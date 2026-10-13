@@ -20,11 +20,30 @@ const Utils = (() => {
   return { debounce, isReducedMotion, safeScrollTo };
 })();
 
-/* StateManager now provided by assets/js/state.js - keep global alias */
+/* StateManager fallback object with memory persistence */
+const _fallbackState = {
+  theme: 'auto',
+  sidebarOpen: typeof window !== 'undefined' ? window.innerWidth > 1024 : true,
+  checklist: {},
+  bookmarks: [],
+  highlights: [],
+  fontSize: 16,
+  mcqResults: {},
+  readProgress: {},
+  readingMode: false
+};
 const StateManager = window.StateManager || {
-  init() {}, get() { return undefined; }, set() {}, save() {},
-  exportData() {}, importData() {}, setMCQResult() {}, getMCQStats() { return { total: 0, correct: 0, pct: 0 }; },
-  setReadProgress() {}, getReadProgress() { return 0; }, getAllReadProgress() { return {}; }
+  init() {},
+  get(key) { return _fallbackState[key]; },
+  set(key, val) { _fallbackState[key] = val; },
+  save() {},
+  exportData() {},
+  importData() {},
+  setMCQResult() {},
+  getMCQStats() { return { total: 0, correct: 0, pct: 0 }; },
+  setReadProgress() {},
+  getReadProgress() { return 0; },
+  getAllReadProgress() { return {}; }
 };
 
 /* ── THEME ──────────────────────────────────────────────────────────── */
@@ -88,44 +107,57 @@ const ThemeManager = (() => {
 /* ── SIDEBAR ───────────────────────────────────────────────────────── */
 const SidebarManager = (() => {
   function apply() {
-    const isOpen = StateManager.get('sidebarOpen');
+    let isOpen = StateManager.get('sidebarOpen');
     const sidebar = document.getElementById('sidebar');
     const content = document.getElementById('main-content');
     const overlay = document.getElementById('sidebar-overlay');
-    const isMobile = window.innerWidth <= 768;
+    const isMobile = window.innerWidth <= 1024;
+    
+    if (isOpen === undefined) {
+      isOpen = !isMobile;
+    }
     
     if (!sidebar) return;
-    sidebar.setAttribute('aria-expanded', isOpen);
+    sidebar.setAttribute('aria-expanded', String(isOpen));
 
     if (isMobile) {
-      sidebar.classList.toggle('open', isOpen);
-      if (overlay) overlay.classList.toggle('show', isOpen);
+      sidebar.classList.toggle('open', Boolean(isOpen));
+      if (overlay) overlay.classList.toggle('show', Boolean(isOpen));
+      sidebar.classList.remove('collapsed');
+      if (content) content.classList.remove('sidebar-collapsed');
     } else {
       sidebar.classList.toggle('collapsed', !isOpen);
       if (content) content.classList.toggle('sidebar-collapsed', !isOpen);
+      sidebar.classList.remove('open');
+      if (overlay) overlay.classList.remove('show');
     }
   }
 
   function toggle() { 
-    StateManager.set('sidebarOpen', !StateManager.get('sidebarOpen')); 
+    const current = StateManager.get('sidebarOpen');
+    const isMobile = window.innerWidth <= 1024;
+    const effective = (current !== undefined) ? current : !isMobile;
+    StateManager.set('sidebarOpen', !effective); 
     apply(); 
   }
 
   function init() {
     apply();
     document.getElementById('sidebar-overlay')?.addEventListener('click', () => {
-      StateManager.set('sidebarOpen', false); apply();
+      StateManager.set('sidebarOpen', false); 
+      apply();
     });
     
     // Debounced Resize
     window.addEventListener('resize', Utils.debounce(() => {
-      if (window.innerWidth > 768 && StateManager.get('sidebarOpen') === false) {
+      if (window.innerWidth > 1024 && StateManager.get('sidebarOpen') === false) {
+        // on expanding to desktop, restore sidebar
         StateManager.set('sidebarOpen', true);
       }
       apply();
     }, 150));
   }
-  return { init, toggle };
+  return { init, toggle, apply };
 })();
 
 /* ── PROGRESS BAR (rAF Optimized) ──────────────────────────────────── */
