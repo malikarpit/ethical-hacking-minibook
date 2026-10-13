@@ -140,6 +140,15 @@ for filename, title, unit_badge, start_marker, end_marker, next_ch, prev_ch in s
     page_html = f"""<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PXSVSF42MF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){{dataLayer.push(arguments);}}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PXSVSF42MF');
+</script>
 <!-- ⚡ Arpit | Ethical Hacking MiniBook 2026 | University of Delhi -->
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="author" content="Arpit"><meta name="description" content="{title} — Ethical Hacking and Advanced Cybersecurity MiniBook, University of Delhi B.Tech CSE.">
