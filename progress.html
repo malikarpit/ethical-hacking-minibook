@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<!-- ⚡ Arpit | Ethical Hacking MiniBook 2026 — Progress Dashboard -->
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="Arpit">
+<meta name="description" content="Study Progress & Analytics Dashboard — Ethical Hacking MiniBook, University of Delhi B.Tech CSE.">
+<title>Study Dashboard | Ethical Hacking MiniBook 🛡️</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/animations.css">
+<link rel="stylesheet" href="assets/css/chapters.css">
+<style>
+.dash-hero {
+  padding: 40px 0 24px;
+  border-bottom: 1px solid var(--bd-default);
+  margin-bottom: 32px;
+}
+.dash-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--tx-primary);
+  margin: 0;
+}
+.dash-hero p {
+  color: var(--tx-muted);
+  margin-top: 8px;
+  font-size: 0.95rem;
+}
+.stat-grid-dash {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.stat-card-dash {
+  background: var(--bg-card);
+  border: 1px solid var(--bd-default);
+  border-radius: var(--em-radius-lg);
+  padding: 20px;
+  text-align: center;
+}
+.stat-card-dash .val {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent-light);
+  font-family: var(--font-mono);
+}
+.stat-card-dash .lbl {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--tx-muted);
+  margin-top: 4px;
+}
+.progress-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.ch-prog-item {
+  background: var(--bg-card);
+  border: 1px solid var(--bd-default);
+  border-radius: var(--em-radius-md);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.ch-prog-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--tx-primary);
+}
+.ch-prog-bar-bg {
+  flex: 1;
+  max-width: 250px;
+  height: 8px;
+  background: var(--bg-elevated);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.ch-prog-bar-fill {
+  height: 100%;
+  background: var(--accent);
+  width: 0%;
+  border-radius: 99px;
+  transition: width 0.4s ease;
+}
+</style>
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<header id="main-header">
+  <div class="header-left">
+    <button id="sidebar-toggle" class="icon-btn" title="Toggle Sidebar (S)" aria-label="Toggle Navigation">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="brand-logo">
+      <div class="brand-icon">🛡️</div>
+      <div class="brand-text">
+        <span class="main">Ethical Hacking</span>
+        <span class="sub">University of Delhi · B.Tech CSE</span>
+      </div>
+    </div>
+  </div>
+
+  <span class="header-chapter-title">Learning Dashboard</span>
+
+  <div class="header-right">
+    <button id="search-btn" class="icon-btn" title="Search (Ctrl+K)" aria-label="Search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    </button>
+    <button id="theme-toggle" class="icon-btn" title="Toggle Theme (T)" aria-label="Theme"></button>
+  </div>
+</header>
+
+<div id="sidebar-overlay"></div>
+<aside id="sidebar">
+  <nav class="sidebar-nav">
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Navigation</div>
+      <a href="index.html" class="sidebar-link"><span class="link-icon">🏠</span>Home Portal</a>
+      <a href="quick-learn.html" class="sidebar-link"><span class="link-icon">⚡</span>Quick Learn</a>
+      <a href="last-minute.html" class="sidebar-link"><span class="link-icon">⏱️</span>Last-Minute Cram</a>
+      <a href="activities.html" class="sidebar-link"><span class="link-icon">📁</span>Activities &amp; Solutions</a>
+      <a href="exams/mcq-test.html" class="sidebar-link"><span class="link-icon">📝</span>MCQ Test Simulator</a>
+      <a href="progress.html" class="sidebar-link active"><span class="link-icon">📊</span>Study Dashboard</a>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Core Chapters</div>
+      <a href="chapters/ch00-syllabus-guide.html" class="sidebar-link"><span class="link-icon">🧭</span>Ch 0 — Syllabus &amp; Blueprint</a>
+      <a href="chapters/ch00-syllabus-guide-hinglish.html" class="sidebar-link sidebar-mukul-sublink"><span class="link-icon">🔥</span>Ch 0 · Mukul Hinglish</a>
+      <a href="chapters/ch01-fundamentals-ethics.html" class="sidebar-link"><span class="link-icon">🛡️</span>Ch 1 — Fundamentals &amp; Ethics</a>
+      <a href="chapters/ch01-fundamentals-ethics-hinglish.html" class="sidebar-link sidebar-mukul-sublink"><span class="link-icon">🔥</span>Ch 1 · Mukul Hinglish</a>
+      <a href="chapters/ch02-network-system-security.html" class="sidebar-link"><span class="link-icon">🌐</span>Ch 2 — Network &amp; System Security</a>
+      <a href="chapters/ch02-network-system-security-hinglish.html" class="sidebar-link sidebar-mukul-sublink"><span class="link-icon">🔥</span>Ch 2 · Mukul Hinglish</a>
+      <a href="chapters/ch03-web-application-security.html" class="sidebar-link"><span class="link-icon">💻</span>Ch 3 — Web &amp; App Security</a>
+      <a href="chapters/ch04-advanced-cybersecurity.html" class="sidebar-link"><span class="link-icon">🔒</span>Ch 4 — Advanced Cyber &amp; Crypto</a>
+      <a href="chapters/ch05-practical-lab-workbook.html" class="sidebar-link"><span class="link-icon">🔬</span>Ch 5 — Practical Labs (1 to 7)</a>
+    </div>
+  </nav>
+  <div class="sidebar-footer">
+    <div class="sidebar-brand-mark"><div class="mark">🛡️</div><span>Arpit · DU B.Tech CSE</span></div>
+  </div>
+</aside>
+
+<main id="main-content">
+  <div class="chapter-content-container">
+    
+    <div class="dash-hero">
+      <h1>Study Progress &amp; Analytics</h1>
+      <p>Local-first progress tracking, syllabus completion metrics, and exam simulator readiness.</p>
+    </div>
+
+    <div class="stat-grid-dash">
+      <div class="stat-card-dash">
+        <div class="val" id="total-chapters-val">5</div>
+        <div class="lbl">Chapters Available</div>
+      </div>
+      <div class="stat-card-dash">
+        <div class="val" id="activities-count-val">7</div>
+        <div class="lbl">Activities Solved</div>
+      </div>
+      <div class="stat-card-dash">
+        <div class="val" id="mcq-bank-val">79+</div>
+        <div class="lbl">Question Bank Items</div>
+      </div>
+      <div class="stat-card-dash">
+        <div class="val" style="color:#10b981;" id="overall-pct-val">100%</div>
+        <div class="lbl">Syllabus Coverage</div>
+      </div>
+    </div>
+
+    <h2 style="font-size:1.3rem; font-weight:800; color:var(--tx-primary); margin-bottom:16px;">
+      Chapter Reading Tracker
+    </h2>
+
+    <div class="progress-list">
+      <div class="ch-prog-item">
+        <div class="ch-prog-title">Ch 1 — Fundamentals of Ethical Hacking &amp; Cyber Laws</div>
+        <div class="ch-prog-bar-bg"><div class="ch-prog-bar-fill" style="width: 100%;"></div></div>
+        <a href="chapters/ch00-syllabus-guide.html" class="sidebar-link"><span class="link-icon">🧭</span>Ch 0 — Syllabus &amp; Blueprint</a>
+      <a href="chapters/ch00-syllabus-guide-hinglish.html" class="sidebar-link sidebar-mukul-sublink"><span class="link-icon">🔥</span>Ch 0 · Mukul Hinglish</a>
+      <a href="chapters/ch01-fundamentals-ethics.html" style="color:var(--accent-light); font-weight:700; text-decoration:none; font-size:0.85rem;">Read &rarr;</a>
+      </div>
+
+      <div class="ch-prog-item">
+        <div class="ch-prog-title">Ch 2 — Network &amp; System Security, VAPT &amp; Wireless</div>
+        <div class="ch-prog-bar-bg"><div class="ch-prog-bar-fill" style="width: 100%;"></div></div>
+        <a href="chapters/ch02-network-system-security.html" style="color:var(--accent-light); font-weight:700; text-decoration:none; font-size:0.85rem;">Read &rarr;</a>
+      </div>
+
+      <div class="ch-prog-item">
+        <div class="ch-prog-title">Ch 3 — Web Security, OWASP Top 10 &amp; Secure Coding</div>
+        <div class="ch-prog-bar-bg"><div class="ch-prog-bar-fill" style="width: 100%;"></div></div>
+        <a href="chapters/ch03-web-application-security.html" style="color:var(--accent-light); font-weight:700; text-decoration:none; font-size:0.85rem;">Read &rarr;</a>
+      </div>
+
+      <div class="ch-prog-item">
+        <div class="ch-prog-title">Ch 4 — Incident Response, Cryptography &amp; Zero Trust</div>
+        <div class="ch-prog-bar-bg"><div class="ch-prog-bar-fill" style="width: 100%;"></div></div>
+        <a href="chapters/ch04-advanced-cybersecurity.html" style="color:var(--accent-light); font-weight:700; text-decoration:none; font-size:0.85rem;">Read &rarr;</a>
+      </div>
+
+      <div class="ch-prog-item">
+        <div class="ch-prog-title">Ch 5 — Seven Syllabus Practical Labs &amp; Report Templates</div>
+        <div class="ch-prog-bar-bg"><div class="ch-prog-bar-fill" style="width: 100%;"></div></div>
+        <a href="chapters/ch05-practical-lab-workbook.html" style="color:var(--accent-light); font-weight:700; text-decoration:none; font-size:0.85rem;">Read &rarr;</a>
+      </div>
+    </div>
+
+    <div style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--bd-subtle); display:flex; gap:12px; flex-wrap:wrap;">
+      <a href="exams/mcq-test.html" class="btn-primary" style="text-decoration:none; display:inline-block; padding:10px 22px; border-radius:99px; background:var(--accent); color:#fff; font-weight:700; font-size:0.9rem;">Practice Exam MCQs &rarr;</a>
+      <a href="activities.html" class="btn-secondary" style="text-decoration:none; display:inline-block; padding:10px 22px; border-radius:99px; background:var(--accent-soft); border:1px solid var(--accent-border); color:var(--accent-light); font-weight:700; font-size:0.9rem;">Classroom Case Studies &rarr;</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="chapter-content-container" style="padding-top:1.5rem; padding-bottom:1.5rem; text-align:center; color:var(--tx-muted); font-size:0.85rem; border-top:1px solid var(--bd-subtle);">
+    <span style="color:var(--em-accent-text); font-weight:700;">Ethical Hacking MiniBook</span> · University of Delhi B.Tech CSE · Learning Analytics.
+  </div>
+</footer>
+
+<script src="assets/js/state.js"></script>
+<script src="assets/js/core.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  ThemeManager.init();
+  SidebarManager.init();
+});
+</script>
+</body>
+</html>

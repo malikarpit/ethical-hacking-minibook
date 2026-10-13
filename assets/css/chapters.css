@@ -1,0 +1,560 @@
+/*
+ * ETHICAL HACKING & ADVANCED CYBERSECURITY MINIBOOK
+ * chapters.css — Chapter Layout, Hero, Navigation, Headings & Content Enclosures
+ * (Engineering Minibooks v2.0 · DIP & AIML Standard)
+ */
+
+/* ─────────────────────────────────────────────────────────────────────
+   01 · CHAPTER HERO & HEADINGS
+   ───────────────────────────────────────────────────────────────────── */
+.chapter-hero {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.12) 0%, rgba(8, 145, 178, 0.05) 100%);
+  border: 1px solid var(--em-accent-border);
+  border-radius: var(--em-radius-lg);
+  padding: clamp(1.5rem, 3.5vw, 2.4rem);
+  margin-bottom: clamp(2rem, 4vw, 2.85rem);
+  box-shadow: var(--sh-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .chapter-hero {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.10) 0%, rgba(37, 99, 235, 0.06) 100%);
+  border-color: rgba(56, 189, 248, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+}
+
+.chapter-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  border-radius: var(--em-radius-full);
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--em-accent-soft);
+  color: var(--em-accent-text);
+  border: 1px solid var(--em-accent-border);
+  margin-bottom: 14px;
+}
+
+.chapter-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  color: var(--em-text);
+  margin: 0 0 12px;
+}
+
+.chapter-sub {
+  color: var(--em-text-secondary);
+  font-size: clamp(0.98rem, 2vw, 1.1rem);
+  line-height: 1.62;
+  margin: 0;
+  max-width: 82ch;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   02 · CHAPTER TOC (TABLE OF CONTENTS)
+   ───────────────────────────────────────────────────────────────────── */
+.toc-box {
+  background: var(--em-surface-1);
+  border: 1px solid var(--em-border);
+  border-left: 4px solid var(--em-accent);
+  border-radius: var(--em-radius-md);
+  padding: clamp(1.2rem, 2.5vw, 1.75rem);
+  margin-bottom: clamp(2.2rem, 4vw, 3rem);
+  box-shadow: var(--sh-sm);
+}
+
+.toc-title {
+  font-weight: 800;
+  font-size: 0.92rem;
+  color: var(--em-accent-text);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.toc-item a {
+  color: var(--em-text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.94rem;
+  line-height: 1.45;
+  transition: color 0.15s ease, padding-left 0.15s ease;
+  display: inline-block;
+}
+.toc-item a:hover {
+  color: var(--em-accent-text);
+  padding-left: 4px;
+}
+
+.toc-subitem {
+  padding-left: 20px;
+}
+.toc-subitem a {
+  color: var(--em-text-secondary);
+  font-size: 0.88rem;
+  text-decoration: none;
+  line-height: 1.45;
+  transition: color 0.15s ease, padding-left 0.15s ease;
+  display: inline-block;
+}
+.toc-subitem a:hover {
+  color: var(--em-accent-text);
+  padding-left: 4px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   03 · CHAPTER PROSE & TOPIC SEPARATION
+   ───────────────────────────────────────────────────────────────────── */
+.chapter-body-text {
+  max-width: 100%;
+}
+
+.section-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.2vw, 2.05rem);
+  font-weight: 700;
+  line-height: 1.28;
+  color: var(--em-text);
+  margin-top: clamp(2.75rem, 5vw, 3.75rem);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 2px solid var(--em-border);
+  letter-spacing: -0.015em;
+  position: relative;
+}
+.section-h2:first-child {
+  margin-top: 0;
+}
+
+.section-h3 {
+  font-family: var(--font-sans);
+  font-size: clamp(1.18rem, 2.4vw, 1.45rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--em-text);
+  margin-top: clamp(2rem, 3.5vw, 2.75rem);
+  margin-bottom: 0.9rem;
+  letter-spacing: -0.01em;
+}
+
+.h-anchor {
+  color: var(--em-accent-text);
+  opacity: 0.65;
+  margin-right: 8px;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  user-select: none;
+}
+
+.body-p {
+  font-size: var(--em-body-size);
+  line-height: var(--em-body-leading);
+  color: var(--em-text-secondary);
+  margin-top: 0;
+  margin-bottom: 1.35rem;
+  max-width: 86ch;
+}
+.body-p:last-child {
+  margin-bottom: 0;
+}
+
+.styled-list {
+  margin-top: 0.85rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  max-width: 86ch;
+}
+.styled-list li {
+  margin-bottom: 0.65rem;
+  line-height: 1.68;
+  color: var(--em-text-secondary);
+}
+.styled-list li:last-child {
+  margin-bottom: 0;
+}
+.styled-list li strong {
+  color: var(--em-text);
+}
+[data-theme="dark"] .styled-list li strong {
+  color: #F8FAFC;
+}
+
+.chapter-divider {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--em-border-strong), transparent);
+  margin: clamp(2.5rem, 5vw, 3.75rem) 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   04 · CALLOUTS & DATA TABLES
+   ───────────────────────────────────────────────────────────────────── */
+.callout {
+  background: var(--em-surface-1);
+  border: 1px solid var(--em-border);
+  border-left: 4px solid var(--em-accent);
+  border-radius: var(--em-radius-md);
+  padding: 1.15rem 1.4rem;
+  margin: 1.75rem 0;
+}
+.callout-info {
+  background: rgba(37, 99, 235, 0.06);
+  border-color: var(--em-accent-border);
+  border-left: 4px solid var(--em-accent);
+}
+[data-theme="dark"] .callout-info {
+  background: rgba(56, 189, 248, 0.08);
+  border-color: rgba(56, 189, 248, 0.25);
+  border-left-color: #38BDF8;
+}
+.callout-content {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--em-text-secondary);
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.75rem 0;
+  border-radius: var(--em-radius-md);
+  border: 1px solid var(--em-border);
+  box-shadow: var(--sh-sm);
+}
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  text-align: left;
+}
+.data-table th {
+  background: var(--em-surface-2);
+  color: var(--em-accent-text);
+  font-weight: 700;
+  padding: 12px 16px;
+  border-bottom: 2px solid var(--em-border);
+  white-space: nowrap;
+}
+.data-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--em-border);
+  color: var(--em-text-secondary);
+  line-height: 1.52;
+}
+.data-table tr:last-child td {
+  border-bottom: none;
+}
+.data-table tr:hover td {
+  background: var(--em-accent-soft);
+}
+.data-table td strong {
+  color: var(--em-text);
+}
+[data-theme="dark"] .data-table td strong {
+  color: #38BDF8;
+}
+
+/* Code Blocks */
+.code-block-container {
+  margin: 1.5rem 0;
+  border-radius: var(--em-radius-md);
+  overflow: hidden;
+  border: 1px solid var(--em-border);
+  box-shadow: var(--sh-sm);
+}
+.code-block {
+  margin: 0;
+  padding: 1.25rem 1.5rem;
+  background: var(--em-surface-2);
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   05 · CHAPTER END BOTTOM NAVIGATION
+   ───────────────────────────────────────────────────────────────────── */
+.chapter-nav-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--em-border);
+}
+
+.chapter-nav-btn {
+  padding: 11px 24px;
+  border-radius: var(--em-radius-full);
+  border: 1px solid var(--em-accent-border);
+  background: var(--em-accent-soft);
+  color: var(--em-accent-text);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.90rem;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.chapter-nav-btn:hover:not(.disabled) {
+  background: var(--em-accent);
+  color: #FFFFFF;
+  border-color: var(--em-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
+}
+[data-theme="dark"] .chapter-nav-btn:hover:not(.disabled) {
+  box-shadow: 0 6px 18px rgba(56, 189, 248, 0.35);
+}
+.chapter-nav-btn.disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  border-color: var(--em-border);
+  background: var(--em-surface-2);
+  color: var(--em-text-muted);
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   06 · BKL MUKUL KE LIYE (HINGLISH + DUAL VIEW FILTER)
+   ───────────────────────────────────────────────────────────────────── */
+.mukul-filter-bar {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.12) 0%, rgba(8, 145, 178, 0.08) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: var(--em-radius-lg);
+  padding: 1.15rem 1.4rem;
+  margin-bottom: 2.2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+[data-theme="dark"] .mukul-filter-bar {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.18) 0%, rgba(8, 145, 178, 0.12) 100%);
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+.mukul-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.mukul-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #f87171;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 10px;
+  border-radius: var(--em-radius-full);
+}
+
+.mukul-tagline {
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--em-text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mukul-sub {
+  font-size: 0.86rem;
+  color: var(--em-text-secondary);
+  line-height: 1.4;
+}
+
+.mukul-toggle-pills {
+  display: inline-flex;
+  background: var(--em-surface-2);
+  border: 1px solid var(--em-border);
+  border-radius: var(--em-radius-full);
+  padding: 4px;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.mukul-pill {
+  border: none;
+  background: transparent;
+  color: var(--em-text-secondary);
+  font-family: inherit;
+  font-size: 0.84rem;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: var(--em-radius-full);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mukul-pill:hover {
+  color: var(--em-text);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.mukul-pill.active {
+  background: var(--em-accent);
+  color: #FFFFFF;
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.4);
+}
+
+[data-theme="dark"] .mukul-pill.active {
+  box-shadow: 0 2px 12px rgba(56, 189, 248, 0.4);
+}
+
+/* Topic Dual/Single View Container */
+.topic-container {
+  margin: 1.75rem 0;
+}
+
+/* Hinglish Box Styling */
+.mukul-card {
+  background: rgba(8, 145, 178, 0.06);
+  border: 1px solid rgba(8, 145, 178, 0.3);
+  border-left: 4px solid var(--accent-light, #38bdf8);
+  border-radius: var(--em-radius-md);
+  padding: 1.25rem 1.4rem;
+  margin-top: 1rem;
+  box-shadow: var(--sh-sm);
+  transition: all 0.25s ease;
+}
+
+[data-theme="dark"] .mukul-card {
+  background: rgba(8, 145, 178, 0.08);
+  border-color: rgba(56, 189, 248, 0.28);
+  border-left-color: #38bdf8;
+}
+
+.mukul-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.86rem;
+  font-weight: 800;
+  color: #38bdf8;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.mukul-card-example {
+  background: rgba(0, 0, 0, 0.25);
+  border-left: 3px solid #f59e0b;
+  padding: 12px 14px;
+  border-radius: 4px;
+  margin: 12px 0 6px;
+  font-size: 0.90rem;
+  line-height: 1.58;
+  color: var(--em-text);
+}
+
+[data-theme="light"] .mukul-card-example {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.mukul-card-example strong {
+  color: #f59e0b;
+}
+
+/* Visibility Control Based on Chapter View Mode */
+.view-mode-en .hi-box {
+  display: none !important;
+}
+.view-mode-en .en-box {
+  display: block !important;
+}
+
+.view-mode-hi .en-box {
+  display: none !important;
+}
+.view-mode-hi .hi-box {
+  display: block !important;
+}
+
+/* Dual Split View Mode */
+.view-mode-dual .topic-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  align-items: start;
+}
+
+.view-mode-dual .en-box,
+.view-mode-dual .hi-box {
+  display: block !important;
+}
+
+.view-mode-dual .mukul-card {
+  margin-top: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .view-mode-dual .topic-split-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Sidebar Mukul Hinglish Sublinks */
+.sidebar-link.sidebar-mukul-sublink {
+  padding-left: 28px;
+  font-size: 0.82rem;
+  opacity: 0.92;
+  color: var(--accent-light, #38bdf8);
+  font-weight: 600;
+  border-left: 2px solid rgba(56, 189, 248, 0.3);
+  margin-left: 12px;
+  margin-top: 2px;
+  margin-bottom: 4px;
+}
+
+.sidebar-link.sidebar-mukul-sublink:hover {
+  color: #67e8f9;
+  background: rgba(56, 189, 248, 0.1);
+  border-left-color: var(--accent-light, #38bdf8);
+}
+
+.sidebar-link.sidebar-mukul-sublink .link-icon {
+  font-size: 0.95rem;
+  margin-right: 6px;
+}
+
+

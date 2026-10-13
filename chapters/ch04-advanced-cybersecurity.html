@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<!-- ⚡ Arpit | Ethical Hacking MiniBook 2026 | University of Delhi -->
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="Arpit"><meta name="description" content="Ch 4: Incident Response, Cryptography & Zero Trust — Ethical Hacking and Advanced Cybersecurity MiniBook, University of Delhi B.Tech CSE.">
+<title>Ch 4: Incident Response, Cryptography & Zero Trust | Ethical Hacking MiniBook 🛡️</title>
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/animations.css">
+<link rel="stylesheet" href="../assets/css/chapters.css">
+<link rel="stylesheet" href="../assets/css/timer.css">
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<!-- HEADER -->
+<header id="main-header">
+  <div class="header-left">
+    <button id="sidebar-toggle" class="icon-btn" title="Toggle Sidebar (S)" aria-label="Toggle Navigation">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="brand-logo">
+      <div class="brand-icon">🛡️</div>
+      <div class="brand-text">
+        <span class="main">Ethical Hacking</span>
+        <span class="sub">University of Delhi · B.Tech CSE</span>
+      </div>
+    </div>
+  </div>
+
+  <span class="header-chapter-title">Ch 4: Incident Response, Cryptography & Zero Trust</span>
+
+  <div class="header-right">
+    <button id="search-btn" class="icon-btn" title="Search (Ctrl+K)" aria-label="Search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    </button>
+    <button id="print-btn" title="Print to Clean PDF (Ctrl+P)" aria-label="Print">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      <span class="print-label">PDF</span>
+    </button>
+    <button id="reading-mode-btn" class="icon-btn" title="Reading Focus Mode (F)" aria-label="Reading Mode">📖</button>
+    <button id="theme-toggle" class="icon-btn" title="Toggle Theme (T)" aria-label="Theme"></button>
+  </div>
+</header>
+
+<!-- SIDEBAR -->
+<div id="sidebar-overlay"></div>
+<aside id="sidebar">
+  <nav class="sidebar-nav">
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Navigation</div>
+      <a href="../index.html" class="sidebar-link"><span class="link-icon">🏠</span>Home Portal</a>
+      <a href="../quick-learn.html" class="sidebar-link"><span class="link-icon">⚡</span>Quick Learn</a>
+      <a href="../last-minute.html" class="sidebar-link"><span class="link-icon">⏱️</span>Last-Minute Cram</a>
+      <a href="../activities.html" class="sidebar-link"><span class="link-icon">📁</span>Activities &amp; Solutions</a>
+      <a href="../exams/mcq-test.html" class="sidebar-link"><span class="link-icon">📝</span>MCQ Test Simulator</a>
+      <a href="../progress.html" class="sidebar-link"><span class="link-icon">📊</span>Study Dashboard</a>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Chapters</div>
+      <a href="ch00-syllabus-guide.html" class="sidebar-link"><span class="link-icon">🧭</span>Ch 0 — Syllabus &amp; Blueprint</a>
+      <a href="ch00-syllabus-guide-hinglish.html" class="sidebar-link sidebar-mukul-sublink"><span class="link-icon">🔥</span>Ch 0 · Mukul Hinglish</a>
+      <a href="ch01-fundamentals-ethics.html" class="sidebar-link "><span class="link-icon">🛡️</span>Ch 1 — Fundamentals &amp; Ethics</a>
+      <a href="ch01-fundamentals-ethics-hinglish.html" class="sidebar-link sidebar-mukul-sublink" style="color:#38bdf8;"><span class="link-icon">🔥</span>Ch 1 — Mukul Hinglish</a>
+      <a href="ch02-network-system-security.html" class="sidebar-link "><span class="link-icon">🌐</span>Ch 2 — Network &amp; Systems</a>
+      <a href="ch02-network-system-security-hinglish.html" class="sidebar-link sidebar-mukul-sublink" style="color:#38bdf8;"><span class="link-icon">🔥</span>Ch 2 — Mukul Hinglish</a>
+      <a href="ch03-web-application-security.html" class="sidebar-link "><span class="link-icon">💻</span>Ch 3 — Web Security &amp; OWASP</a>
+      <a href="ch04-advanced-cybersecurity.html" class="sidebar-link active"><span class="link-icon">🔒</span>Ch 4 — Advanced Cyber &amp; Crypto</a>
+      <a href="ch05-practical-lab-workbook.html" class="sidebar-link "><span class="link-icon">🔬</span>Ch 5 — Practical Labs (1 to 7)</a>
+    </div>
+  </nav>
+  <div class="sidebar-footer">
+    <div class="sidebar-brand-mark"><div class="mark">🛡️</div><span>Arpit · DU B.Tech CSE</span></div>
+  </div>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main id="main-content">
+  <div class="chapter-content-container">
+    
+    <div class="chapter-hero">
+      <span class="chapter-badge">Unit 4</span>
+      <h1 class="chapter-headline">Ch 4: Incident Response, Cryptography & Zero Trust</h1>
+      <p class="chapter-sub">Curriculum-aligned textbook study module for University of Delhi (DSE-3/GE-5).</p>
+    </div>
+
+    <nav class="toc-box"><div class="toc-title">📑 Table of Contents</div><ul class="toc-list"><li class="toc-item"><a href="#s-6-unit-4-advanced-cybersecurity-concepts">6. Unit 4 - Advanced Cybersecurity Concepts</a></li><li class="toc-subitem"><a href="#s-6-1-incident-detection-and-response">6.1 Incident detection and response</a></li><li class="toc-subitem"><a href="#s-6-2-monitoring-and-threat-hunting">6.2 Monitoring and threat hunting</a></li><li class="toc-subitem"><a href="#s-6-3-cryptographic-foundations">6.3 Cryptographic foundations</a></li><li class="toc-subitem"><a href="#s-6-4-symmetric-vs-asymmetric-cryptography">6.4 Symmetric vs asymmetric cryptography</a></li><li class="toc-subitem"><a href="#s-6-5-encryption-signatures-and-certificates">6.5 Encryption, signatures, and certificates</a></li><li class="toc-subitem"><a href="#s-6-6-advanced-persistent-threats-apts">6.6 Advanced Persistent Threats (APTs)</a></li><li class="toc-subitem"><a href="#s-6-7-blockchain-security">6.7 Blockchain security</a></li><li class="toc-subitem"><a href="#s-6-8-zero-trust-architecture">6.8 Zero-Trust Architecture</a></li><li class="toc-subitem"><a href="#s-6-9-emerging-ai-and-iot-threats">6.9 Emerging AI and IoT threats</a></li><li class="toc-subitem"><a href="#s-6-10-unit-4-quick-check">6.10 Unit 4 - Quick check</a></li></ul></nav>
+
+    <div class="chapter-body-text">
+      <h2 id="s-6-unit-4-advanced-cybersecurity-concepts" class="section-h2"><span class="h-anchor">§</span> 6. Unit 4 - Advanced Cybersecurity Concepts</h2>
+<h3 id="s-6-1-incident-detection-and-response" class="section-h3"><span class="h-anchor">#</span> 6.1 Incident detection and response</h3>
+<p class="body-p"><strong>Incident detection</strong> identifies evidence that a security event may be occurring. <strong>Incident response</strong> coordinates analysis and action to limit harm, preserve evidence, remove the cause, and restore safe operations.</p>
+<p class="body-p">A practical response cycle can be described as:</p>
+<ul class="styled-list">
+<li><strong>1.</strong> <strong>Prepare:</strong> define roles, contacts, playbooks, backups, logging, exercises, and decision authority.</li>
+<li><strong>2.</strong> <strong>Detect and analyze:</strong> correlate alerts, identify affected assets, validate the event, and estimate scope and severity.</li>
+<li><strong>3.</strong> <strong>Contain:</strong> limit spread and ongoing harm while preserving evidence and business-critical services when feasible.</li>
+<li><strong>4.</strong> <strong>Eradicate:</strong> remove the cause, such as malicious access, compromised credentials, or an exploited weakness.</li>
+<li><strong>5.</strong> <strong>Recover:</strong> restore clean systems, validate integrity, monitor for recurrence, and return services carefully.</li>
+<li><strong>6.</strong> <strong>Learn and improve:</strong> conduct a retrospective, update controls, and track corrective actions.</li>
+</ul>
+<p class="body-p">This is a useful teaching model; actual frameworks may group stages differently. Current NIST guidance (SP 800-61 Rev. 3, published in April 2025) integrates incident response into broader cybersecurity risk management rather than treating it as an isolated post-event task.</p>
+<p class="body-p"><strong>Evidence to correlate:</strong> authentication logs, endpoint telemetry, DNS/proxy/firewall logs, cloud audit logs, application logs, process/network events, and user reports. Use synchronized clocks where possible. Preserve originals, record who handled evidence, and make analysis copies.</p>
+<h3 id="s-6-2-monitoring-and-threat-hunting" class="section-h3"><span class="h-anchor">#</span> 6.2 Monitoring and threat hunting</h3>
+<p class="body-p"><strong>Monitoring</strong> continuously observes telemetry for known patterns, rules, or behavioral signals. <strong>Threat hunting</strong> is a hypothesis-driven search for suspicious activity that may not have triggered existing alerts.</p>
+<p class="body-p">A hunt example: “Could a compromised account be accessing an unusual number of files outside normal working hours?” Define the data sources, time window, expected baseline, query logic, results, and limitations. A hunt produces leads requiring investigation; a statistical anomaly is not automatic proof of malicious behavior.</p>
+<p class="body-p"><strong>Detection engineering basics:</strong></p>
+<ul class="styled-list">
+<li>Define a specific behavior and the evidence that would indicate it.</li>
+<li>Use sources with adequate coverage and timestamps.</li>
+<li>Measure false positives and false negatives.</li>
+<li>Test detections against benign cases and controlled simulations.</li>
+<li>Document the response expected when an alert fires.</li>
+<li>Review whether an attacker could evade the logic or whether normal behavior could trigger it.</li>
+</ul>
+<p class="body-p">MITRE ATT&CK is a knowledge base that organizes observed adversary tactics and techniques. It helps analysts describe behaviors and map detections, but it is not a complete prediction of every attack or a checklist that every organization must implement in full.</p>
+<h3 id="s-6-3-cryptographic-foundations" class="section-h3"><span class="h-anchor">#</span> 6.3 Cryptographic foundations</h3>
+<p class="body-p">Cryptography supports confidentiality, integrity, authentication, and non-repudiation-related workflows, but a cryptographic algorithm alone cannot guarantee all of them.</p>
+<ul class="styled-list">
+<li><strong>Encryption:</strong> transforms readable plaintext into ciphertext under a key, so an unauthorized party should not recover the plaintext without the appropriate key.</li>
+<li><strong>Hash function:</strong> maps data to a fixed-length digest. A secure cryptographic hash is designed to make collisions and preimages computationally difficult. A hash is not encryption and cannot be “decrypted.”</li>
+<li><strong>Message Authentication Code (MAC):</strong> uses a shared secret to provide integrity and authenticity to parties sharing that secret.</li>
+<li><strong>Digital signature:</strong> uses a private key to sign a message or digest; a corresponding public key verifies the signature. It can support authenticity and integrity, but identity binding depends on key management and trust.</li>
+<li><strong>Certificate:</strong> binds an identity or subject to a public key and is signed by a certificate authority (CA) or otherwise trusted under a defined scheme.</li>
+<li><strong>Key management:</strong> includes generation, storage, access control, rotation, revocation, backup, and destruction. Weak key management can undermine strong cryptographic algorithms.</li>
+</ul>
+<h3 id="s-6-4-symmetric-vs-asymmetric-cryptography" class="section-h3"><span class="h-anchor">#</span> 6.4 Symmetric vs asymmetric cryptography</h3>
+<div class="table-responsive"><table class="data-table"><thead><tr><th>Aspect</th><th>Symmetric</th><th>Asymmetric (public-key)</th></tr></thead><tbody><tr><td>Keys</td><td>Same shared secret key for encryption/decryption or a shared-key construction</td><td>Public/private key pair</td></tr><tr><td>Strength</td><td>Efficient for large amounts of data</td><td>Useful for key establishment, signatures, and identity mechanisms; generally more computationally expensive</td></tr><tr><td>Main challenge</td><td>Securely sharing and managing the secret</td><td>Protecting the private key and establishing trust in the public key</td></tr><tr><td>Examples</td><td>AES for encryption; HMAC for message authentication</td><td>RSA or elliptic-curve schemes for selected encryption/signature/key-establishment use cases</td></tr></tbody></table></div>
+<p class="body-p">Real systems often use <strong>hybrid cryptography</strong>: public-key mechanisms help establish or authenticate session keys, while symmetric cryptography protects bulk traffic. Modern protocols should use well-reviewed libraries and current protocol configurations rather than custom cryptographic designs.</p>
+<h3 id="s-6-5-encryption-signatures-and-certificates" class="section-h3"><span class="h-anchor">#</span> 6.5 Encryption, signatures, and certificates</h3>
+<p class="body-p"><strong>Encryption answers:</strong> “Who can read this data?”  </p>
+<p class="body-p"><strong>Hashing answers:</strong> “Does this digest match this input?” (It does not prove who created the input.)  </p>
+<p class="body-p"><strong>Digital signatures answer:</strong> “Does this signature verify under this public key, and has the signed content remained unchanged?”  </p>
+<p class="body-p"><strong>Certificates answer:</strong> “Why should I trust that this public key belongs to this identity under this trust system?”</p>
+<p class="body-p">A signature is not the same as encryption. A certificate does not itself encrypt a file. A valid certificate is meaningful only when the client checks the chain, name/identity, validity, purpose, revocation/status where appropriate, and relevant policy.</p>
+<p class="body-p"><strong>TLS at a high level:</strong> a client and server negotiate cryptographic parameters, authenticate the server (and sometimes the client), establish session keys, and use symmetric encryption with integrity protection for application traffic. Exact TLS protocol details evolve; rely on current secure configurations and library defaults.</p>
+<h3 id="s-6-6-advanced-persistent-threats-apts" class="section-h3"><span class="h-anchor">#</span> 6.6 Advanced Persistent Threats (APTs)</h3>
+<p class="body-p">An <strong>Advanced Persistent Threat (APT)</strong> is commonly used to describe a capable, well-resourced adversary conducting sustained, targeted activity. The exact term is used differently by different organizations; do not treat “APT” as proof of a particular actor or nation-state.</p>
+<p class="body-p">Typical behavior may include initial access, execution, persistence, privilege escalation, discovery, credential access, lateral movement, collection, command and control, and exfiltration. These are possible behaviors, not a mandatory sequence.</p>
+<p class="body-p"><strong>Detection and mitigation:</strong></p>
+<ul class="styled-list">
+<li>Maintain asset and identity inventories; monitor high-value systems.</li>
+<li>Enforce MFA and least privilege; protect privileged accounts.</li>
+<li>Patch exposed services and reduce unnecessary attack surface.</li>
+<li>Centralize and retain appropriate logs; alert on suspicious identity, process, and network behavior.</li>
+<li>Segment critical systems and restrict outbound paths.</li>
+<li>Protect backups and test restoration.</li>
+<li>Hunt across endpoint, identity, network, email, and cloud telemetry.</li>
+<li>Prepare an incident response plan and practice it.</li>
+<li>Use threat intelligence as context, not as a substitute for local evidence.</li>
+</ul>
+<h3 id="s-6-7-blockchain-security" class="section-h3"><span class="h-anchor">#</span> 6.7 Blockchain security</h3>
+<p class="body-p">A blockchain is a replicated data structure in which records are linked cryptographically and accepted according to a consensus protocol. Security depends not only on hashes but also on consensus, key custody, software, smart contracts, governance, and external dependencies.</p>
+<p class="body-p">Common risks:</p>
+<ul class="styled-list">
+<li><strong>Private-key compromise:</strong> an attacker can act as the key holder.</li>
+<li><strong>Smart-contract flaws:</strong> incorrect logic, access-control errors, re-entrancy-like interaction bugs, arithmetic or validation issues, or unsafe assumptions about external calls.</li>
+<li><strong>Consensus and network attacks:</strong> attacks on validators/miners or assumptions about the cost and control of consensus resources.</li>
+<li><strong>Oracle risk:</strong> a contract may trust incorrect external data.</li>
+<li><strong>Bridge risk:</strong> assets or messages crossing chains may rely on fragile validation or privileged operators.</li>
+<li><strong>Governance risk:</strong> concentrated control may allow malicious or unexpected changes.</li>
+</ul>
+<p class="body-p">A tamper-evident ledger does not automatically make entries true, applications bug-free, wallets safe, or private data confidential. “Immutable” does not mean “secure by default.”</p>
+<h3 id="s-6-8-zero-trust-architecture" class="section-h3"><span class="h-anchor">#</span> 6.8 Zero-Trust Architecture</h3>
+<p class="body-p">Zero trust is a security approach that avoids granting trust solely because a user or device is inside a traditional network perimeter. Access is evaluated using identity, device health, resource sensitivity, policy, and contextual signals, with continuous verification as appropriate.</p>
+<p class="body-p">Core ideas:</p>
+<ul class="styled-list">
+<li>Verify explicitly using available identity and context signals.</li>
+<li>Apply least-privilege access and limit the duration/scope of permissions.</li>
+<li>Assume a breach is possible; segment systems and limit lateral movement.</li>
+<li>Monitor access continuously and revoke or adjust access when risk changes.</li>
+<li>Protect data, workloads, devices, and identities—not only network boundaries.</li>
+</ul>
+<p class="body-p">Zero trust is not a single product and does not mean “trust nothing under any circumstances.” It is an architecture and policy model implemented through several controls.</p>
+<h3 id="s-6-9-emerging-ai-and-iot-threats" class="section-h3"><span class="h-anchor">#</span> 6.9 Emerging AI and IoT threats</h3>
+<p class="body-p"><strong>AI-related risks</strong> include prompt injection against AI applications, sensitive-data exposure, model or training-data poisoning, insecure tool/plugin access, model theft, abusive automation, and over-trusting generated output. AI output can be inaccurate and must not be treated as authoritative without verification. Systems that let a model call tools need strict authorization, input/output boundaries, logging, and human approval for high-impact actions.</p>
+<p class="body-p"><strong>IoT risks</strong> include default or hard-coded credentials, delayed updates, weak device identity, exposed services, insecure APIs, poor segmentation, unsafe update mechanisms, and devices that cannot support modern security controls. IoT can create physical as well as digital safety consequences.</p>
+<p class="body-p"><strong>Defensive principles for both:</strong> minimize privileges and exposed services, authenticate devices and services, maintain updates, isolate networks, protect secrets, validate inputs, log relevant activity, and establish a clear support/decommissioning lifecycle. For AI systems, also limit access to tools and data and test adversarial and misuse cases. For IoT, consider physical access and safety constraints.</p>
+<h3 id="s-6-10-unit-4-quick-check" class="section-h3"><span class="h-anchor">#</span> 6.10 Unit 4 - Quick check</h3>
+<p class="body-p">Be able to describe incident response; distinguish encryption, hashing, MACs, signatures, and certificates; explain the threat pattern and defenses for APTs; and state what blockchain and zero trust can and cannot guarantee.</p>
+<hr class="chapter-divider">
+    </div>
+
+    <div class="chapter-nav-bottom">
+      <a href="ch03-web-application-security.html" class="chapter-nav-btn prev-btn">&larr; Previous Chapter</a>
+      <a href="ch05-practical-lab-workbook.html" class="chapter-nav-btn next-btn">Next Chapter &rarr;</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="chapter-content-container" style="padding-top:1.5rem; padding-bottom:1.5rem; text-align:center; color:var(--tx-muted); font-size:0.85rem; border-top:1px solid var(--bd-subtle);">
+    <span style="color:var(--em-accent-text); font-weight:700;">Ethical Hacking MiniBook</span> · University of Delhi B.Tech CSE · Pitch Black &amp; Archival Paper Themes.
+  </div>
+</footer>
+
+<script src="../assets/js/state.js"></script>
+<script src="../assets/js/core.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  ThemeManager.init();
+  SidebarManager.init();
+});
+</script>
+</body>
+</html>

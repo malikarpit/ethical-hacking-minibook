@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<!-- ⚡ Arpit | Ethical Hacking MiniBook 2026 | University of Delhi -->
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="Arpit"><meta name="description" content="Quick Learn Study Filter — Ethical Hacking and Advanced Cybersecurity. High-yield core concepts, comparative matrices, and rapid review checklists.">
+<title>Quick Learn Filter ⚡ | Ethical Hacking MiniBook 🛡️</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/animations.css">
+<link rel="stylesheet" href="assets/css/chapters.css">
+<link rel="stylesheet" href="assets/css/timer.css">
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<!-- HEADER -->
+<header id="main-header">
+  <div class="header-left">
+    <button id="sidebar-toggle" class="icon-btn" title="Toggle Sidebar (S)" aria-label="Toggle Navigation">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="brand-logo">
+      <div class="brand-icon">🛡️</div>
+      <div class="brand-text">
+        <span class="main">Ethical Hacking</span>
+        <span class="sub">University of Delhi · B.Tech CSE</span>
+      </div>
+    </div>
+  </div>
+
+  <span class="header-chapter-title">Quick Learn Study Filter</span>
+
+  <div class="header-right">
+    <button id="search-btn" class="icon-btn" title="Search (Ctrl+K)" aria-label="Search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    </button>
+    <button id="print-btn" title="Print to Clean PDF (Ctrl+P)" aria-label="Print">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      <span class="print-label">PDF</span>
+    </button>
+    <button id="reading-mode-btn" class="icon-btn" title="Reading Focus Mode (F)" aria-label="Reading Mode">📖</button>
+    <button id="theme-toggle" class="icon-btn" title="Toggle Theme (T)" aria-label="Theme"></button>
+  </div>
+</header>
+
+<!-- SIDEBAR -->
+<div id="sidebar-overlay"></div>
+<aside id="sidebar">
+  <nav class="sidebar-nav">
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Navigation</div>
+      <a href="index.html" class="sidebar-link"><span class="link-icon">🏠</span>Home Portal</a>
+      <a href="quick-learn.html" class="sidebar-link active"><span class="link-icon">⚡</span>Quick Learn</a>
+      <a href="quick-learn-hinglish.html" class="sidebar-link sidebar-mukul-sublink"><span class="link-icon">🔥</span>Quick Learn · Mukul</a>
+      <a href="last-minute.html" class="sidebar-link"><span class="link-icon">⏱️</span>Last-Minute Cram</a>
+      <a href="activities.html" class="sidebar-link"><span class="link-icon">📁</span>Activities & Solutions</a>
+      <a href="exams/mcq-test.html" class="sidebar-link"><span class="link-icon">📝</span>MCQ Test Simulator</a>
+      <a href="progress.html" class="sidebar-link"><span class="link-icon">📊</span>Study Dashboard</a>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Core Chapters</div>
+            <a href="chapters/ch00-syllabus-guide.html" class="sidebar-link"><span class="link-icon">🧭</span>Ch 0 — Syllabus &amp; Blueprint</a>
+      <a href="chapters/ch00-syllabus-guide-hinglish.html" class="sidebar-link sidebar-mukul-sublink"><span class="link-icon">🔥</span>Ch 0 · Mukul Hinglish</a>
+      <a href="chapters/ch01-fundamentals-ethics.html" class="sidebar-link"><span class="link-icon">🛡️</span>Ch 1 — Fundamentals & Ethics</a>
+      <a href="chapters/ch01-fundamentals-ethics-hinglish.html" class="sidebar-link sidebar-mukul-sublink"><span class="link-icon">🔥</span>Ch 1 · Mukul Hinglish</a>
+      <a href="chapters/ch02-network-system-security.html" class="sidebar-link"><span class="link-icon">🌐</span>Ch 2 — Network & System Security</a>
+      <a href="chapters/ch02-network-system-security-hinglish.html" class="sidebar-link sidebar-mukul-sublink"><span class="link-icon">🔥</span>Ch 2 · Mukul Hinglish</a>
+      <a href="chapters/ch03-web-application-security.html" class="sidebar-link"><span class="link-icon">💻</span>Ch 3 — Web & App Security</a>
+      <a href="chapters/ch04-advanced-cybersecurity.html" class="sidebar-link"><span class="link-icon">🔒</span>Ch 4 — Advanced Cyber & Crypto</a>
+      <a href="chapters/ch05-practical-lab-workbook.html" class="sidebar-link"><span class="link-icon">🔬</span>Ch 5 — Practical Labs (1 to 7)</a>
+    </div>
+  </nav>
+  <div class="sidebar-footer">
+    <div class="sidebar-brand-mark"><div class="mark">🛡️</div><span>Arpit · DU B.Tech CSE</span></div>
+  </div>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main id="main-content">
+  <div class="chapter-content-container">
+    
+    <div style="margin-bottom: 2.5rem;">
+      <div style="display:inline-flex; align-items:center; gap:8px; background:var(--accent-soft); border:1px solid var(--accent-border); border-radius:99px; padding:4px 14px; font-size:0.75rem; font-weight:700; color:var(--accent-light); margin-bottom:12px;">
+        ⚡ High-Yield Conceptual Accelerator
+      </div>
+      <h1 style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; letter-spacing: -0.03em; color: var(--tx-primary); margin: 0 0 10px;">
+        Quick Learn Filter
+      </h1>
+      <p style="color: var(--tx-secondary); font-size: 1.05rem; line-height: 1.6; margin: 0;">
+        Use this streamlined pass when you need to master the core ideas of the syllabus quickly without sacrificing technical depth. Perfect for pre-lecture previews and weekly revision.
+      </p>
+    </div>
+    <!-- BKL MUKUL SPECIAL FILTER / VIEW SWITCHER -->
+    <div class="mukul-filter-bar">
+      <div class="mukul-header-row">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span class="mukul-badge">🔥 FOR BKL Mukul Filter</span>
+          <span class="mukul-tagline">Hinglish Rapid Accelerator Mode</span>
+        </div>
+        <div class="mukul-toggle-pills">
+          <button class="mukul-pill active" id="btn-view-en" data-mode="en" onclick="switchChapterMode('en')">
+            <span>🇬🇧</span> English Official
+          </button>
+          <button class="mukul-pill" id="btn-view-hi" data-mode="hi" onclick="switchChapterMode('hi')">
+            <span>🇮🇳</span> FOR BKL Mukul (Hinglish)
+          </button>
+          <button class="mukul-pill" id="btn-view-dual" data-mode="dual" onclick="switchChapterMode('dual')">
+            <span>⚡</span> Dual Split View (Both)
+          </button>
+        </div>
+      </div>
+      <div class="mukul-sub">
+        Quick review karna hai par English me dimaag ghoom raha hai? Switch to <strong>FOR BKL Mukul (Hinglish Edition)</strong> for rapid desi cramming with hostel analogies, or view both side-by-side simultaneously!
+      </div>
+    </div>
+
+
+    <!-- Unit 1 Card: Fundamentals of Ethical Hacking & Cyber Laws -->
+    <div class="chapter-body-text view-mode-en" id="quick-learn-content-body">
+    <article class="ql-card">
+      <h2 class="ql-title"><span>🛡️</span> Unit 1: Fundamentals of Ethical Hacking &amp; Cyber Laws</h2>
+      <p style="color:var(--tx-secondary); font-size:0.96rem; margin-top:0; line-height:1.6;">
+        Core conceptual accelerator covering authorization boundaries, Indian legal frameworks, the 5-phase lifecycle, ethical tool ecosystems, and risk calculation models.
+      </p>
+
+      <h3 style="font-size:1.15rem; font-weight:700; color:var(--em-accent-text); margin:1.5rem 0 0.75rem; display:flex; align-items:center; gap:8px;">
+        <span>📌</span> 1.1 Scope, Legality &amp; Indian Cyber Law Framework
+      </h3>
+      <div class="topic-split-grid">
+        <div class="en-box">
+          <ul class="ql-list">
+        <li><strong>Ethical Hacking vs Penetration Testing:</strong> <em>Ethical Hacking</em> is the overarching discipline of utilizing adversary techniques under explicit authorization to identify vulnerabilities, assess real risk, and assist asset owners in remediation. <em>Penetration Testing (PT)</em> is a specific, goal-oriented methodology that safely validates whether identified weaknesses can be chained to compromise assets within an agreed boundary.</li>
+        <li><strong>Rules of Engagement (ROE):</strong> The formal operational contract defining target IP addresses/URLs, testing timeframes, prohibited techniques (e.g., DoS, data exfiltration), synthetic test accounts, emergency stop contacts, and evidence-handling rules. A classroom assignment does <strong>not</strong> grant permission to scan or test university or public networks.</li>
+        <li><strong>Information Technology Act, 2000 (India):</strong>
+          <br>• <strong>Section 43:</strong> Civil penalty for unauthorized computer access, downloading, copying, extraction of data, or introducing computer contaminants.
+          <br>• <strong>Section 66:</strong> Criminal liability (imprisonment up to 3 years and fine up to ₹5 lakh) for any dishonest or fraudulent act under Section 43.
+          <br>• <strong>Section 66C &amp; 66E:</strong> Criminalization of identity theft, stolen credentials, and violation of bodily privacy.
+          <br>• <strong>Section 70:</strong> Severe penalties (up to 10 years imprisonment) for unauthorized access to declared <em>Critical Information Infrastructure (CII)</em>.
+        </li>
+        <li><strong>DPDP Rules 2025 (Digital Personal Data Protection):</strong> Mandates that <em>Data Fiduciaries</em> enforce robust organizational safeguards for citizen data, restrict testing to synthetic data, and report cybersecurity incidents to CERT-In within strictly prescribed time windows (typically 6 hours).</li>
+      </ul>
+        </div>
+        <div class="hi-box">
+          <div class="mukul-card">
+  <div class="mukul-card-header"><span>🇮🇳</span> FOR BKL Mukul Explains · 1.1 Scope, RoE aur Indian Cyber Law</div>
+  <p class="body-p">Bhai Mukul, testing karne se pehle boundary tay karna sabse zaroori hai:</p>
+  <ul class="styled-list">
+    <li><strong>Ethical Hacking vs Pentesting:</strong> Ethical Hacking poori security theek karne ki padhai hai; Pentesting (PT) targeted attack karke dikhana hai ki system sach me hack hota hai ya nahi.</li>
+    <li><strong>Rules of Engagement (RoE):</strong> Asli legal contract! Isme target IP, test ki timing (raat 2-5 AM), allowed tools, aur emergency phone number likha hota hai. Class assignment me campus network scan karna illegal hai!</li>
+    <li><strong>IT Act 2000 Ki Dharayein:</strong>
+      <br>• <strong>Sec 43:</strong> Bina permission computer access / data download (Civil compensation &rupee;1 Crore tak).
+      <br>• <strong>Sec 66:</strong> Dishonest hacking (3 saal jail aur &rupee;5 Lakh fine).
+      <br>• <strong>Sec 66C:</strong> Identity theft aur password chori (3 saal jail).
+      <br>• <strong>Sec 70:</strong> Critical Infrastructure (Nuclear, Railway, Power) pe attack (<strong>10 saal jail</strong>).
+    </li>
+    <li><strong>CERT-In 6-Hour Rule:</strong> Data breach ya cyber attack hone ke <strong>6 ghante ke andar</strong> Indian cyber agency CERT-In ko report dena compulsory hai!</li>
+  </ul>
+  <div class="mukul-card-example">
+    <strong>💡 Mukul Analogy:</strong> College fest me bina pass ke ghusna trespass hai. Agar fest committee ne tumhe security audit ka written pass diya hai, tabhi tum gate check kar sakte ho!
+  </div>
+</div>
+        </div>
+      </div>
+
+      <h3 style="font-size:1.15rem; font-weight:700; color:var(--em-accent-text); margin:2rem 0 0.75rem; display:flex; align-items:center; gap:8px;">
+        <span>👤</span> 1.2 Hacker Taxonomy &amp; Motivation Matrix
+      </h3>
+      <div class="topic-split-grid">
+        <div class="en-box">
+          <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>Hacker Category</th>
+            <th>Primary Motivation</th>
+            <th>Authorization Status</th>
+            <th>Legal &amp; Operational Posture</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>White-Hat Hacker</strong></td>
+            <td>Defensive security improvement, risk remediation</td>
+            <td>Explicit, documented owner permission</td>
+            <td>Lawful; operates strictly within Rules of Engagement and reports all findings privately</td>
+          </tr>
+          <tr>
+            <td><strong>Black-Hat Hacker</strong></td>
+            <td>Personal financial gain, extortion, sabotage, espionage</td>
+            <td>Zero authorization</td>
+            <td>Criminal; violates cyber laws by exfiltrating data, deploying ransomware, or disrupting systems</td>
+          </tr>
+          <tr>
+            <td><strong>Grey-Hat Hacker</strong></td>
+            <td>Curiosity, public disclosure, proving technical skill</td>
+            <td>Absent or ambiguous</td>
+            <td>Unlawful; testing without permission remains illegal regardless of claimed benign intentions</td>
+          </tr>
+          <tr>
+            <td><strong>Script Kiddie</strong></td>
+            <td>Notoriety, peer recognition, casual vandalism</td>
+            <td>Zero authorization</td>
+            <td>Unlawful; executes automated exploits and pre-written scripts without understanding underlying protocols</td>
+          </tr>
+          <tr>
+            <td><strong>Hacktivist</strong></td>
+            <td>Political, ideological, or social protest</td>
+            <td>Zero authorization</td>
+            <td>Unlawful; uses website defacements, data dumps, and DDoS attacks to broadcast an ideological message</td>
+          </tr>
+          <tr>
+            <td><strong>State-Sponsored APT</strong></td>
+            <td>Geopolitical advantage, critical infrastructure disruption</td>
+            <td>Sovereign backing, foreign target</td>
+            <td>Covert, highly resourced multi-year intrusion campaigns executing advanced persistent threat operations</td>
+          </tr>
+        </tbody>
+      </table>
+        </div>
+        <div class="hi-box">
+          <div class="mukul-card">
+  <div class="mukul-card-header"><span>🇮🇳</span> FOR BKL Mukul Explains · 1.2 Hacker Ke 7 Avataar</div>
+  <p class="body-p">Examiner viva me 7 types ke hackers poochta hai:</p>
+  <ul class="styled-list">
+    <li><strong>White Hat:</strong> Company ki written permission leke security strengthen karne wale hero (Legal).</li>
+    <li><strong>Black Hat:</strong> Ransomware daalne wale, data bechne wale criminal hackers (Illegal).</li>
+    <li><strong>Grey Hat:</strong> Bina permission test karke bolte hain 'Bhai bounty do warna leak karunga' (Still illegal under Sec 66).</li>
+    <li><strong>Script Kiddie:</strong> Jinhe theory ka zero gyaan hai par pre-made tools chala ke DDoS karte hain.</li>
+    <li><strong>Hacktivist:</strong> Ideological protest ke liye website deface karne wale.</li>
+    <li><strong>State-Sponsored (APT):</strong> Doosre desh ke military/intelligence hackers.</li>
+    <li><strong>Malicious Insider:</strong> Ghar ka bhedi—naraaz employee jo resign karne se pehle data chura le!</li>
+  </ul>
+</div>
+        </div>
+      </div>
+
+      <h3 style="font-size:1.15rem; font-weight:700; color:var(--em-accent-text); margin:2rem 0 0.75rem; display:flex; align-items:center; gap:8px;">
+        <span>🔄</span> 1.3 The 5-Phase Attack &amp; Ethical Audit Lifecycle
+      </h3>
+      <div class="topic-split-grid">
+        <div class="en-box">
+          <ul class="ql-list">
+        <li><strong>Phase 1 · Reconnaissance (Footprinting):</strong> Gathering public, open-source, and target intelligence. <em>Passive Reconnaissance</em> uses public registries (Whois, Shodan, Google Dorking, Netcraft, Maltego) without generating traffic against the target. <em>Active Reconnaissance</em> directly probes target DNS servers (zone transfer requests) or network boundaries, requiring explicit scope.</li>
+        <li><strong>Phase 2 · Scanning &amp; Enumeration:</strong> Mapping live assets and service surfaces. Involves host discovery (ICMP ping sweeps), TCP/UDP port scanning, OS fingerprinting, and application service querying. <em>Enumeration</em> extracts specific target metadata: usernames, Windows shares (SMB), SNMP community strings, network routing tables, and banner version strings.</li>
+        <li><strong>Phase 3 · Gaining Access (Exploitation Validation):</strong> Proving that a hypothesized vulnerability can be leveraged. In ethical engagements, testers use minimal, non-destructive proofs-of-concept (e.g., executing a calculator or obtaining an unprivileged echo shell) to validate realistic business impact without disrupting uptime.</li>
+        <li><strong>Phase 4 · Maintaining Access (Persistence Analysis):</strong> Attackers establish persistent access via backdoors, scheduled cron jobs, rootkits, or secondary administrative accounts. In ethical testing, persistence is simulated strictly in disposable sandbox labs to test endpoint detection (EDR), with all changes cleanly documented and rolled back.</li>
+        <li><strong>Phase 5 · Covering Tracks (Defensive Evidence Management):</strong> While adversaries tamper with event logs, overwrite timestamps (timestomping), or delete shell histories to conceal intrusion, ethical professionals do the opposite: they preserve immutable audit trails, record exact command timestamps, and disclose all activities to verify SIEM detection coverage.</li>
+      </ul>
+        </div>
+        <div class="hi-box">
+          <div class="mukul-card">
+  <div class="mukul-card-header"><span>🇮🇳</span> FOR BKL Mukul Explains · 1.3 Hacking Ke 5 Phases Ka Step-by-Step Flow</div>
+  <ol class="styled-list">
+    <li><strong>Phase 1: Reconnaissance (Footprinting):</strong> Target ke baare me jaankari nikaalna (Google Dorking, WHOIS, DNS harvesting). Target ko pata nahi chalta.</li>
+    <li><strong>Phase 2: Scanning &amp; Enumeration:</strong> Live hosts, open ports (80, 22), aur software versions (Apache, OpenSSH) scan karna using Nmap.</li>
+    <li><strong>Phase 3: Gaining Access (Exploitation):</strong> Flaw dhoondh kar Metasploit ya payload se shell command prompt lena.</li>
+    <li><strong>Phase 4: Maintaining Access:</strong> Root/Admin privilege lena aur backdoor banana taaki server reboot ke baad bhi connection na toote.</li>
+    <li><strong>Phase 5: Clearing Tracks &amp; Reporting:</strong> Temporary artifacts delete karna aur client ko detailed audit report dena (How to patch).</li>
+  </ol>
+</div>
+        </div>
+      </div>
+
+      <h3 style="font-size:1.15rem; font-weight:700; color:var(--em-accent-text); margin:2rem 0 0.75rem; display:flex; align-items:center; gap:8px;">
+        <span>🛠️</span> 1.4 Core Security Tools Ecosystem Breakdown
+      </h3>
+      <div class="topic-split-grid">
+        <div class="en-box">
+          <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>Security Tool</th>
+            <th>Primary Classification</th>
+            <th>Key Technical Capabilities</th>
+            <th>Operational Safety Boundary</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Kali Linux</strong></td>
+            <td>Offensive OS Distribution</td>
+            <td>Debian-based distribution preloaded with 600+ vetted tools for wireless, web, forensic, and reverse engineering</td>
+            <td>Run inside dedicated isolated virtual machines; never expose unhardened virtual interfaces to public subnets</td>
+          </tr>
+          <tr>
+            <td><strong>Metasploit Framework</strong></td>
+            <td>Exploitation &amp; Validation Framework</td>
+            <td>Modular architecture with verified exploits, auxiliary scanners, post-exploitation modules, encoders, and staged Meterpreter payloads</td>
+            <td>Exploit modules can crash unstable services or trigger buffer overflows; inspect module source and test in sandboxes first</td>
+          </tr>
+          <tr>
+            <td><strong>Wireshark</strong></td>
+            <td>Packet Sniffer &amp; Protocol Analyzer</td>
+            <td>Deep packet inspection, packet carving, protocol dissection, TCP stream reassembly, and promiscuous mode capture analysis</td>
+            <td>Captures expose unencrypted credentials and proprietary data; restrict capture scope and store `.pcap` files securely</td>
+          </tr>
+          <tr>
+            <td><strong>Burp Suite</strong></td>
+            <td>Web Intercepting Proxy</td>
+            <td>Man-in-the-middle HTTP/S traffic interception, Repeater (manual request tampering), Intruder (automated fuzzing), Decoder, and Scanner</td>
+            <td>Configure browser proxy scope strictly to in-scope hostnames; avoid intercepting third-party or banking sessions</td>
+          </tr>
+          <tr>
+            <td><strong>Maltego</strong></td>
+            <td>OSINT &amp; Link Analysis Tool</td>
+            <td>Transform-driven graph engine linking domain names, DNS records, IP blocks, email addresses, and corporate infrastructure</td>
+            <td>Transforms may return stale or inferred relationships; verify all data manually and respect data privacy regulations</td>
+          </tr>
+          <tr>
+            <td><strong>Nmap</strong></td>
+            <td>Network Mapper &amp; Port Scanner</td>
+            <td>Host discovery, SYN stealth scanning (`-sS`), service banner grabbing (`-sV`), OS detection (`-O`), and Nmap Scripting Engine (NSE)</td>
+            <td>Aggressive scan timing (`-T4`/`-T5`) or intrusive scripts can overwhelm firewalls or trigger active blocking</td>
+          </tr>
+        </tbody>
+      </table>
+        </div>
+        <div class="hi-box">
+          <div class="mukul-card">
+  <div class="mukul-card-header"><span>🇮🇳</span> FOR BKL Mukul Explains · 1.4 Kali Linux Ke 8 Core Tools</div>
+  <table class="styled-table">
+    <thead><tr><th>Tool</th><th>Primary Kaam</th><th>Kab Use Hota Hai</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Nmap</strong></td><td>Port scanner aur OS detection</td><td>Phase 2 Scanning</td></tr>
+      <tr><td><strong>Wireshark</strong></td><td>Live network packet sniffing &amp; analysis</td><td>Traffic Analysis</td></tr>
+      <tr><td><strong>Burp Suite</strong></td><td>HTTP/S request interceptor &amp; web fuzzer</td><td>Web Security (OWASP)</td></tr>
+      <tr><td><strong>Metasploit</strong></td><td>Exploit execution aur Meterpreter shell</td><td>Phase 3 Exploitation</td></tr>
+      <tr><td><strong>Nikto</strong></td><td>Web server vulnerability scanner</td><td>Web Server Audit</td></tr>
+      <tr><td><strong>Hashcat / John</strong></td><td>Password hash cracking (MD5, SHA, bcrypt)</td><td>Password Auditing</td></tr>
+      <tr><td><strong>Aircrack-ng</strong></td><td>Wi-Fi packet capture aur WPA2 cracking</td><td>Wireless Testing</td></tr>
+      <tr><td><strong>OWASP ZAP</strong></td><td>Free automated web application vulnerability scanner</td><td>Web Auditing</td></tr>
+    </tbody>
+  </table>
+</div>
+        </div>
+      </div>
+
+      <h3 style="font-size:1.15rem; font-weight:700; color:var(--em-accent-text); margin:2rem 0 0.75rem; display:flex; align-items:center; gap:8px;">
+        <span>🔍</span> 1.5 Nmap Port Scanning Mechanics &amp; Reconnaissance Operators
+      </h3>
+      <div class="topic-split-grid">
+        <div class="en-box">
+          <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>Scan Type / Operator</th>
+            <th>CLI Flag / Syntax</th>
+            <th>Mechanism &amp; Packet Behavior</th>
+            <th>Exam Relevance &amp; Trade-off</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>TCP SYN Stealth Scan</strong></td>
+            <td><code>nmap -sS &lt;target&gt;</code></td>
+            <td>Sends SYN; receives SYN-ACK (open) or RST (closed); sends RST immediately to abort 3-way handshake</td>
+            <td>Default root scan. Stealthy because TCP socket never establishes; evades application-layer daemon logging</td>
+          </tr>
+          <tr>
+            <td><strong>TCP Connect Scan</strong></td>
+            <td><code>nmap -sT &lt;target&gt;</code></td>
+            <td>Completes standard 3-Way Handshake via OS network socket API (SYN &rarr; SYN-ACK &rarr; ACK)</td>
+            <td>Usable without root/raw-socket privileges; slower, easily detected, and heavily logged by target firewalls/services</td>
+          </tr>
+          <tr>
+            <td><strong>UDP Port Scan</strong></td>
+            <td><code>nmap -sU &lt;target&gt;</code></td>
+            <td>Sends empty UDP packets; ICMP Port Unreachable (Type 3 Code 3) indicates closed; no reply indicates open|filtered</td>
+            <td>Essential for discovering DNS (53), SNMP (161), DHCP (67/68); slow due to operating system ICMP rate limiting</td>
+          </tr>
+          <tr>
+            <td><strong>Service Version Probe</strong></td>
+            <td><code>nmap -sV &lt;target&gt;</code></td>
+            <td>Interrogates open ports with signature payloads; matches banners against `nmap-service-probes` database</td>
+            <td>Identifies unpatched software versions regardless of whether service runs on non-standard ports (e.g. SSH on 2222)</td>
+          </tr>
+          <tr>
+            <td><strong>OS Fingerprinting</strong></td>
+            <td><code>nmap -O &lt;target&gt;</code></td>
+            <td>Analyzes subtle TCP/IP stack implementation nuances (initial TTL, window size, TCP options, IP ID generation)</td>
+            <td>Determines target operating system to narrow exploit payloads; can be skewed by packet scrubbers or load balancers</td>
+          </tr>
+          <tr>
+            <td><strong>Vulnerability NSE Script</strong></td>
+            <td><code>nmap --script vuln &lt;target&gt;</code></td>
+            <td>Executes Lua scripts from Nmap Scripting Engine to detect known CVE vulnerabilities and service misconfigurations</td>
+            <td>Automates non-destructive detection; high-intensity scripts can trigger intrusion alarms or destabilize legacy daemons</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <ul class="ql-list" style="margin-top:1.25rem;">
+        <li><strong>Google Dorking (Passive OSINT Reconnaissance):</strong>
+          <br>• <code>site:target.com</code> — Limits query scope strictly to target organization domains.
+          <br>• <code>filetype:pdf | env | sql | log | xlsx</code> — Discovers leaked credential files, environment configurations, and database dumps.
+          <br>• <code>intitle:"Index of /"</code> — Pinpoints servers with active directory indexing enabled, exposing internal file systems.
+          <br>• <code>inurl:admin | inurl:login | inurl:dashboard</code> — Uncovers unlinked administrative backdoors and login portals.
+        </li>
+      </ul>
+        </div>
+        <div class="hi-box">
+          <div class="mukul-card">
+  <div class="mukul-card-header"><span>🇮🇳</span> FOR BKL Mukul Explains · 1.5 Nmap Flags Ka Formula</div>
+  <p class="body-p">Nmap ke yeh 5 flags viva aur practical exam me 100% poochhe jaate hain:</p>
+  <ul class="styled-list">
+    <li><code>-sS</code>: <strong>SYN Stealth Scan</strong> — Half-open scan; handshake poora kiye bina connection reset (RST) karta hai taaki server logs me shor na mache!</li>
+    <li><code>-sV</code>: <strong>Version Detection</strong> — Port pe chal rahe software ka exact version batata hai.</li>
+    <li><code>-sC</code>: <strong>Default Scripts</strong> — Nmap Scripting Engine (NSE) ke safe scripts chalata hai.</li>
+    <li><code>-O</code>: <strong>OS Detection</strong> — TCP/IP fingerprint se target ka OS (Linux vs Windows) batata hai.</li>
+    <li><code>-p-</code>: <strong>All Ports</strong> — Port 1 se 65535 tak saare ports scan karta hai.</li>
+  </ul>
+</div>
+        </div>
+      </div>
+
+      <h3 style="font-size:1.15rem; font-weight:700; color:var(--em-accent-text); margin:2rem 0 0.75rem; display:flex; align-items:center; gap:8px;">
+        <span>📊</span> 1.6 Risk Calculation &amp; Professional Reporting Architecture
+      </h3>
+      <div class="topic-split-grid">
+        <div class="en-box">
+          <ul class="ql-list">
+        <li><strong>Quantitative Risk Formula:</strong> $$\text{Risk} = \text{Threat} \times \text{Vulnerability} \times \text{Impact}$$
+          A critical vulnerability on an isolated host without an active threat agent presents lower real risk than a medium vulnerability on a public-facing authentication portal.
+        </li>
+        <li><strong>CVSS v3.1 Scoring Metrics:</strong> Evaluates vulnerability severity across <em>Base Metrics</em> (Attack Vector, Attack Complexity, Privileges Required, User Interaction, Scope, Confidentiality, Integrity, Availability), <em>Temporal Metrics</em> (Exploit Code Maturity, Remediation Level), and <em>Environmental Metrics</em> (Modified Base Metrics in target organization).</li>
+        <li><strong>7 Mandatory Components of a Penetration Test Report:</strong>
+          <br>1. <strong>Executive Summary:</strong> High-level business impact, strategic risk overview, and prioritized roadmap for leadership.
+          <br>2. <strong>Methodology &amp; Scope Confirmation:</strong> Contract dates, tested IPs/domains, and explicit exclusions.
+          <br>3. <strong>Vulnerability Title &amp; Severity Rationale:</strong> Standardized identifier (CVE/CWE) and CVSS rating justified in context.
+          <br>4. <strong>Reproducible Technical Steps:</strong> Clear, deterministic narrative enabling client engineers to replicate the finding.
+          <br>5. <strong>Sanitized Evidence:</strong> Redacted HTTP requests/responses, console screenshots, and proof-of-concept output.
+          <br>6. <strong>Specific Technical Remediation:</strong> Configuration directives, code-level patches, and defensive architectural controls.
+          <br>7. <strong>Retest &amp; Verification Procedure:</strong> Explicit criteria to validate that the fix works and does not introduce side-effects.
+        </li>
+      </ul>
+        </div>
+        <div class="hi-box">
+          <div class="mukul-card">
+  <div class="mukul-card-header"><span>🇮🇳</span> FOR BKL Mukul Explains · 1.6 Risk Calculation &amp; Pentest Report</div>
+  <p class="body-p">Cybersecurity me risk ka official mathematical formula:</p>
+  <div class="mukul-card-example">
+    $$\text{{Risk}} = \text{{Threat (Khatra)}} \times \text{{Vulnerability (Kamzori)}} \times \text{{Impact (Nuksan)}}$$
+    <br>• Agar server internal private network pe hai aur bahar se unreachable hai (Threat kam), toh vulnerability hone par bhi overall Risk drastically kam ho jata hai!
+    <br>• <strong>Audit Report Format:</strong> Executive Summary (CEO ke liye high-level) &rarr; CVSS v3.1 Severity Score (0.1 se 10.0) &rarr; Step-by-Step Proof of Concept (PoC) &rarr; Concrete Remediation Patch Code.
+  </div>
+</div>
+        </div>
+      </div>
+
+      </article>
+
+    <!-- Unit 2 Card: Network & System Security Essentials -->
+    <article class="ql-card">
+      <h2 class="ql-title"><span>🌐</span> Unit 2: Network &amp; System Security Essentials</h2>
+      <p style="color:var(--tx-secondary); font-size:0.96rem; margin-top:0; line-height:1.6;">
+        Deep conceptual mastery of perimeter defenses, IDS/IPS operational placements, VAPT cycles, packet sniffing, MITM attack mechanics, privilege escalation, and wireless protocol cracking.
+      </p>
+
+      <h3 style="font-size:1.15rem; font-weight:700; color:var(--em-accent-text); margin:1.5rem 0 0.75rem; display:flex; align-items:center; gap:8px;">
+        <span>🛡️</span> 2.1 Perimeter Defenses &amp; Network Filtering Architecture
+      </h3>
+      <div class="topic-split-grid">
+        <div class="en-box">
+          <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>Security Technology</th>
+            <th>OSI Layer</th>
+            <th>Operational Placement</th>
+            <th>Primary Function &amp; Detection Logic</th>
+            <th>Critical Limitation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Packet Filtering Firewall (Stateless)</strong></td>
+            <td>Layer 3 / 4</td>
+            <td>Perimeter router or border interface</td>
+            <td>Filters packets based on static rules: Source/Dest IP, Source/Dest Port, Protocol (TCP/UDP/ICMP). Evaluates each packet in isolation</td>
+            <td>Cannot track connection states; vulnerable to spoofed ACK flags and fragmented packet attacks</td>
+          </tr>
+          <tr>
+            <td><strong>Stateful Inspection Firewall (SPI)</strong></td>
+            <td>Layer 3 / 4</td>
+            <td>Perimeter boundary, DMZ border</td>
+            <td>Maintains a state table tracking active TCP handshakes (SYN, SYN-ACK, ACK) and UDP sessions; automatically permits valid returning packets</td>
+            <td>Cannot inspect application layer payloads or detect attacks tunneling through allowed ports (e.g. port 80/443)</td>
+          </tr>
+          <tr>
+            <td><strong>Next-Generation Firewall (NGFW)</strong></td>
+            <td>Layer 3 to 7</td>
+            <td>Corporate edge, datacenter ingress</td>
+            <td>Combines SPI with Deep Packet Inspection (DPI), integrated IPS, user-identity awareness, and TLS decryption inspection</td>
+            <td>High resource overhead; SSL inspection requires installing enterprise root certificates on all endpoints</td>
+          </tr>
+          <tr>
+            <td><strong>IDS (Intrusion Detection System)</strong></td>
+            <td>Layer 3 to 7</td>
+            <td>Out-of-band via network TAP or switch SPAN mirror port</td>
+            <td>Passively inspects a copy of network traffic; compares against known signatures (Snort/Suricata) or behavioral anomalies; generates alerts</td>
+            <td>Passive only; cannot terminate or block attacks inline. High rate of false positives if signatures are not tuned</td>
+          </tr>
+          <tr>
+            <td><strong>IPS (Intrusion Prevention System)</strong></td>
+            <td>Layer 3 to 7</td>
+            <td>Inline directly in the live traffic path</td>
+            <td>Actively monitors traffic passing through; immediately drops malicious packets, resets TCP connections (`TCP RST`), and updates firewall rules</td>
+            <td>Single point of failure/latency if overloaded; false positives directly drop legitimate corporate business traffic</td>
+          </tr>
+          <tr>
+            <td><strong>VPN (Virtual Private Network)</strong></td>
+            <td>Layer 3 / 4</td>
+            <td>Gateway-to-gateway or client-to-gateway</td>
+            <td>Establishes an authenticated, encrypted tunnel across untrusted networks using IPsec (AH/ESP) or SSL/TLS (WireGuard, OpenVPN)</td>
+            <td>Protects data in transit only; does not protect against compromised endpoints or attacks launched inside the private network</td>
+          </tr>
+          <tr>
+            <td><strong>Forward Proxy vs Reverse Proxy</strong></td>
+            <td>Layer 7</td>
+            <td>Forward: client egress. Reverse: server ingress</td>
+            <td>Forward proxies enforce employee URL filtering, caching, and client anonymity. Reverse proxies handle load balancing, SSL termination, and WAF inspection</td>
+            <td>Misconfiguration can create open relay proxies or introduce single points of server failure</td>
+          </tr>
+        </tbody>
+      </table>
+        </div>
+        <div class="hi-box">
+          <div class="mukul-card">
+  <div class="mukul-card-header"><span>🇮🇳</span> FOR BKL Mukul Explains · 2.1 Firewalls, IDS, IPS aur Proxies</div>
+  <ul class="styled-list">
+    <li><strong>Stateless vs Stateful:</strong> Stateless har packet ko static rules pe akele dekhta hai (fake ACK flag se fool ho jata hai). Stateful dynamic <strong>Connection State Table</strong> maintain karta hai; unsolicited packets turant <code>DROP</code>!</li>
+    <li><strong>NGFW (Next-Gen):</strong> Layer 7 Deep Packet Inspection (DPI) karke application pehchanta hai (port 80 pe BitTorrent block karega).</li>
+    <li><strong>IDS vs IPS:</strong> IDS passive CCTV camera hai (switch ke SPAN port pe sirf alert deta hai). IPS active inline bouncer hai jo malicious packet live drop karke TCP RST bhejta hai!</li>
+    <li><strong>Reverse Proxy:</strong> Nginx web server ke aage baith kar backend IP chupata hai aur SSL load sambhalta hai.</li>
+  </ul>
+</div>
+        </div>
+      </div>
+
+      <h3 style="font-size:1.15rem; font-weight:700; color:var(--em-accent-text); margin:2rem 0 0.75rem; display:flex; align-items:center; gap:8px;">
+        <span>🔄</span> 2.2 The Complete 8-Stage VAPT Workflow Pipeline
+      </h3>
+      <div class="topic-split-grid">
+        <div class="en-box">
+          <ul class="ql-list">
+        <li><strong>Stage 1 · Scoping &amp; Legal Sign-Off:</strong> Obtain written authorization, non-disclosure agreements (NDA), defined IP subnets, excluded critical servers, and agreed testing timeframes.</li>
+        <li><strong>Stage 2 · Reconnaissance &amp; Asset Discovery:</strong> Discover all live hosts, domain assets, subnet allocations, and exposed edge interfaces using passive OSINT and ICMP/ARP sweeps.</li>
+        <li><strong>Stage 3 · Network Scanning &amp; Service Enumeration:</strong> Scan open ports using TCP SYN scans (`nmap -sS`), identify exact software versions (`nmap -sV`), and query service-specific protocols (SMB, SNMP, LDAP).</li>
+        <li><strong>Stage 4 · Vulnerability Assessment (Breadth Scan):</strong> Run automated vulnerability scanners (OpenVAS, Nessus) to check discovered services against CVE databases and misconfiguration baselines.</li>
+        <li><strong>Stage 5 · Manual Verification &amp; False Positive Elimination:</strong> Manually examine scanner findings to discard false positives (Type I errors) and uncover subtle logic flaws missed by automated tools.</li>
+        <li><strong>Stage 6 · Controlled Exploitation Validation:</strong> Safely validate selected high-risk attack paths in accordance with the ROE using targeted proof-of-concept scripts to demonstrate realistic business impact.</li>
+        <li><strong>Stage 7 · Comprehensive Reporting &amp; Risk Rating:</strong> Author a prioritized technical report with CVSS ratings, executive risk summaries, reproducible evidence, and code/config fixes.</li>
+        <li><strong>Stage 8 · Remediation Retesting &amp; Formal Closure:</strong> After the engineering team applies patches, re-run tests against previously vulnerable assets to verify that the remediation is effective and stable.</li>
+      </ul>
+        </div>
+        <div class="hi-box">
+          <div class="mukul-card">
+  <div class="mukul-card-header"><span>🇮🇳</span> FOR BKL Mukul Explains · 2.2 VAPT Ka 8-Stage Audit Pipeline</div>
+  <ol class="styled-list">
+    <li><strong>1. Scoping &amp; RoE:</strong> Boundary aur timing tay karo.</li>
+    <li><strong>2. Asset Discovery:</strong> Network ke saare active IPs dhoondho.</li>
+    <li><strong>3. Automated Scanning:</strong> Nessus/OpenVAS se unpatched bugs ki list banao.</li>
+    <li><strong>4. False Positive Filtering:</strong> Scanner ke jhooth manually pakdo.</li>
+    <li><strong>5. Manual Exploitation:</strong> PoC exploit chala ke proof dikhao.</li>
+    <li><strong>6. Post-Exploitation &amp; Privilege Escalation:</strong> Root access test karo.</li>
+    <li><strong>7. Risk Prioritization:</strong> CVSS v3.1 score assign karo.</li>
+    <li><strong>8. Remediation &amp; Re-Test:</strong> Sysadmin ko patch batao aur re-test karo.</li>
+  </ol>
+</div>
+        </div>
+      </div>
+
+      <h3 style="font-size:1.15rem; font-weight:700; color:var(--em-accent-text); margin:2rem 0 0.75rem; display:flex; align-items:center; gap:8px;">
+        <span>🦈</span> 2.3 Packet Sniffing &amp; Essential Wireshark Display Filters
+      </h3>
+      <div class="topic-split-grid">
+        <div class="en-box">
+          <p style="color:var(--tx-secondary); font-size:0.94rem; margin-top:0; line-height:1.6;">
+        Packet sniffing captures network frames traversing a network interface operating in <strong>promiscuous mode</strong>. On switched networks, sniffing requires redirecting traffic (e.g. via ARP poisoning or switch port mirroring).
+      </p>
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>Filter Syntax</th>
+            <th>Protocol Level</th>
+            <th>Diagnostic Purpose &amp; Security Analysis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>tcp.flags.syn == 1 &amp;&amp; tcp.flags.ack == 0</code></td>
+            <td>TCP Layer 4</td>
+            <td>Detects outbound TCP connection requests, port scanning activity (SYN scans), and potential SYN flood DoS attacks</td>
+          </tr>
+          <tr>
+            <td><code>dns.flags.response == 0</code></td>
+            <td>DNS Layer 7</td>
+            <td>Isolates outbound DNS lookup queries to detect command-and-control (C2) beaconing, data exfiltration via DNS tunnels, or reconnaissance</td>
+          </tr>
+          <tr>
+            <td><code>http.request.method == "POST"</code></td>
+            <td>HTTP Layer 7</td>
+            <td>Isolates unencrypted web form submissions, credential transmissions, and file uploads sent across cleartext channels</td>
+          </tr>
+          <tr>
+            <td><code>ip.addr == 192.168.1.50 &amp;&amp; tcp.port == 443</code></td>
+            <td>IP / TCP</td>
+            <td>Filters all encrypted TLS communication to and from a specific target host on the standard HTTPS port</td>
+          </tr>
+          <tr>
+            <td><code>arp.duplicate-address-frame</code></td>
+            <td>ARP Layer 2</td>
+            <td>Detects duplicate IP address announcements, highlighting potential ARP spoofing and Man-in-the-Middle positioning attacks</td>
+          </tr>
+          <tr>
+            <td><code>tcp.analysis.retransmission</code></td>
+            <td>TCP Layer 4</td>
+            <td>Detects dropped packets, network congestion, firewall packet filtering drops, or unstable network links</td>
+          </tr>
+        </tbody>
+      </table>
+        </div>
+        <div class="hi-box">
+          <div class="mukul-card">
+  <div class="mukul-card-header"><span>🇮🇳</span> FOR BKL Mukul Explains · 2.3 Wireshark &amp; tcpdump Cheatsheet</div>
+  <p class="body-p">Promiscuous mode me NIC hardware MAC filter off ho jata hai, aur wire ka saara data kernel me pass hota hai:</p>
+  <ul class="styled-list">
+    <li><code>tcpdump -i eth0 -nn -v 'port 80'</code>: HTTP traffic sniff karo bina DNS delay ke.</li>
+    <li><code>http.request.method == "POST"</code>: Wireshark me submitted logins aur passwords filter karo.</li>
+    <li><strong>Follow TCP Stream:</strong> Packet pe right-click karo aur poori cleartext transcript padh lo!</li>
+  </ul>
+</div>
+        </div>
+      </div>
+
+      <h3 style="font-size:1.15rem; font-weight:700; color:var(--em-accent-text); margin:2rem 0 0.75rem; display:flex; align-items:center; gap:8px;">
+        <span>🎭</span> 2.4 Spoofing &amp; Man-in-the-Middle (MITM) Deep-Dive
+      </h3>
+      <div class="topic-split-grid">
+        <div class="en-box">
+          <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>Attack Vector</th>
+            <th>Layer</th>
+            <th>Underlying Vulnerability &amp; Mechanism</th>
+            <th>Effective Defensive Controls</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>ARP Spoofing / Poisoning</strong></td>
+            <td>Data Link (L2)</td>
+            <td>ARP lacks authentication; hosts accept unsolicited gratuitous ARP replies. Attacker broadcasts forged ARP replies mapping gateway's IP to attacker's MAC</td>
+            <td><strong>Dynamic ARP Inspection (DAI)</strong> on managed switches, <strong>DHCP Snooping</strong>, static ARP tables for critical gateways, encrypted application protocols</td>
+          </tr>
+          <tr>
+            <td><strong>DNS Cache Poisoning</strong></td>
+            <td>Application (L7)</td>
+            <td>DNS resolvers accepting forged UDP replies containing spoofed Transaction IDs (TXID) before the authentic authoritative server responds</td>
+            <td><strong>DNSSEC</strong> (cryptographic record signing), <strong>DNS over HTTPS (DoH)</strong> / <strong>DNS over TLS (DoT)</strong>, randomized source ports and query IDs</td>
+          </tr>
+          <tr>
+            <td><strong>IP Address Spoofing</strong></td>
+            <td>Network (L3)</td>
+            <td>IPv4 does not validate whether source IP matches transmitting host. Used extensively in reflected amplification DoS attacks (NTP, DNS, SNMP)</td>
+            <td><strong>BCP 38 (Ingress/Egress Filtering)</strong> at ISPs, <strong>Unicast Reverse Path Forwarding (uRPF)</strong>, cryptographic handshake verification (TCP SYN cookies)</td>
+          </tr>
+          <tr>
+            <td><strong>SSL/TLS Stripping (MITM)</strong></td>
+            <td>Transport/App (L4-7)</td>
+            <td>Intercepting proxy intercepts initial unencrypted HTTP redirect, serving cleartext HTTP to client while maintaining HTTPS to server</td>
+            <td><strong>HTTP Strict Transport Security (HSTS)</strong> with `preload` directive, Secure cookie flags, eliminating cleartext HTTP entry points entirely</td>
+          </tr>
+        </tbody>
+      </table>
+        </div>
+        <div class="hi-box">
+          <div class="mukul-card">
+  <div class="mukul-card-header"><span>🇮🇳</span> FOR BKL Mukul Explains · 2.4 ARP Poisoning &amp; MITM Attacks</div>
+  <p class="body-p">ARP protocol (RFC 826) stateless hai aur unsolicited Gratuitous ARP pe vishwas karta hai:</p>
+  <ul class="styled-list">
+    <li>Attacker victim ko bolta hai: <em>'Gateway Router ka IP mere MAC pe hai'</em>, aur router ko bolta hai: <em>'Victim ka IP mere MAC pe hai'</em>. Dono ka traffic attacker se pass hota hai!</li>
+    <li><strong>SSL Strip:</strong> HTTP se HTTPS ka 302 redirect intercept karke victim ko cleartext HTTP pe rakhta hai.</li>
+    <li><strong>Defenses:</strong> Switch pe <strong>Dynamic ARP Inspection (DAI)</strong> aur web pe <strong>HSTS (Strict Transport Security)</strong> lagao!</li>
+  </ul>
+</div>
+        </div>
+      </div>
+
+      <h3 style="font-size:1.15rem; font-weight:700; color:var(--em-accent-text); margin:2rem 0 0.75rem; display:flex; align-items:center; gap:8px;">
+        <span>🔒</span> 2.5 IPsec Protocol Suite Architecture: AH vs ESP &amp; Modes
+      </h3>
+      <div class="topic-split-grid">
+        <div class="en-box">
+          <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>IPsec Component</th>
+            <th>Protocol Number</th>
+            <th>Security Services Provided</th>
+            <th>NAT Compatibility &amp; Packet Behavior</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Authentication Header (AH)</strong></td>
+            <td>IP Protocol 51</td>
+            <td>Data integrity, origin authentication, anti-replay. Hashes immutable fields of outer IP header + payload</td>
+            <td><strong style="color:#ef4444;">Fails with NAT</strong>: NAT modifies source/dest IP in outer header, immediately invalidating the AH Integrity Check Value (ICV). Provides <em>zero confidentiality</em> (payload is cleartext)</td>
+          </tr>
+          <tr>
+            <td><strong>Encapsulating Security Payload (ESP)</strong></td>
+            <td>IP Protocol 50</td>
+            <td>Confidentiality (AES-CBC/GCM), data integrity, origin authentication, anti-replay. Encrypts payload and appends ICV</td>
+            <td><strong>Compatible with NAT-Traversal (NAT-T)</strong>: Encapsulates ESP inside UDP port 4500 packets, allowing seamless traversal through stateful NAT firewalls</td>
+          </tr>
+          <tr>
+            <td><strong>Transport Mode</strong></td>
+            <td>Host-to-Host</td>
+            <td>Protects Layer 4 payload (TCP/UDP segments) while keeping the original IP header visible and unencrypted</td>
+            <td>Used for direct end-to-end communication between two servers. Lower header overhead; exposes source and destination IP addresses</td>
+          </tr>
+          <tr>
+            <td><strong>Tunnel Mode</strong></td>
+            <td>Gateway-to-Gateway / Remote Access</td>
+            <td>Encrypts the <strong>entire original IP packet</strong> (header + payload) and encapsulates it inside a completely <strong>new outer IP header</strong></td>
+            <td>Standard for Site-to-Site VPNs. Conceals internal corporate IP addressing topologies from intermediate public routers and adversaries</td>
+          </tr>
+        </tbody>
+      </table>
+        </div>
+        <div class="hi-box">
+          <div class="mukul-card">
+  <div class="mukul-card-header"><span>🇮🇳</span> FOR BKL Mukul Explains · 2.5 IPsec AH vs ESP &amp; Modes</div>
+  <ul class="styled-list">
+    <li><strong>AH (Authentication Header):</strong> Packet integrity aur source authentication deta hai par data ko encrypt nahi karta.</li>
+    <li><strong>ESP (Encapsulating Security Payload):</strong> Confidentiality + Integrity dono deta hai (poora data encrypt).</li>
+    <li><strong>Tunnel vs Transport:</strong> Tunnel Mode me poora original IP packet encrypt hoke naye IP header me pack hota hai (Site-to-Site VPN). Transport Mode me sirf data payload encrypt hota hai (Host-to-Host).</li>
+  </ul>
+</div>
+        </div>
+      </div>
+
+      <h3 style="font-size:1.15rem; font-weight:700; color:var(--em-accent-text); margin:2rem 0 0.75rem; display:flex; align-items:center; gap:8px;">
+        <span>🔓</span> 2.6 System Security: Privilege Escalation, Backdoors &amp; Trojans
+      </h3>
+      <div class="topic-split-grid">
+        <div class="en-box">
+          <ul class="ql-list">
+        <li><strong>Vertical vs Horizontal Privilege Escalation:</strong>
+          <br>• <strong>Vertical:</strong> Gaining higher permission levels than assigned (e.g. standard local user elevating to `root` or `NT AUTHORITY\SYSTEM`). Common vectors: kernel vulnerabilities (e.g. Dirty COW), SUID binaries with insecure paths, misconfigured `sudoers` rules (`NOPASSWD`), weak service permissions, unquoted Windows service paths, and DLL search-order hijacking.
+          <br>• <strong>Horizontal:</strong> Accessing resources, data, or functions belonging to peer accounts at the same privilege tier (e.g. user Alice accessing user Bob's financial records via Insecure Direct Object References - IDOR).
+        </li>
+        <li><strong>Backdoors vs Trojans vs Worms:</strong>
+          <br>• <strong>Backdoor:</strong> A hidden mechanism, listening service, or undocumented hardcoded credential allowing unauthorized administrative access bypassing standard authentication controls.
+          <br>• <strong>Trojan Horse:</strong> Malicious code disguised as legitimate, benign software (e.g., a utility, game, or driver update). Does <em>not</em> self-replicate; relies on social engineering or user deception to achieve execution.
+          <br>• <strong>Computer Worm:</strong> Autonomous malicious program that actively self-replicates and spreads across network subnets by exploiting unpatched network services (e.g., WannaCry exploiting MS17-010 SMB) without human intervention.
+        </li>
+        <li><strong>System Hardening Checklist:</strong> Enforce the <em>Principle of Least Privilege (PoLP)</em>, remove unneeded SUID/SGID bits (`find / -perm -4000 -exec ls -ld {} +`), audit administrative rights, implement Role-Based Access Control (RBAC), enforce application allowlisting, and deploy File Integrity Monitoring (FIM / AIDE).</li>
+      </ul>
+        </div>
+        <div class="hi-box">
+          <div class="mukul-card">
+  <div class="mukul-card-header"><span>🇮🇳</span> FOR BKL Mukul Explains · 2.6 SUID Escalation &amp; Rootkits</div>
+  <ul class="styled-list">
+    <li><strong>SUID Binaries (chmod 4755):</strong> Executable file owner (root) ke privileges se run hoti hai. Command: <code>find / -perm -u=s -type f 2>/dev/null</code>.</li>
+    <li>Agar <code>find</code>, <code>vim</code>, ya <code>nmap</code> pe SUID laga hai, toh GTFOBins trick se 1 second me root shell escape mil jata hai: <code>find . -exec /bin/sh -p \; -quit</code>!</li>
+    <li><strong>Rootkits:</strong> Kernel syscalls (jaise <code>sys_getdents64</code>) hook karke processes aur files ko <code>ps</code> aur <code>ls</code> se invisible bana dete hain.</li>
+  </ul>
+</div>
+        </div>
+      </div>
+
+      <h3 style="font-size:1.15rem; font-weight:700; color:var(--em-accent-text); margin:2rem 0 0.75rem; display:flex; align-items:center; gap:8px;">
+        <span>📶</span> 2.7 Wireless Network Security &amp; WPA/WPA2/WPA3 Protocol Cracking
+      </h3>
+      <div class="topic-split-grid">
+        <div class="en-box">
+          <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>Protocol Standard</th>
+            <th>Cipher &amp; Key Length</th>
+            <th>Authentication Method</th>
+            <th>Vulnerability Profile &amp; Attack Vector</th>
+            <th>Current Recommended Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>WEP (Wired Equivalent Privacy)</strong></td>
+            <td>RC4 stream cipher (64-bit / 128-bit)</td>
+            <td>Open System or Shared Key (pre-shared)</td>
+            <td>Critically flawed 24-bit Initialization Vector (IV). Rapid IV reuse allows passive key recovery within minutes via FMS or ChopChop attacks</td>
+            <td><strong style="color:#ef4444;">Completely Broken &amp; Obsolete</strong> — Never deploy</td>
+          </tr>
+          <tr>
+            <td><strong>WPA (Wi-Fi Protected Access)</strong></td>
+            <td>TKIP cipher (Temporal Key Integrity Protocol)</td>
+            <td>PSK (Pre-Shared Key) or 802.1X Enterprise</td>
+            <td>Uses 48-bit IV and per-packet key mixing, but relies on flawed Michael MIC algorithm vulnerable to Beck-Tews keystream recovery</td>
+            <td><strong style="color:#ef4444;">Deprecated &amp; Insecure</strong> — Replace with WPA2/WPA3</td>
+          </tr>
+          <tr>
+            <td><strong>WPA2 (802.11i)</strong></td>
+            <td>AES-CCMP cipher (Counter Mode CBC-MAC)</td>
+            <td>PSK or 802.1X Enterprise with RADIUS</td>
+            <td>Encryption is robust, but the <strong>4-Way Handshake</strong> is vulnerable: capturing Message 1 (ANonce) and Message 2 (SNonce + MIC) allows offline dictionary attacks against weak PSK passphrases using tools like `aircrack-ng`</td>
+            <td><strong style="color:#eab308;">Acceptable with Hardened Passphrases</strong> (20+ chars) or Enterprise 802.1X</td>
+          </tr>
+          <tr>
+            <td><strong>WPA3 (802.11ax/ac)</strong></td>
+            <td>AES-GCMP-256 (Enterprise) / AES-128</td>
+            <td>Simultaneous Authentication of Equals (SAE)</td>
+            <td>Replaces 4-Way Handshake with <em>Dragonfly Key Exchange</em> (SAE), providing forward secrecy and mathematical immunity to offline dictionary cracking. Mandates Protected Management Frames (PMF)</td>
+            <td><strong style="color:#38bdf8;">Modern Industry Standard</strong> — Highly Recommended</td>
+          </tr>
+        </tbody>
+      </table>
+        </div>
+        <div class="hi-box">
+          <div class="mukul-card">
+  <div class="mukul-card-header"><span>🇮🇳</span> FOR BKL Mukul Explains · 2.7 WEP vs WPA vs WPA2 vs WPA3</div>
+  <ul class="styled-list">
+    <li><strong>WEP:</strong> RC4 cipher + 24-bit IV. 5,000 packets me IV collision hoti hai, FMS attack se 5 minute me crack!</li>
+    <li><strong>WPA:</strong> TKIP stopgap fix (48-bit IV). Deprecated.</li>
+    <li><strong>WPA2:</strong> AES-128 CCMP encryption. Cipher uncrackable hai par 4-Way Handshake offline brute-force ho sakta hai.</li>
+    <li><strong>WPA3:</strong> Dragonfly SAE handshake. Offline dictionary attack impossible; forward secrecy included!</li>
+  </ul>
+</div>
+        </div>
+      </div>
+
+      <h3 style="font-size:1.15rem; font-weight:700; color:var(--em-accent-text); margin:2rem 0 0.75rem; display:flex; align-items:center; gap:8px;">
+        <span>🔑</span> 2.8 WPA2 4-Way Handshake Anatomy &amp; Defensive Hardening
+      </h3>
+      <div class="topic-split-grid">
+        <div class="en-box">
+          <ul class="ql-list">
+        <li><strong>Handshake Message Flow:</strong>
+          <br>• <strong>Msg 1 (AP &rarr; Client):</strong> Access Point transmits <code>ANonce</code> (random authenticator value).
+          <br>• <strong>Msg 2 (Client &rarr; AP):</strong> Client generates <code>SNonce</code>, computes the <em>Pairwise Transient Key (PTK)</em> using Pairwise Master Key (derived from PSK), and returns <code>SNonce</code> + Message Integrity Code (MIC).
+          <br>• <strong>Msg 3 (AP &rarr; Client):</strong> AP verifies MIC, installs PTK, and sends Group Temporal Key (GTK) with MIC.
+          <br>• <strong>Msg 4 (Client &rarr; AP):</strong> Client confirms encryption installation with an acknowledgment frame.
+        </li>
+        <li><strong>Offline Attack Mechanics:</strong> An attacker injects deauthentication frames (`aireplay-ng -0`) to disconnect a legitimate client. When the client reconnects, the attacker captures Msg 1 and Msg 2 (`airodump-ng`). The attacker then performs high-speed offline hash matching (`aircrack-ng` or `hashcat` mode 22000) comparing candidate passwords against the captured MIC without interacting with the network.</li>
+        <li><strong>Defensive Hardening Controls:</strong> Enforce random passphrases of $\ge 20$ characters (making dictionary attacks mathematically infeasible), deploy <strong>802.1X Enterprise with EAP-TLS</strong> certificates, strictly disable <strong>Wi-Fi Protected Setup (WPS)</strong> to eliminate PIN brute-forcing (Reaver attack), isolate guest clients with VLAN segmentation, and enable Protected Management Frames (PMF / 802.11w).</li>
+      </ul>
+        </div>
+        <div class="hi-box">
+          <div class="mukul-card">
+  <div class="mukul-card-header"><span>🇮🇳</span> FOR BKL Mukul Explains · 2.8 WPA2 4-Way Handshake Ka Cryptographic Khel</div>
+  <p class="body-p">Wi-Fi password (PSK) kabhi bhi hawa me transmit nahi hota! Router aur phone 4 messages me dynamic PTK banate hain:</p>
+  <div class="mukul-card-example">
+    $$\text{{PTK}} = \text{{PRF}}(\text{{PMK}}, \text{{ANonce}}, \text{{SNonce}}, \text{{MAC}}_{{\text{{AP}}}}, \text{{MAC}}_{{\text{{Client}}}})$$
+    <br>1. Router sends <code>ANonce</code> &rarr; 2. Phone generates <code>SNonce</code>, computes PTK + MIC &rarr; 3. Router derives PTK, verifies MIC, sends Group Key GTK &rarr; 4. Phone confirms.
+  </div>
+</div>
+        </div>
+      </div>
+
+      <h3 style="font-size:1.15rem; font-weight:700; color:var(--em-accent-text); margin:2rem 0 0.75rem; display:flex; align-items:center; gap:8px;">
+        <span>📡</span> 2.9 Wireless Attacks: Rogue AP, Evil Twin &amp; WPS Exploits
+      </h3>
+      <div class="topic-split-grid">
+        <div class="en-box">
+          <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>Wireless Threat Vector</th>
+            <th>Execution Mechanism</th>
+            <th>Attacker Objective</th>
+            <th>Detection &amp; Prevention</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Rogue Access Point</strong></td>
+            <td>Unauthorized physical AP plugged into an internal corporate Ethernet wall jack without IT approval</td>
+            <td>Bypasses edge firewall and IDS controls, creating an unmonitored wireless backdoor into corporate LAN</td>
+            <td>Wireless Intrusion Prevention Systems (WIPS), 802.1X port-based Network Access Control (NAC), periodic RF audits</td>
+          </tr>
+          <tr>
+            <td><strong>Evil Twin AP</strong></td>
+            <td>Attacker configures soft AP broadcasting the exact SSID and MAC address of a trusted network at higher power</td>
+            <td>Lures victim clients to associate; serves fake captive portal to harvest credentials or inject malicious updates</td>
+            <td>WIPS rogue AP detection, mutual certificate validation (EAP-TLS), enterprise VPN tunnels, client verification of BSSID</td>
+          </tr>
+          <tr>
+            <td><strong>WPS PIN Attack (Reaver / Pixie Dust)</strong></td>
+            <td>Exploits flawed WPS design splitting 8-digit PIN into 4-digit and 3-digit halves (11,000 candidate combinations)</td>
+            <td>Recovers AP Pre-Shared Key (PSK) in under a few hours/minutes without requiring offline wordlist cracking</td>
+            <td><strong>Disable WPS permanently</strong> in AP firmware configuration; enable WPS lockouts after failed PIN attempts</td>
+          </tr>
+          <tr>
+            <td><strong>Deauthentication Flood</strong></td>
+            <td>Injects unencrypted 802.11 deauth management frames (`aireplay-ng -0`) spoofing AP source MAC address</td>
+            <td>Forces victim disconnections, disrupts service (DoS), and prompts immediate reconnect to capture 4-Way Handshake</td>
+            <td>Enable <strong>Protected Management Frames (PMF / 802.11w)</strong>; upgrade to WPA3 which strictly mandates PMF</td>
+          </tr>
+        </tbody>
+      </table>
+        </div>
+        <div class="hi-box">
+          <div class="mukul-card">
+  <div class="mukul-card-header"><span>🇮🇳</span> FOR BKL Mukul Explains · 2.9 Rogue AP, Evil Twin &amp; Deauth Attacks</div>
+  <ul class="styled-list">
+    <li><strong>Evil Twin Attack:</strong> Target Wi-Fi ke same SSID aur MAC ka nakli router khada karna aur victim ko connect karwana.</li>
+    <li><strong>Deauthentication Attack:</strong> Attacker fake deauth packet bhejke phone ko disconnect karta hai (<code>aireplay-ng -0 5</code>). Phone reconnect hote waqt handshake packet capture ho jata hai!</li>
+    <li><strong>WPA2 Weakness:</strong> 802.11 management frames plain text hote hain! WPA3 me 802.11w MFP mandatory hai isliye deauth attack fail ho jata hai.</li>
+  </ul>
+</div>
+        </div>
+      </div>
+
+      </article>
+
+    <!-- Unit 3 Card -->
+    <article class="ql-card">
+      <h2 class="ql-title"><span>💻</span> Unit 3: Application &amp; Web Security Essentials</h2>
+      <p style="color:var(--tx-secondary); font-size:0.95rem; margin-top:0;">The core web application triad: comparison of root causes, impacts, and remediation:</p>
+
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>Vulnerability</th>
+            <th>Root Cause</th>
+            <th>Primary Impact</th>
+            <th>Definitive Remediation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>SQL Injection (SQLi)</strong></td>
+            <td>Concatenating untrusted user input directly into dynamic SQL query strings</td>
+            <td>Database exfiltration, authentication bypass, data tampering</td>
+            <td>Parameterized queries (prepared statements), least-privilege DB accounts</td>
+          </tr>
+          <tr>
+            <td><strong>Cross-Site Scripting (XSS)</strong></td>
+            <td>Rendering untrusted data in the browser without proper context-aware encoding</td>
+            <td>Session hijacking, cookie theft, DOM manipulation, credential harvesting</td>
+            <td>Context-aware output encoding, safe DOM APIs (<code>textContent</code>), Content Security Policy (CSP)</td>
+          </tr>
+          <tr>
+            <td><strong>Cross-Site Request Forgery (CSRF)</strong></td>
+            <td>Browser automatically submits authenticated session cookies on cross-origin requests</td>
+            <td>Unintended state-changing transactions performed in victim's session context</td>
+            <td>Server-validated anti-CSRF tokens (Synchronizer pattern), <code>SameSite=Strict</code> cookie flag</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <ul class="ql-list">
+        <li><strong>Authentication vs Authorization:</strong> Authentication establishes <em>who you are</em> (identity verification); Authorization determines <em>what resources and actions you are permitted to access</em>.</li>
+        <li><strong>OWASP Top 10 Framework:</strong> An awareness and prioritization benchmark for web application risks. Be mindful of differences between OWASP 2021 and the newly finalized OWASP 2025.</li>
+        <li><strong>API Security Checklist:</strong> Enforce server-side token authentication, validate object-level authorization (BOLA prevention), schema validation, rate-limiting quotas, and TLS transport encryption.</li>
+        <li><strong>Mobile Security Rule:</strong> The client device is an untrusted environment. Never embed permanent API secrets in application binaries, and enforce all critical authorization checks on backend servers.</li>
+      </ul>
+    </article>
+
+    <!-- Unit 4 Card -->
+    <article class="ql-card">
+      <h2 class="ql-title"><span>🔒</span> Unit 4: Advanced Cybersecurity Concepts Essentials</h2>
+      <ul class="ql-list">
+        <li><strong>Incident Response Flow (NIST SP 800-61):</strong> <em>Preparation &rarr; Detection &amp; Analysis &rarr; Containment &rarr; Eradication &rarr; Recovery &rarr; Lessons Learned</em>.</li>
+        <li><strong>Cryptographic Distinctions:</strong>
+          <br>• <strong>Encryption:</strong> Reversible transformation using keys ensuring confidentiality.
+          <br>• <strong>Hash Function:</strong> One-way, fixed-length mathematical digest verifying integrity (cannot be decrypted).
+          <br>• <strong>Message Authentication Code (MAC):</strong> Shared-secret keyed digest providing integrity and authenticity between peers.
+          <br>• <strong>Digital Signature:</strong> Asymmetric private-key signed digest providing non-repudiation and third-party verification.
+          <br>• <strong>Digital Certificate (X.509):</strong> Data structure signed by a trusted CA binding a subject identity to a public key.
+        </li>
+        <li><strong>Hybrid Cryptography:</strong> Practical systems (e.g. TLS) use asymmetric algorithms (RSA/ECC) for key establishment and authentication, then switch to fast symmetric ciphers (AES-GCM) for bulk data payload encryption.</li>
+        <li><strong>Advanced Persistent Threats (APTs):</strong> Sustained, targeted, well-resourced campaigns by capable adversaries utilizing multi-stage tactics mapped by MITRE ATT&amp;CK. Defenses center on zero trust, endpoint detection (EDR), and active threat hunting.</li>
+        <li><strong>Zero-Trust Architecture (ZTA):</strong> "Never Trust, Always Verify." Discards physical network perimeter trust in favor of continuous, context-aware policy evaluations via Policy Decision Points (PDP) and Policy Enforcement Points (PEP).</li>
+        <li><strong>Emerging Attack Surfaces:</strong> AI risks (Prompt injection, training data poisoning, insecure tool invocation) and IoT risks (hardcoded credentials, unpatched firmware, lack of host isolation).</li>
+      </ul>
+    </article>
+
+    <!-- Practical Checklist Card -->
+    <article class="ql-card">
+      <h2 class="ql-title"><span>🔬</span> Practical Lab Quick Checklist</h2>
+      <ul class="ql-list">
+        <li><strong>Pre-Lab Scope &amp; Safety:</strong> Document the authorized target URL/IP, test duration, tools permitted, and explicit stop conditions before executing any command.</li>
+        <li><strong>Hypervisor Isolation:</strong> Verify that testing virtual machines operate on private <em>Host-Only</em> or <em>Internal</em> networks to prevent traffic leakage onto campus or public networks.</li>
+        <li><strong>Evidence Hygiene:</strong> Capture clean, timestamped logs and redact all real personal identifiable information (PII) or credentials from report screenshots.</li>
+        <li><strong>Standardized Report Format:</strong> Every syllabus lab submission must include: <code>Aim</code>, <code>Scope &amp; Authorization</code>, <code>Tools Used</code>, <code>Security Theory</code>, <code>Step-by-Step Procedure</code>, <code>Observations</code>, <code>Result</code>, <code>Risks &amp; Limitations</code>, and <code>Remediation Lessons</code>.</li>
+      </ul>
+    </article>
+
+  </div>
+    </div>
+</main>
+
+<footer>
+  <div class="chapter-content-container" style="padding-top:1.5rem; padding-bottom:1.5rem; text-align:center; color:var(--tx-muted); font-size:0.85rem; border-top:1px solid var(--bd-subtle);">
+    <span style="color:var(--em-accent-text); font-weight:700;">Ethical Hacking MiniBook</span> · University of Delhi B.Tech CSE (DSE-3/GE-5) · Pure Pitch Black &amp; Archival Paper Themes.
+  </div>
+</footer>
+
+<script src="assets/js/state.js"></script>
+<script src="assets/js/core.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  ThemeManager.init();
+  SidebarManager.init();
+});
+</script>
+</body>
+</html>

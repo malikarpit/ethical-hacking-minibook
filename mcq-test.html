@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<!-- ⚡ Arpit | Ethical Hacking MiniBook 2026 | University of Delhi -->
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="Arpit"><meta name="description" content="Interactive MCQ & MSQ Exam Simulator for Ethical Hacking and Advanced Cybersecurity — B.Tech CSE, University of Delhi. Features practice mode, timed mock exam, show solution toggles, and detailed explanations.">
+<title>MCQ & MSQ Exam Simulator | Ethical Hacking MiniBook 🛡️</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/animations.css">
+<link rel="stylesheet" href="assets/css/chapters.css">
+<link rel="stylesheet" href="assets/css/timer.css">
+<style>
+.exam-dashboard-card {
+  background: var(--bg-card);
+  border: 1px solid var(--bd-default);
+  border-radius: var(--em-radius-lg);
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+.mode-switch-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bd-subtle);
+}
+.mode-toggle-group {
+  display: inline-flex;
+  background: var(--bg-elevated);
+  padding: 4px;
+  border-radius: var(--em-radius-full);
+  border: 1px solid var(--bd-default);
+}
+.mode-btn {
+  padding: 6px 18px;
+  border-radius: var(--em-radius-full);
+  border: none;
+  background: transparent;
+  color: var(--tx-secondary);
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.mode-btn.active {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+}
+.filter-chip-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.filter-chip {
+  padding: 6px 14px;
+  border-radius: var(--em-radius-full);
+  border: 1px solid var(--bd-default);
+  background: var(--bg-card);
+  color: var(--tx-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.filter-chip:hover {
+  border-color: var(--accent);
+  color: var(--accent-light);
+}
+.filter-chip.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.primary-unit-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--bd-subtle);
+  padding-bottom: 12px;
+  flex-wrap: wrap;
+}
+.primary-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--bd-default);
+  color: var(--tx-secondary);
+  padding: 10px 18px;
+  border-radius: var(--em-radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+.primary-tab-btn:hover {
+  border-color: var(--accent);
+  color: var(--tx-primary);
+  background: var(--accent-soft);
+}
+.primary-tab-btn.active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent-light);
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.2);
+}
+.q-badge-sqa { background: rgba(234, 179, 8, 0.15); color: #eab308; border: 1px solid rgba(234, 179, 8, 0.3); }
+.score-hud {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--em-radius-md);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.hud-val {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--accent-light);
+  font-family: var(--font-mono);
+  line-height: 1.1;
+}
+.hud-lbl {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--tx-muted);
+  margin-top: 4px;
+}
+.q-card {
+  background: var(--bg-card);
+  border: 1px solid var(--bd-default);
+  border-radius: var(--em-radius-lg);
+  padding: 1.75rem;
+  margin-bottom: 1.75rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+.q-card:hover {
+  border-color: var(--accent-border);
+}
+.q-header-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+}
+.q-badge {
+  padding: 3px 10px;
+  border-radius: var(--em-radius-full);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.q-badge-msq { background: rgba(192, 132, 252, 0.15); color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.3); }
+.q-badge-mcq { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+.q-badge-diff { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); }
+.q-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--tx-primary);
+  line-height: 1.5;
+  margin: 0 0 1.25rem 0;
+}
+.opt-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 1.25rem;
+}
+.opt-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: var(--em-radius-md);
+  border: 1px solid var(--bd-default);
+  background: var(--bg-elevated);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--tx-secondary);
+}
+.opt-label:hover {
+  border-color: var(--accent-light);
+  background: var(--accent-soft);
+  color: var(--tx-primary);
+}
+.opt-label.selected {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.opt-label.correct {
+  border-color: #10b981 !important;
+  background: rgba(16, 185, 129, 0.15) !important;
+  color: #10b981 !important;
+  font-weight: 600;
+}
+.opt-label.wrong {
+  border-color: #ef4444 !important;
+  background: rgba(239, 68, 68, 0.15) !important;
+  color: #ef4444 !important;
+}
+.opt-input {
+  margin-top: 4px;
+  accent-color: var(--accent);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.q-footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 1rem;
+  border-top: 1px solid var(--bd-subtle);
+}
+.btn-solution-toggle {
+  background: transparent;
+  border: 1px solid var(--bd-default);
+  color: var(--tx-secondary);
+  padding: 7px 16px;
+  border-radius: var(--em-radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-solution-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent-light);
+  background: var(--accent-soft);
+}
+.btn-check-ans {
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  color: #fff;
+  padding: 7px 18px;
+  border-radius: var(--em-radius-sm);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-check-ans:hover {
+  background: var(--accent-light);
+}
+.solution-panel {
+  display: none;
+  background: var(--em-surface-2);
+  border: 1px solid var(--accent-border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--em-radius-md);
+  padding: 1.25rem;
+  margin-top: 1.25rem;
+  animation: fadeIn 0.25s ease;
+}
+.solution-panel.open {
+  display: block;
+}
+.sol-header {
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: var(--accent-light);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.sol-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--tx-secondary);
+}
+.timer-chip {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #f59e0b;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(245, 158, 11, 0.1);
+  padding: 4px 14px;
+  border-radius: var(--em-radius-full);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+</style>
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<!-- HEADER -->
+<header id="main-header">
+  <div class="header-left">
+    <button id="sidebar-toggle" class="icon-btn" title="Toggle Sidebar (S)" aria-label="Toggle Navigation">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="brand-logo">
+      <div class="brand-icon">🛡️</div>
+      <div class="brand-text">
+        <span class="main">Ethical Hacking</span>
+        <span class="sub">University of Delhi · B.Tech CSE</span>
+      </div>
+    </div>
+  </div>
+
+  <span class="header-chapter-title">Interactive MCQ &amp; MSQ Test Simulator</span>
+
+  <div class="header-right">
+    <button id="search-btn" class="icon-btn" title="Search (Ctrl+K)" aria-label="Search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    </button>
+    <button id="print-btn" title="Print to Clean PDF (Ctrl+P)" aria-label="Print">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      <span class="print-label">PDF</span>
+    </button>
+    <button id="reading-mode-btn" class="icon-btn" title="Reading Focus Mode (F)" aria-label="Reading Mode">📖</button>
+    <button id="theme-toggle" class="icon-btn" title="Toggle Theme (T)" aria-label="Theme"></button>
+  </div>
+</header>
+
+<!-- SIDEBAR -->
+<div id="sidebar-overlay"></div>
+<aside id="sidebar">
+  <nav class="sidebar-nav">
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Navigation</div>
+      <a href="index.html" class="sidebar-link"><span class="link-icon">🏠</span>Home Portal</a>
+      <a href="quick-learn.html" class="sidebar-link"><span class="link-icon">⚡</span>Quick Learn</a>
+      <a href="last-minute.html" class="sidebar-link"><span class="link-icon">⏱️</span>Last-Minute Cram</a>
+      <a href="activities.html" class="sidebar-link"><span class="link-icon">📁</span>Activities & Solutions</a>
+      <a href="mcq-test.html" class="sidebar-link active"><span class="link-icon">📝</span>MCQ Test Simulator</a>
+      <a href="progress.html" class="sidebar-link"><span class="link-icon">📊</span>Study Dashboard</a>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Core Chapters</div>
+      <a href="chapters/ch00-syllabus-guide.html" class="sidebar-link"><span class="link-icon">🧭</span>Ch 0 — Syllabus &amp; Blueprint</a>
+      <a href="chapters/ch00-syllabus-guide-hinglish.html" class="sidebar-link sidebar-mukul-sublink"><span class="link-icon">🔥</span>Ch 0 · Mukul Hinglish</a>
+      <a href="chapters/ch01-fundamentals-ethics.html" class="sidebar-link"><span class="link-icon">🛡️</span>Ch 1 — Fundamentals & Ethics</a>
+      <a href="chapters/ch01-fundamentals-ethics-hinglish.html" class="sidebar-link sidebar-mukul-sublink"><span class="link-icon">🔥</span>Ch 1 · Mukul Hinglish</a>
+      <a href="chapters/ch02-network-system-security.html" class="sidebar-link"><span class="link-icon">🌐</span>Ch 2 — Network & System Security</a>
+      <a href="chapters/ch02-network-system-security-hinglish.html" class="sidebar-link sidebar-mukul-sublink"><span class="link-icon">🔥</span>Ch 2 · Mukul Hinglish</a>
+      <a href="chapters/ch03-web-application-security.html" class="sidebar-link"><span class="link-icon">💻</span>Ch 3 — Web & App Security</a>
+      <a href="chapters/ch04-advanced-cybersecurity.html" class="sidebar-link"><span class="link-icon">🔒</span>Ch 4 — Advanced Cyber & Crypto</a>
+      <a href="chapters/ch05-practical-lab-workbook.html" class="sidebar-link"><span class="link-icon">🔬</span>Ch 5 — Practical Labs (1 to 7)</a>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Quick Jump by Unit</div>
+      <a href="javascript:void(0)" onclick="filterByUnit('all')" class="sidebar-link"><span class="link-icon">📚</span>All Questions</a>
+      <a href="javascript:void(0)" onclick="filterByUnit('Unit 1')" class="sidebar-link"><span class="link-icon">🛡️</span>Unit 1: Fundamentals</a>
+      <a href="javascript:void(0)" onclick="filterByUnit('Unit 2')" class="sidebar-link"><span class="link-icon">🌐</span>Unit 2: Network & Systems</a>
+      <a href="javascript:void(0)" onclick="filterByUnit('Unit 3')" class="sidebar-link"><span class="link-icon">💻</span>Unit 3: Web Security & OWASP</a>
+      <a href="javascript:void(0)" onclick="filterByUnit('Unit 4')" class="sidebar-link"><span class="link-icon">🔒</span>Unit 4: Advanced Cyber & Crypto</a>
+    </div>
+  </nav>
+  <div class="sidebar-footer">
+    <div class="sidebar-brand-mark"><div class="mark">🛡️</div><span>Arpit · DU B.Tech CSE</span></div>
+  </div>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main id="main-content">
+  <div class="chapter-content-container">
+
+    <!-- Test Dashboard Card -->
+    <div class="exam-dashboard-card">
+      <div class="mode-switch-bar">
+        <div>
+          <span style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:var(--accent-light); letter-spacing:0.05em;">Exam Simulator Engine</span>
+          <h1 style="font-size:1.6rem; font-weight:800; margin:4px 0 0; color:var(--tx-primary);">
+            Ethical Hacking Question Bank
+          </h1>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+          <div id="exam-timer-container" style="display:none;">
+            <div class="timer-chip">⏱️ <span id="timer-display">45:00</span></div>
+          </div>
+          <div class="mode-toggle-group">
+            <button class="mode-btn active" id="btn-mode-practice" onclick="setMode('practice')">🎯 Practice Mode</button>
+            <button class="mode-btn" id="btn-mode-exam" onclick="setMode('exam')">⏱️ Timed Test Mode</button>
+          </div>
+        </div>
+      </div>
+
+            <!-- PRIMARY UNIT TABS (UNIT 1 & UNIT 2 DEDICATED TABS) -->
+      <div class="primary-unit-tabs">
+        <button class="primary-tab-btn active" id="tab-u1" data-unit="Unit 1" onclick="selectPrimaryTab('Unit 1')">
+          <span style="font-size:1.25rem;">🛡️</span>
+          <div>
+            <div style="font-weight:800; font-size:1rem;">Unit 1 Question Bank</div>
+            <div style="font-size:0.76rem; color:var(--tx-muted);">80 Questions · Foundations, Ethics &amp; Cyber Law</div>
+          </div>
+        </button>
+
+        <button class="primary-tab-btn" id="tab-u2" data-unit="Unit 2" onclick="selectPrimaryTab('Unit 2')">
+          <span style="font-size:1.25rem;">🌐</span>
+          <div>
+            <div style="font-weight:800; font-size:1rem;">Unit 2 Question Bank</div>
+            <div style="font-size:0.76rem; color:var(--tx-muted);">80 Questions · Network &amp; Systems, VAPT, Firewalls</div>
+          </div>
+        </button>
+
+        <button class="primary-tab-btn" id="tab-all" data-unit="all" onclick="selectPrimaryTab('all')">
+          <span style="font-size:1.25rem;">📚</span>
+          <div>
+            <div style="font-weight:800; font-size:1rem;">All Questions Combined</div>
+            <div style="font-size:0.76rem; color:var(--tx-muted);">160 Questions Across Both Units</div>
+          </div>
+        </button>
+      </div>
+<!-- Real-time Score HUD -->
+      <div class="score-hud">
+        <div>
+          <div class="hud-val" id="stat-total">0</div>
+          <div class="hud-lbl">Total Questions</div>
+        </div>
+        <div>
+          <div class="hud-val" id="stat-attempted" style="color:var(--tx-primary);">0</div>
+          <div class="hud-lbl">Attempted</div>
+        </div>
+        <div>
+          <div class="hud-val" id="stat-correct" style="color:#10b981;">0</div>
+          <div class="hud-lbl">Correct</div>
+        </div>
+        <div>
+          <div class="hud-val" id="stat-accuracy" style="color:#f59e0b;">0%</div>
+          <div class="hud-lbl">Accuracy</div>
+        </div>
+      </div>
+
+      <!-- Filter Controls -->
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:12px;">
+        <div class="filter-chip-row" style="margin-bottom:0;">
+          <button class="filter-chip active" data-type="all" onclick="filterByType('all')">All Formats</button>
+          <button class="filter-chip" data-type="MCQ" onclick="filterByType('MCQ')">Single-Choice (MCQs)</button>
+          <button class="filter-chip" data-type="MSQ" onclick="filterByType('MSQ')">Multi-Select (MSQs)</button>
+          <button class="filter-chip" data-type="ShortQA" onclick="filterByType('ShortQA')">📝 Short Q&amp;A / Model Answers</button>
+        </div>
+
+        <div style="display:flex; gap:8px;">
+          <button class="btn-solution-toggle" onclick="toggleAllSolutions()">💡 Toggle All Solutions</button>
+          <button class="btn-solution-toggle" style="color:#ef4444;" onclick="resetTest()">🔄 Reset</button>
+        </div>
+      </div>
+
+      <!-- Live Search in Questions -->
+      <div>
+        <input type="text" id="q-search" placeholder="🔍 Search questions, topics (e.g. SQLi, Firewall, XSS, Zero Trust, SYN)..." 
+               style="width:100%; box-sizing:border-box; padding:10px 16px; border-radius:var(--em-radius-md); border:1px solid var(--bd-default); background:var(--bg-elevated); color:var(--tx-primary); font-size:0.9rem;"
+               oninput="onSearchInput(this.value)">
+      </div>
+    </div>
+
+    <!-- Exam Submit Bar (Only in Exam Mode) -->
+    <div id="exam-submit-bar" style="display:none; background:var(--bg-elevated); border:1px solid var(--accent); border-radius:var(--em-radius-md); padding:1rem 1.5rem; margin-bottom:1.5rem; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+      <div>
+        <strong style="color:var(--tx-primary);">Timed Test in Progress</strong>
+        <p style="margin:2px 0 0; font-size:0.85rem; color:var(--tx-muted);">Select your choices. Feedback and solutions will be displayed after submission.</p>
+      </div>
+      <button class="btn-check-ans" style="background:var(--em-accent); border-color:var(--em-accent); color:var(--tx-inverse); padding:10px 24px; font-size:0.95rem; font-weight:700;" onclick="submitExam()">
+        🏁 Submit Examination
+      </button>
+    </div>
+
+    <!-- Questions Container -->
+    <div id="questions-list">
+      <!-- Injected by JavaScript -->
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div style="max-width:980px; margin:0 auto; padding:2rem 1.5rem; text-align:center; color:var(--tx-muted); font-size:0.85rem; border-top:1px solid var(--bd-subtle);">
+    <span style="color:var(--accent-light); font-weight:700;">Ethical Hacking MiniBook</span> · University of Delhi B.Tech CSE (DSE-3/GE-5) · Interactive Question Engine.
+  </div>
+</footer>
+
+<script src="assets/js/quiz-data.js"></script>
+<script src="assets/js/state.js"></script>
+<script src="assets/js/core.js"></script>
+<script>
+// Test Simulator State
+let currentMode = 'practice'; // 'practice' or 'exam'
+let activeUnitFilter = 'Unit 1'; // Default to Unit 1 Tab
+let activeTypeFilter = 'all';
+let searchQuery = '';
+let userSelections = {}; // qId -> array of selected index numbers
+let checkedQuestions = new Set();
+let timerInterval = null;
+let timeRemaining = 45 * 60; // 45 minutes
+
+const rawQuestions = typeof EH_QUIZ_DATA !== 'undefined' ? EH_QUIZ_DATA : [];
+
+function selectPrimaryTab(unit) {
+  activeUnitFilter = unit;
+  document.querySelectorAll('.primary-tab-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-unit') === unit);
+  });
+  renderQuestions();
+}
+
+function filterByType(type) {
+  activeTypeFilter = type;
+  document.querySelectorAll('.filter-chip').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-type') === type);
+  });
+  renderQuestions();
+}
+
+function getFilteredQuestions() {
+  return rawQuestions.filter(q => {
+    if (activeUnitFilter !== 'all' && q.unit !== activeUnitFilter) return false;
+    if (activeTypeFilter !== 'all' && q.type !== activeTypeFilter) return false;
+    if (searchQuery.trim() !== '') {
+      const sq = searchQuery.toLowerCase();
+      const matchQ = q.q.toLowerCase().includes(sq);
+      const matchTopic = (q.topic || '').toLowerCase().includes(sq);
+      const matchOpt = (q.options || []).some(o => o.toLowerCase().includes(sq));
+      const matchShort = (q.short_ans || '').toLowerCase().includes(sq);
+      if (!matchQ && !matchTopic && !matchOpt && !matchShort) return false;
+    }
+    return true;
+  });
+}
+
+function renderQuestions() {
+  const container = document.getElementById('questions-list');
+  const filtered = getFilteredQuestions();
+
+  document.getElementById('stat-total').textContent = filtered.length;
+  updateStats();
+
+  if (filtered.length === 0) {
+    container.innerHTML = `
+      <div style="text-align:center; padding:3rem 1rem; color:var(--tx-muted); background:var(--bg-card); border-radius:var(--em-radius-lg); border:1px solid var(--bd-default);">
+        <p style="font-size:1.2rem; margin:0 0 8px;">No matching questions found.</p>
+        <button class="filter-chip active" onclick="resetFilters()">Clear Filters</button>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = filtered.map((q, idx) => {
+    const isMSQ = q.type === 'MSQ' || (Array.isArray(q.ans) && q.ans.length > 1);
+    const isShortQA = q.type === 'ShortQA';
+    const selected = userSelections[q.id] || [];
+    const isChecked = checkedQuestions.has(q.id);
+
+    if (isShortQA) {
+      return `
+        <div class="q-card" id="q-card-${q.id}">
+          <div class="q-header-meta">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="font-weight:800; font-family:var(--font-mono); color:var(--accent-light);">#${q.id}</span>
+              <span class="q-badge q-badge-sqa">📝 Short Q&amp;A / Model Answer</span>
+              <span class="q-badge q-badge-diff">${q.diff || 'Moderate'}</span>
+            </div>
+            <div style="color:var(--tx-muted); font-size:0.75rem;">
+              <span>${q.unit}</span> · <strong>${q.topic}</strong>
+            </div>
+          </div>
+
+          <h3 class="q-title" style="color:var(--tx-primary);">${q.q}</h3>
+
+          <div class="q-footer-actions">
+            <button class="btn-solution-toggle" onclick="toggleSolution(${q.id})">
+              💡 Show Model Answer &amp; Solution
+            </button>
+            <span style="font-size:0.8rem; color:var(--tx-muted);">DU Exam 5-10 Mark Practice</span>
+          </div>
+
+          <!-- Collapsible Solution Card -->
+          <div class="solution-panel" id="sol-panel-${q.id}">
+            <div class="sol-header">
+              <span>🎯 University Model Answer &amp; Scoring Key</span>
+              <span style="font-size:0.75rem; color:var(--tx-muted); margin-left:auto;">DU DSE-3 Blueprint</span>
+            </div>
+            <div style="font-size:0.95rem; color:var(--tx-primary); line-height:1.6; margin-bottom:12px; white-space:pre-line; background:rgba(37,99,235,0.06); border-left:3px solid var(--accent); padding:10px 14px; border-radius:4px;">
+              ${q.short_ans || ''}
+            </div>
+            <div class="sol-text"><strong>💡 In-Depth Explanation:</strong> ${q.exp}</div>
+            ${q.viva_tip ? `<div style="margin-top:10px; font-size:0.85rem; color:#f59e0b;"><strong>🎓 Viva Voce Tip:</strong> ${q.viva_tip}</div>` : ''}
+          </div>
+        </div>
+      `;
+    }
+
+    return `
+      <div class="q-card" id="q-card-${q.id}">
+        <div class="q-header-meta">
+          <div style="display:flex; align-items:center; gap:8px;">
+            <span style="font-weight:800; font-family:var(--font-mono); color:var(--accent-light);">#${q.id}</span>
+            <span class="q-badge ${isMSQ ? 'q-badge-msq' : 'q-badge-mcq'}">${isMSQ ? 'Multiple-Select (MSQ)' : 'Single Choice (MCQ)'}</span>
+            <span class="q-badge q-badge-diff">${q.diff || 'Moderate'}</span>
+          </div>
+          <div style="color:var(--tx-muted); font-size:0.75rem;">
+            <span>${q.unit}</span> · <strong>${q.topic}</strong>
+          </div>
+        </div>
+
+        <h3 class="q-title">${q.q}</h3>
+
+        <div class="opt-list">
+          ${(q.options || []).map((opt, oIdx) => {
+            const isOptSelected = selected.includes(oIdx);
+            let stateClass = '';
+            if (currentMode === 'practice' && isChecked) {
+              const isCorrectOpt = Array.isArray(q.ans) ? q.ans.includes(oIdx) : q.ans === oIdx;
+              if (isCorrectOpt) stateClass = 'correct';
+              else if (isOptSelected && !isCorrectOpt) stateClass = 'wrong';
+            } else if (isOptSelected) {
+              stateClass = 'selected';
+            }
+
+            return `
+              <label class="opt-label ${stateClass}" onclick="handleOptionClick(${q.id}, ${oIdx}, ${isMSQ})">
+                <input type="${isMSQ ? 'checkbox' : 'radio'}" 
+                       name="q-opt-${q.id}" 
+                       class="opt-input" 
+                       ${isOptSelected ? 'checked' : ''} 
+                       tabindex="-1">
+                <span><strong style="color:var(--accent-light); margin-right:4px;">${String.fromCharCode(65 + oIdx)}.</strong> ${opt}</span>
+              </label>
+            `;
+          }).join('')}
+        </div>
+
+        <div class="q-footer-actions">
+          <button class="btn-solution-toggle" onclick="toggleSolution(${q.id})">
+            💡 Show Solution &amp; Explanation
+          </button>
+
+          <div style="display:flex; align-items:center; gap:8px;">
+            ${currentMode === 'practice' ? `
+              <button class="btn-check-ans" onclick="checkAnswer(${q.id})">
+                Check Answer
+              </button>
+            ` : ''}
+          </div>
+        </div>
+
+        <!-- Collapsible Solution Card -->
+        <div class="solution-panel" id="sol-panel-${q.id}">
+          <div class="sol-header">
+            <span>✅ Official Solution &amp; Reasoning</span>
+            <span style="font-size:0.75rem; color:var(--tx-muted); margin-left:auto;">${q.source || 'University of Delhi'}</span>
+          </div>
+          <div style="font-weight:700; color:#10b981; font-size:0.85rem; margin-bottom:6px;">
+            Correct Option(s): ${Array.isArray(q.ans) ? q.ans.map(i => String.fromCharCode(65 + i)).join(', ') : String.fromCharCode(65 + q.ans)}
+          </div>
+          <div class="sol-text">${q.exp}</div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function handleOptionClick(qId, optIdx, isMSQ) {
+  if (!userSelections[qId]) userSelections[qId] = [];
+
+  if (isMSQ) {
+    if (userSelections[qId].includes(optIdx)) {
+      userSelections[qId] = userSelections[qId].filter(i => i !== optIdx);
+    } else {
+      userSelections[qId].push(optIdx);
+    }
+  } else {
+    userSelections[qId] = [optIdx];
+  }
+
+  if (currentMode === 'practice') {
+    // Re-check answer if it was already evaluated
+    checkAnswer(qId);
+  } else {
+    renderQuestions();
+  }
+}
+
+function checkAnswer(qId) {
+  checkedQuestions.add(qId);
+  renderQuestions();
+}
+
+function toggleSolution(qId) {
+  const panel = document.getElementById(`sol-panel-${qId}`);
+  if (panel) {
+    panel.classList.toggle('open');
+  }
+}
+
+function toggleAllSolutions() {
+  const panels = document.querySelectorAll('.solution-panel');
+  const anyOpen = Array.from(panels).some(p => p.classList.contains('open'));
+  panels.forEach(p => {
+    if (anyOpen) p.classList.remove('open');
+    else p.classList.add('open');
+  });
+}
+
+function updateStats() {
+  const attempted = Object.keys(userSelections).filter(k => userSelections[k].length > 0).length;
+  let correctCount = 0;
+
+  rawQuestions.forEach(q => {
+    const sel = userSelections[q.id] || [];
+    if (sel.length > 0) {
+      const targetAns = Array.isArray(q.ans) ? q.ans : [q.ans];
+      const isCorrect = sel.length === targetAns.length && sel.every(val => targetAns.includes(val));
+      if (isCorrect) correctCount++;
+    }
+  });
+
+  const accuracy = attempted > 0 ? Math.round((correctCount / attempted) * 100) : 0;
+
+  document.getElementById('stat-attempted').textContent = attempted;
+  document.getElementById('stat-correct').textContent = correctCount;
+  document.getElementById('stat-accuracy').textContent = `${accuracy}%`;
+}
+
+function setMode(mode) {
+  currentMode = mode;
+  document.getElementById('btn-mode-practice').classList.toggle('active', mode === 'practice');
+  document.getElementById('btn-mode-exam').classList.toggle('active', mode === 'exam');
+
+  const timerEl = document.getElementById('exam-timer-container');
+  const submitBar = document.getElementById('exam-submit-bar');
+
+  if (mode === 'exam') {
+    timerEl.style.display = 'block';
+    submitBar.style.display = 'flex';
+    checkedQuestions.clear();
+    startTimer();
+  } else {
+    timerEl.style.display = 'none';
+    submitBar.style.display = 'none';
+    clearInterval(timerInterval);
+  }
+  renderQuestions();
+}
+
+function startTimer() {
+  clearInterval(timerInterval);
+  timeRemaining = 45 * 60;
+  const display = document.getElementById('timer-display');
+  timerInterval = setInterval(() => {
+    timeRemaining--;
+    if (timeRemaining <= 0) {
+      clearInterval(timerInterval);
+      alert('⏱️ Time is up! Submitting examination.');
+      submitExam();
+      return;
+    }
+    const mins = String(Math.floor(timeRemaining / 60)).padStart(2, '0');
+    const secs = String(timeRemaining % 60).padStart(2, '0');
+    display.textContent = `${mins}:${secs}`;
+  }, 1000);
+}
+
+function submitExam() {
+  clearInterval(timerInterval);
+  rawQuestions.forEach(q => checkedQuestions.add(q.id));
+  currentMode = 'practice';
+  document.getElementById('exam-submit-bar').style.display = 'none';
+  document.getElementById('btn-mode-practice').classList.add('active');
+  document.getElementById('btn-mode-exam').classList.remove('active');
+  renderQuestions();
+  toggleAllSolutions();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  alert('🎉 Examination submitted! Full score calculated. Review your answers and explanations below.');
+}
+
+function filterByUnit(unit) {
+  activeUnitFilter = unit;
+  document.querySelectorAll('.filter-chip[data-unit]').forEach(b => {
+    b.classList.toggle('active', b.getAttribute('data-unit') === unit);
+  });
+  renderQuestions();
+}
+
+function filterByType(type) {
+  if (activeTypeFilter === type) {
+    activeTypeFilter = 'all';
+  } else {
+    activeTypeFilter = type;
+  }
+  document.querySelectorAll('.filter-chip[data-type]').forEach(b => {
+    b.classList.toggle('active', b.getAttribute('data-type') === activeTypeFilter);
+  });
+  renderQuestions();
+}
+
+function onSearchInput(val) {
+  searchQuery = val;
+  renderQuestions();
+}
+
+function resetTest() {
+  if (confirm('Are you sure you want to reset your selections and score?')) {
+    userSelections = {};
+    checkedQuestions.clear();
+    renderQuestions();
+  }
+}
+
+function resetFilters() {
+  activeUnitFilter = 'all';
+  activeTypeFilter = 'all';
+  searchQuery = '';
+  document.getElementById('q-search').value = '';
+  document.querySelectorAll('.filter-chip').forEach(b => {
+    b.classList.toggle('active', b.getAttribute('data-unit') === 'all');
+  });
+  renderQuestions();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  ThemeManager.init();
+  SidebarManager.init();
+  renderQuestions();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<!-- ⚡ Arpit | Ethical Hacking MiniBook 2026 | University of Delhi -->
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="Arpit"><meta name="description" content="Ch 1: Fundamentals of Ethical Hacking & Cyber Laws — Ethical Hacking and Advanced Cybersecurity MiniBook, University of Delhi B.Tech CSE. English & Hinglish (FOR BKL Mukul Edition).">
+<title>Ch 1: Fundamentals of Ethical Hacking & Cyber Laws | Ethical Hacking MiniBook 🛡️</title>
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/animations.css">
+<link rel="stylesheet" href="../assets/css/chapters.css">
+<link rel="stylesheet" href="../assets/css/timer.css">
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<!-- HEADER -->
+<header id="main-header">
+  <div class="header-left">
+    <button id="sidebar-toggle" class="icon-btn" title="Toggle Sidebar (S)" aria-label="Toggle Navigation">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="brand-logo">
+      <div class="brand-icon">🛡️</div>
+      <div class="brand-text">
+        <span class="main">Ethical Hacking</span>
+        <span class="sub">University of Delhi · B.Tech CSE</span>
+      </div>
+    </div>
+  </div>
+
+  <span class="header-chapter-title">Ch 1: Fundamentals of Ethical Hacking &amp; Cyber Laws</span>
+
+  <div class="header-right">
+    <button id="search-btn" class="icon-btn" title="Search (Ctrl+K)" aria-label="Search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    </button>
+    <button id="print-btn" title="Print to Clean PDF (Ctrl+P)" aria-label="Print">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      <span class="print-label">PDF</span>
+    </button>
+    <button id="reading-mode-btn" class="icon-btn" title="Reading Focus Mode (F)" aria-label="Reading Mode">📖</button>
+    <button id="theme-toggle" class="icon-btn" title="Toggle Theme (T)" aria-label="Theme"></button>
+  </div>
+</header>
+
+<!-- SIDEBAR -->
+<div id="sidebar-overlay"></div>
+<aside id="sidebar">
+  <nav class="sidebar-nav">
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Navigation</div>
+      <a href="../index.html" class="sidebar-link"><span class="link-icon">🏠</span>Home Portal</a>
+      <a href="../quick-learn.html" class="sidebar-link"><span class="link-icon">⚡</span>Quick Learn</a>
+      <a href="../last-minute.html" class="sidebar-link"><span class="link-icon">⏱️</span>Last-Minute Cram</a>
+      <a href="../activities.html" class="sidebar-link"><span class="link-icon">📁</span>Activities &amp; Solutions</a>
+      <a href="../exams/mcq-test.html" class="sidebar-link"><span class="link-icon">📝</span>MCQ Test Simulator</a>
+      <a href="../progress.html" class="sidebar-link"><span class="link-icon">📊</span>Study Dashboard</a>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Core Chapters</div>
+      <a href="ch00-syllabus-guide.html" class="sidebar-link"><span class="link-icon">🧭</span>Ch 0 — Syllabus &amp; Blueprint</a>
+      <a href="ch00-syllabus-guide-hinglish.html" class="sidebar-link sidebar-mukul-sublink"><span class="link-icon">🔥</span>Ch 0 · Mukul Hinglish</a>
+      <a href="ch01-fundamentals-ethics.html" class="sidebar-link active"><span class="link-icon">🛡️</span>Ch 1 — English Official</a>
+      <a href="ch01-fundamentals-ethics-hinglish.html" class="sidebar-link  sidebar-mukul-sublink"><span class="link-icon">🔥</span>Ch 1 · Mukul Hinglish</a>
+      <a href="ch02-network-system-security.html" class="sidebar-link"><span class="link-icon">🌐</span>Ch 2 — Network &amp; System Security</a>
+      <a href="ch02-network-system-security-hinglish.html" class="sidebar-link sidebar-mukul-sublink"><span class="link-icon">🔥</span>Ch 2 · Mukul Hinglish</a>
+      <a href="ch03-web-application-security.html" class="sidebar-link"><span class="link-icon">💻</span>Ch 3 — Web Security &amp; OWASP</a>
+      <a href="ch04-advanced-cybersecurity.html" class="sidebar-link"><span class="link-icon">🔒</span>Ch 4 — Advanced Cyber &amp; Crypto</a>
+      <a href="ch05-practical-lab-workbook.html" class="sidebar-link"><span class="link-icon">🔬</span>Ch 5 — Practical Labs (1 to 7)</a>
+    </div>
+  </nav>
+  <div class="sidebar-footer">
+    <div class="sidebar-brand-mark"><div class="mark">🛡️</div><span>Arpit · DU B.Tech CSE</span></div>
+  </div>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main id="main-content">
+  <div class="chapter-content-container">
+    
+    <div class="chapter-hero">
+      <span class="chapter-badge">Unit 1 · Master Expanded Textbook</span>
+      <h1 class="chapter-headline">Ch 1: Fundamentals of Ethical Hacking &amp; Cyber Laws</h1>
+      <p class="chapter-sub">Curriculum-aligned textbook study module for University of Delhi (DSE-3/GE-5). Ethics, Rules of Engagement (RoE), Indian IT Act 2000, 7 hacker classifications, 5-phase attack lifecycle, Kali Linux core tools, and <strong>FOR BKL Mukul Hinglish Dual View</strong>.</p>
+    </div>
+
+    <!-- BKL MUKUL SPECIAL FILTER / VIEW SWITCHER -->
+    <div class="mukul-filter-bar">
+      <div class="mukul-header-row">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span class="mukul-badge">🔥 FOR BKL Mukul Filter</span>
+          <span class="mukul-tagline">Hinglish + Real-Life College Analogy Mode</span>
+        </div>
+        <div class="mukul-toggle-pills">
+          <button class="mukul-pill active" id="btn-view-en" data-mode="en" onclick="switchChapterMode('en')">
+            <span>🇬🇧</span> English Official
+          </button>
+          <button class="mukul-pill " id="btn-view-hi" data-mode="hi" onclick="switchChapterMode('hi')">
+            <span>🇮🇳</span> FOR BKL Mukul (Hinglish)
+          </button>
+          <button class="mukul-pill" id="btn-view-dual" data-mode="dual" onclick="switchChapterMode('dual')">
+            <span>⚡</span> Dual Split View (Both)
+          </button>
+        </div>
+      </div>
+      <div class="mukul-sub">
+        English se sar dard ho raha hai? Switch to <strong>FOR BKL Mukul (Hinglish Edition)</strong> with relatable hostel/college examples, or view both side-by-side simultaneously!
+      </div>
+    </div>
+
+    <nav class="toc-box">
+      <div class="toc-title">📑 Table of Contents</div>
+      <ul class="toc-list">
+        <li class="toc-item"><a href="#s-1-safety-authorization-and-lab-rules">1. Safety, Authorization, and Legal Boundaries</a></li>
+        <li class="toc-subitem"><a href="#s-1-1-rules-before-every-test">1.1 Rules before every test</a></li>
+        <li class="toc-subitem"><a href="#s-1-2-authorization-and-scope-example">1.2 Authorization and scope example</a></li>
+        <li class="toc-subitem"><a href="#s-1-3-ethical-decision-checklist">1.3 Ethical decision checklist</a></li>
+        <li class="toc-subitem"><a href="#s-1-4-legal-awareness-note-for-india">1.4 Legal-awareness note for India (IT Act 2000)</a></li>
+        <li class="toc-item"><a href="#s-2-unit-1-fundamentals-of-ethical-hacking">2. Fundamentals of Ethical Hacking &amp; Hacker Taxonomy</a></li>
+        <li class="toc-subitem"><a href="#s-2-1-definition-scope-and-importance">2.1 Definition, scope, and importance</a></li>
+        <li class="toc-subitem"><a href="#s-2-2-hacker-categories">2.2 Hacker categories</a></li>
+        <li class="toc-subitem"><a href="#s-2-3-ethical-hacking-lifecycle">2.3 Ethical hacking lifecycle</a></li>
+        <li class="toc-item"><a href="#s-3-methodology-tools-and-vulnerabilities">3. Methodology, Tools &amp; Vulnerabilities</a></li>
+        <li class="toc-subitem"><a href="#s-3-1-reconnaissance-scanning-and-enumeration">3.1 Reconnaissance, scanning, and enumeration</a></li>
+        <li class="toc-subitem"><a href="#s-3-2-core-tools">3.2 Core tools</a></li>
+        <li class="toc-subitem"><a href="#s-3-3-vulnerability-exploit-payload-risk-and-impact">3.3 Vulnerability, exploit, payload, risk, and impact</a></li>
+        <li class="toc-subitem"><a href="#s-3-4-reporting-a-finding">3.4 Reporting a finding</a></li>
+        <li class="toc-subitem"><a href="#s-3-5-unit-1-quick-check">3.5 Unit 1 - Quick check</a></li>
+      </ul>
+    </nav>
+
+    <!-- CONTENT BODY WITH DUAL VIEW CONTROLLER -->
+    <div class="chapter-body-text view-mode-en" id="chapter-content-body">
+      
+      <!-- § 1. Safety, Authorization, and Legal Boundaries -->
+      <h2 id="s-1-safety-authorization-and-lab-rules" class="section-h2"><span class="h-anchor">§</span> 1. Safety, Authorization, and Legal Boundaries</h2>
+
+      <!-- 1.1 -->
+      <div class="topic-container" id="sec-1-1">
+        <h3 id="s-1-1-rules-before-every-test" class="section-h3"><span class="h-anchor">#</span> 1.1 Rules before every test</h3>
+        <div class="topic-split-grid">
+          <div class="en-box">
+            <p class="body-p">The line separating lawful security assessment from criminal computer trespass is defined entirely by <strong>prior explicit written authorization</strong>. In academic and enterprise environments alike, executing security tooling without formalized permission is illegal under statutory law. The four non-negotiable operational principles are:</p>
+            <ul class="styled-list">
+              <li><strong>Principle 1 — Explicit Written Authorization:</strong> Never transmit a single probe packet without an executed contract signed by the authorized asset owner (e.g. Chief Information Security Officer or designated infrastructure authority).</li>
+              <li><strong>Principle 2 — Strict Adherence to Scoping Boundaries:</strong> Assessment activity must be confined to the exact IP ranges, hostnames, and application domains designated in the statement of work. Collateral assets belonging to third-party cloud tenants are strictly off-limits.</li>
+              <li><strong>Principle 3 — Non-Destructive Methodology:</strong> Testing must avoid Denial-of-Service (DoS) conditions, irreversible database modifications, or production service disruption. Always use benign proof-of-concept verification.</li>
+              <li><strong>Principle 4 — Responsible Confidential Disclosure:</strong> All discovered flaws, credentials, and evidence artifacts must be encrypted in transit and at rest, and disclosed solely to authorized stakeholder contacts via encrypted communication channels.</li>
+            </ul>
+          </div>
+          <div class="hi-box">
+            <div class="mukul-card">
+              <div class="mukul-card-header"><span>🇮🇳</span> FOR BKL Mukul Explains · 1.1 Testing Se Pehle Ke 4 Golden Rules</div>
+              <p class="body-p">Bhai Mukul, technical skills hona achhi baat hai, par jail na jaana usse bhi zyada zaroori hai! College lab ho ya company ka network, koi bhi tool chalane se pehle yeh 4 niyam patthar ki lakeer hain:</p>
+              <ul class="styled-list">
+                <li><strong>Rule 1 (Written Permission):</strong> Jab tak system ke asli maalik (CISO/Owner) ka stamp aur sign kiya hua paper na ho, ek bhi packet mat bhejo! Verbal permission ki court me koi value nahi hoti.</li>
+                <li><strong>Rule 2 (Boundary Mat Todo):</strong> Agar contract me <code>192.168.1.50</code> likha hai, toh <code>192.168.1.51</code> ko ping bhi mat karo! Cloud pe doosri company ka server hua toh seedha FIR ho sakti hai.</li>
+                <li><strong>Rule 3 (No Destructive Attacks):</strong> Server crash nahi hona chahiye! Proof dikhana hai ki taala kharab hai, darwaza tod ke ghar me aag nahi lagani hoti. DoS attacks bilkul ban hain.</li>
+                <li><strong>Rule 4 (Secret Reporting):</strong> Kamzori milte hi LinkedIn ya Instagram pe flex mat maro! Report ko encrypt karo aur chupchap company ke security head ko do.</li>
+              </ul>
+              <div class="mukul-card-example">
+                <strong>💡 Desi Analogy:</strong> Socho tum kisi ke ghar ka lock check karne gaye ho. Owner ne bola 'Main gate ka lock check karo'. Tumne main gate check karne ke bajaye padosi ki deewar faand di aur unki car ka sheesha tod diya! Owner seedha police ko bulayega. Ethical hacker hamesha boundary me rehta hai!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1.2 -->
+      <div class="topic-container" id="sec-1-2">
+        <h3 id="s-1-2-authorization-and-scope-example" class="section-h3"><span class="h-anchor">#</span> 1.2 Authorization and scope example</h3>
+        <div class="topic-split-grid">
+          <div class="en-box">
+            <p class="body-p">A legally enforceable <strong>Rules of Engagement (RoE)</strong> document establishes the scope of work and shields security practitioners from liability. Below is an architectural blueprint of an enterprise authorization matrix:</p>
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Target Asset Component</th>
+                  <th>Designated Scope Status</th>
+                  <th>Permitted Operational Techniques</th>
+                  <th>Explicit Restrictions &amp; Constraints</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>portal.university.edu</code> (192.0.2.10)</td>
+                  <td><span class="badge badge-success">In-Scope</span></td>
+                  <td>Nikto web scan, Burp Suite parameter tampering, authenticated SQLi checks</td>
+                  <td>Automated high-thread brute-forcing prohibited; limit to &le; 5 req/sec</td>
+                </tr>
+                <tr>
+                  <td><code>db-cluster-prod.internal</code></td>
+                  <td><span class="badge badge-danger">Out-of-Scope</span></td>
+                  <td>Passive architectural review only</td>
+                  <td>Zero direct network probing, SQL extraction, or credential spraying</td>
+                </tr>
+                <tr>
+                  <td><code>gateway-router.isp.net</code></td>
+                  <td><span class="badge badge-danger">Out-of-Scope</span></td>
+                  <td>Strictly None (Third-party ISP infrastructure)</td>
+                  <td>Zero scanning; civil and criminal liability applies</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="body-p"><strong>Operational Escrow:</strong> Testing windows must be strictly scheduled during pre-arranged maintenance intervals (e.g. 02:00–05:00 IST) with designated live-escalation contacts readily available.</p>
+          </div>
+          <div class="hi-box">
+            <div class="mukul-card">
+              <div class="mukul-card-header"><span>🇮🇳</span> FOR BKL Mukul Explains · 1.2 Scope &amp; Rules of Engagement (RoE) Ka Asli Khel</div>
+              <p class="body-p">Bhai RoE (Rules of Engagement) contract ka matlab hai boundary line. Examiner viva me zaroor poochta hai: <em>'In-Scope aur Out-of-Scope me kya farak hota hai?'</em></p>
+              <ul class="styled-list">
+                <li><strong>In-Scope (Green Signal):</strong> Sirf wahi IP aur domain jahan testing allowed hai. Jaise <code>portal.university.edu</code>. Par yahan bhi speed limit hoti hai (&le; 5 requests/sec) taaki server hang na ho!</li>
+                <li><strong>Out-of-Scope (Red Light / Khatra):</strong> Production database, backup servers, ya third-party payment gateways (Razorpay, Stripe). Agar galti se bhi wahan scan chala gaya toh poora pentest illegal ban jata hai.</li>
+                <li><strong>Testing Window (Timing):</strong> Din ke 2 baje jab sab bacche result dekh rahe hon tab scan nahi chalate! Testing raat ko 2:00 se 5:00 AM ke beech hoti hai jab traffic sabse kam ho.</li>
+              </ul>
+              <div class="mukul-card-example">
+                <strong>💡 Cricket Match Analogy:</strong> Match ground ke andar khela jaata hai (In-Scope). Agar tumne six maara aur ball stadium ke baahar khadi car ke sheeshe pe lagi (Out-of-Scope), toh compensation tumhe hi bharna padega! Scope document batata hai ki ball kahan tak allow hai.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1.3 -->
+      <div class="topic-container" id="sec-1-3">
+        <h3 id="s-1-3-ethical-decision-checklist" class="section-h3"><span class="h-anchor">#</span> 1.3 Ethical decision checklist</h3>
+        <div class="topic-split-grid">
+          <div class="en-box">
+            <p class="body-p">When encountering unexpected live vulnerabilities, high-privilege credentials, or exposed Personally Identifiable Information (PII) during an assessment, follow this standardized decision protocol:</p>
+            <ol class="styled-list">
+              <li><strong>Immediate Operational Pause:</strong> The moment critical system access (e.g. root shell or database administrative credentials) is achieved, halt further exploitation immediately. Do not browse or exfiltrate private records.</li>
+              <li><strong>Cryptographic Evidence Preservation:</strong> Capture minimal necessary proof-of-concept evidence (e.g. <code>whoami</code> output, redacted table schema, timestamped terminal log). Calculate cryptographic SHA-256 hashes of all artifacts.</li>
+              <li><strong>Secure Out-of-Band Escalation:</strong> Contact the designated emergency liaison through pre-arranged secure channels (PGP-encrypted email or secure signal line) within 60 minutes.</li>
+              <li><strong>Remediation Verification:</strong> Assist engineering teams in reviewing proposed patch mechanisms without re-exploiting production environments until explicit re-test approval is granted.</li>
+            </ol>
+          </div>
+          <div class="hi-box">
+            <div class="mukul-card">
+              <div class="mukul-card-header"><span>🇮🇳</span> FOR BKL Mukul Explains · 1.3 Jab Root Access Mil Jaye Toh Kya Karein</div>
+              <p class="body-p">Testing karte waqt achanak kisi server ka root password mil jaye ya poora student database saamne aa jaye, toh ghabrana nahi hai aur na hi hero banna hai:</p>
+              <ul class="styled-list">
+                <li><strong>1. Haath Rok Lo (Instant Stop):</strong> Root milte hi aage exploratory hacking band karo! Data download mat karne lag jao.</li>
+                <li><strong>2. Minimal PoC (Saboot Record Karo):</strong> Terminal pe sirf <code>whoami</code> ya <code>id</code> chalao aur screenshot le lo. Uska SHA-256 hash banao taaki koi na kahe ki screenshot fake hai.</li>
+                <li><strong>3. 1 Ghante Ke Andar Report Karo:</strong> Client ke security lead ko phone ghumao ya encrypted mail bhejo ki critical vulnerability mil gayi hai, turant patch karo.</li>
+                <li><strong>4. Confidentiality Maintain Karo:</strong> Apne hostel ke dosto ko mat dikhana ki 'Dekh maine DU ka server hack kar diya'. NDA sign kiya hai, breach hua toh career khatam!</li>
+              </ul>
+              <div class="mukul-card-example">
+                <strong>💡 Wallet Finding Analogy:</strong> Sadak pe kisi ka wallet gira mila jisme 50,000 rupaye hain. Achha insaan wallet kholke ID card dekhta hai aur owner ko call karta hai (Ethical). Paise nikaal ke wallet phenk dena Black Hat hai!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1.4 -->
+      <div class="topic-container" id="sec-1-4">
+        <h3 id="s-1-4-legal-awareness-note-for-india" class="section-h3"><span class="h-anchor">#</span> 1.4 Legal-awareness note for India (IT Act 2000)</h3>
+        <div class="topic-split-grid">
+          <div class="en-box">
+            <p class="body-p">In India, cybersecurity operations and cyber offences are governed primarily by the <strong>Information Technology Act, 2000 (amended 2008)</strong>, alongside the <strong>Digital Personal Data Protection (DPDP) Act, 2025</strong> and CERT-In cybersecurity directives. Key legal statutes include:</p>
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>IT Act Section</th>
+                  <th>Offence &amp; Legal Description</th>
+                  <th>Maximum Statutory Penalty</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Section 43</strong></td>
+                  <td>Unauthorized access, downloading, extraction of data, introduction of computer contaminants or virus</td>
+                  <td>Civil damages up to &rupee;1 Crore paid to the affected person/entity</td>
+                </tr>
+                <tr>
+                  <td><strong>Section 65</strong></td>
+                  <td>Tampering with computer source code / source documents</td>
+                  <td>Imprisonment up to 3 years and/or fine up to &rupee;2 Lakh</td>
+                </tr>
+                <tr>
+                  <td><strong>Section 66</strong></td>
+                  <td>Dishonest or fraudulent computer-related offences (Hacking / unauthorized access with intent)</td>
+                  <td>Rigorous imprisonment up to 3 years and/or fine up to &rupee;5 Lakh</td>
+                </tr>
+                <tr>
+                  <td><strong>Section 66B</strong></td>
+                  <td>Dishonestly receiving stolen computer resource or communication device</td>
+                  <td>Imprisonment up to 3 years and/or fine up to &rupee;1 Lakh</td>
+                </tr>
+                <tr>
+                  <td><strong>Section 66C</strong></td>
+                  <td>Identity theft (fraudulent use of electronic signature, password, or unique identification feature)</td>
+                  <td>Imprisonment up to 3 years and/or fine up to &rupee;1 Lakh</td>
+                </tr>
+                <tr>
+                  <td><strong>Section 66D</strong></td>
+                  <td>Cheating by personation using computer resource (phishing, impersonation)</td>
+                  <td>Imprisonment up to 3 years and/or fine up to &rupee;1 Lakh</td>
+                </tr>
+                <tr>
+                  <td><strong>Section 66E</strong></td>
+                  <td>Violation of privacy (capturing, publishing, transmitting images of private area without consent)</td>
+                  <td>Imprisonment up to 3 years and/or fine up to &rupee;2 Lakh</td>
+                </tr>
+                <tr>
+                  <td><strong>Section 66F</strong></td>
+                  <td>Cyber Terrorism (acts threatening unity, integrity, security of nation, or denial of access to critical infrastructure)</td>
+                  <td><strong>Imprisonment for Life</strong> (Non-bailable)</td>
+                </tr>
+                <tr>
+                  <td><strong>Section 70</strong></td>
+                  <td>Unauthorized access to declared <strong>Critical Information Infrastructure (CII)</strong></td>
+                  <td>Imprisonment up to <strong>10 Years</strong> and mandatory fine</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="body-p"><strong>CERT-In 6-Hour Reporting Mandate:</strong> Under the Indian Computer Emergency Response Team (CERT-In) cybersecurity directions, all corporate entities, service providers, intermediaries, and data centers must report mandatory cybersecurity incidents within <strong>6 hours</strong> of detection.</p>
+          </div>
+          <div class="hi-box">
+            <div class="mukul-card">
+              <div class="mukul-card-header"><span>🇮🇳</span> FOR BKL Mukul Explains · 1.4 Indian IT Act 2000 Ki Saari Dharayein (Exam Matrix)</div>
+              <p class="body-p">Bhai Mukul, DU ke semester paper me 5-mark aur 10-mark ka direct sawal aata hai: <em>'Explain Indian cyber laws related to ethical hacking and unauthorized access.'</em> Is table ko ghol ke pee jao:</p>
+              
+              <table class="styled-table">
+                <thead>
+                  <tr>
+                    <th>IT Act Dhara (Section)</th>
+                    <th>Jurm / Offence (Simple Hindi)</th>
+                    <th>Kanooni Saza (Maximum Penalty)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Section 43</strong></td>
+                    <td>Bina permission kisi ke computer me ghusna, data copy karna, ya virus daalna</td>
+                    <td>Civil fine (&rupee;1 Crore tak ka compensation)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Section 65</strong></td>
+                    <td>Source code ya programming files ke sath chhed-chhaad karna</td>
+                    <td>3 saal jail aur/ya &rupee;2 Lakh fine</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Section 66</strong></td>
+                    <td>Galat irade se computer hack karna ya data chori karna (Hacking)</td>
+                    <td>3 saal rigorous jail aur/ya &rupee;5 Lakh fine</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Section 66C</strong></td>
+                    <td>Identity theft—kisi aur ka password, token, ya digital sign use karna</td>
+                    <td>3 saal jail aur &rupee;1 Lakh fine</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Section 66D</strong></td>
+                    <td>Nakli identity banake fraud karna (Phishing scams)</td>
+                    <td>3 saal jail aur &rupee;1 Lakh fine</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Section 66F</strong></td>
+                    <td><strong>Cyber Terrorism:</strong> Desh ki security ya critical infrastructure pe hamla</td>
+                    <td><strong>Umr Qaid (Life Imprisonment)</strong> — Bail bhi nahi milti!</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Section 70</strong></td>
+                    <td><strong>Critical Information Infrastructure (CII):</strong> Nuclear, Railway, Power grid hack karna</td>
+                    <td><strong>10 Saal Ki Jail</strong> aur fine</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="mukul-card-example">
+                <strong>🚨 CERT-In Ka 6-Ghante Wala Rule:</strong>
+                India ki cyber agency <strong>CERT-In</strong> ka strict rule hai: agar kisi company ya college server pe cyber attack ya data breach hua, toh unhe <strong>6 ghante ke andar</strong> government ko official report deni padti hai!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- § 2. Fundamentals of Ethical Hacking & Hacker Taxonomy -->
+      <h2 id="s-2-unit-1-fundamentals-of-ethical-hacking" class="section-h2"><span class="h-anchor">§</span> 2. Fundamentals of Ethical Hacking &amp; Hacker Taxonomy</h2>
+
+      <!-- 2.1 -->
+      <div class="topic-container" id="sec-2-1">
+        <h3 id="s-2-1-definition-scope-and-importance" class="section-h3"><span class="h-anchor">#</span> 2.1 Definition, scope, and importance</h3>
+        <div class="topic-split-grid">
+          <div class="en-box">
+            <p class="body-p"><strong>Ethical Hacking</strong> is the authorized, structured application of adversarial methodologies, tools, and mindsets to evaluate the security posture of an information system, uncover vulnerabilities, and assist defenders in remediation prior to exploitation by malicious actors.</p>
+            <p class="body-p">It is formally differentiated from related disciplines through the following comparative operational criteria:</p>
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Evaluation Discipline</th>
+                  <th>Primary Objective</th>
+                  <th>Methodological Scope</th>
+                  <th>Exploitation Conducted?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Vulnerability Assessment (VA)</strong></td>
+                  <td>Catalog and score all detectable vulnerabilities across target infrastructure</td>
+                  <td>Automated scanning (Nessus, OpenVAS, Qualys)</td>
+                  <td>No (Passive detection only)</td>
+                </tr>
+                <tr>
+                  <td><strong>Penetration Testing (PT)</strong></td>
+                  <td>Prove real-world exploitability and business impact of identified flaws</td>
+                  <td>Goal-oriented manual &amp; automated exploit chaining</td>
+                  <td><strong>Yes</strong> (Controlled verification)</td>
+                </tr>
+                <tr>
+                  <td><strong>Security Auditing</strong></td>
+                  <td>Verify regulatory compliance against established standards (ISO 27001, PCI-DSS)</td>
+                  <td>Policy inspection, configuration audits, interview reviews</td>
+                  <td>No (Checklist and config verification)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="hi-box">
+            <div class="mukul-card">
+              <div class="mukul-card-header"><span>🇮🇳</span> FOR BKL Mukul Explains · 2.1 Ethical Hacking vs VA vs PT vs Audit</div>
+              <p class="body-p">Bhai Mukul, viva me examiner sabse pehle yahi poochta hai: <em>'Vulnerability Assessment aur Penetration Testing me kya difference hai?'</em> Iska seedha funda dekh:</p>
+              <ul class="styled-list">
+                <li><strong>Vulnerability Assessment (VA):</strong> List banana ki ghar me kahan kahan kamzori hai. Jaise scanner chala ke bol diya ki 'Khidki khuli hai, piche ka taala purana hai'. Yahan koi chori karke nahi dikhata, sirf kamzoriyan ginayi jaati hain.</li>
+                <li><strong>Penetration Testing (PT):</strong> Asli action! Us khuli khidki se andar ghus ke dikhana ki 'Dekho, main tumhare drawing room tak pahunch gaya'. Flaw ko actively exploit karke prove karna ki hacker kaise nuksan pahuncha sakta hai.</li>
+                <li><strong>Security Audit:</strong> Inspector jo aake checklist match karta hai ki 'Society ke rules ke hisaab se fire extinguisher laga hai ya nahi'.</li>
+              </ul>
+              <div class="mukul-card-example">
+                <strong>💡 Health Checkup Analogy:</strong>
+                VA blood test report hai (jisme cholesterol high likha hai). PT heart attack ka actual stress test hai jisme doctor treadmill pe dauda ke dekhta hai ki dil sach me fail hoga ya nahi!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2.2 -->
+      <div class="topic-container" id="sec-2-2">
+        <h3 id="s-2-2-hacker-categories" class="section-h3"><span class="h-anchor">#</span> 2.2 Hacker categories</h3>
+        <div class="topic-split-grid">
+          <div class="en-box">
+            <p class="body-p">The cybersecurity domain categorizes threat actors and researchers across seven distinct classifications based on <strong>intent</strong>, <strong>authorization</strong>, and <strong>operational posture</strong>:</p>
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Hacker Category</th>
+                  <th>Primary Motivation</th>
+                  <th>Authorization Level</th>
+                  <th>Legal Classification</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>White Hat</strong></td>
+                  <td>Defensive security improvement, risk remediation</td>
+                  <td>Explicit written owner permission</td>
+                  <td>Fully Lawful</td>
+                </tr>
+                <tr>
+                  <td><strong>Black Hat</strong></td>
+                  <td>Personal financial gain, extortion, sabotage, corporate espionage</td>
+                  <td>Zero authorization</td>
+                  <td>Criminal under IT Act &amp; IPC</td>
+                </tr>
+                <tr>
+                  <td><strong>Grey Hat</strong></td>
+                  <td>Curiosity, public disclosure, personal recognition</td>
+                  <td>Absent or ambiguous permission</td>
+                  <td>Unlawful (Trespass occurs regardless of benign intent)</td>
+                </tr>
+                <tr>
+                  <td><strong>Script Kiddie</strong></td>
+                  <td>Notoriety, peer recognition, casual vandalism</td>
+                  <td>Zero authorization</td>
+                  <td>Unlawful (Relies on pre-packaged tools without comprehension)</td>
+                </tr>
+                <tr>
+                  <td><strong>Hacktivist</strong></td>
+                  <td>Political, social, or ideological messaging</td>
+                  <td>Zero authorization</td>
+                  <td>Criminal (Defacement, DDoS, public document leaks)</td>
+                </tr>
+                <tr>
+                  <td><strong>State-Sponsored (APT)</strong></td>
+                  <td>Geopolitical intelligence gathering, critical infrastructure sabotage</td>
+                  <td>Nation-state authorization (Foreign adversary)</td>
+                  <td>Classified Espionage / Act of Cyber Warfare</td>
+                </tr>
+                <tr>
+                  <td><strong>Malicious Insider</strong></td>
+                  <td>Revenge, financial bribery, corporate espionage</td>
+                  <td>Legitimate internal access abused beyond scope</td>
+                  <td>Criminal Breach of Trust &amp; Corporate Fraud</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="hi-box">
+            <div class="mukul-card">
+              <div class="mukul-card-header"><span>🇮🇳</span> FOR BKL Mukul Explains · 2.2 Hacker Ke 7 Avataar (Classification Matrix)</div>
+              <p class="body-p">Bhai cinema me sabko khali hacker bolte hain, par exam me examiner 7 alag categories maangta hai:</p>
+              <ul class="styled-list">
+                <li><strong>1. White Hat (Doodh Ka Dhula):</strong> Ethical hacker jo company ki permission leke security theek karta hai aur mahine ki moti salary leta hai.</li>
+                <li><strong>2. Black Hat (Kala Saanp):</strong> Criminal hacker jo ransomware daalta hai, bank account khaali karta hai, aur police se bhagta firta hai.</li>
+                <li><strong>3. Grey Hat (Dogle Hacker):</strong> Bina permission doosre ki website hack karke bolta hai 'Bhai maine teri site hack kar li, mujhe reward de warna leak kar dunga'. Niyat achhi ho tab bhi kanoon ki nazar me criminal hai!</li>
+                <li><strong>4. Script Kiddie (Chhapri Hacker):</strong> Jisko networking ka N nahi pata, par YouTube dekh ke LOIC ya GitHub se script download karke DDoS attack maar deta hai. Pakde sabse pehle yahi jaate hain!</li>
+                <li><strong>5. Hacktivist:</strong> Kisi political party ya protest ke liye website deface karne wale (jaise Anonymous group).</li>
+                <li><strong>6. State-Sponsored (APT):</strong> Doosre desh ki sarkar dwara funded hackers jo military ya power grid pe attack karte hain.</li>
+                <li><strong>7. Malicious Insider (Ghar Ka Bhedi):</strong> Company ka naraaz employee jo resign karne se pehle sara data pendrive me daal ke le jaye!</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2.3 -->
+      <div class="topic-container" id="sec-2-3">
+        <h3 id="s-2-3-ethical-hacking-lifecycle" class="section-h3"><span class="h-anchor">#</span> 2.3 Ethical hacking lifecycle</h3>
+        <div class="topic-split-grid">
+          <div class="en-box">
+            <p class="body-p">Every rigorous ethical hacking engagement proceeds across a disciplined 5-phase operational lifecycle derived from the CEH and NIST SP 800-115 frameworks:</p>
+            <ol class="styled-list">
+              <li><strong>Phase 1 — Reconnaissance (Footprinting):</strong> Gathering intelligence regarding the target system via passive sources (WHOIS, OSINT, DNS records, LinkedIn) and active interaction without alerting defenders.</li>
+              <li><strong>Phase 2 — Scanning &amp; Enumeration:</strong> Mapping live hosts, discovering open TCP/UDP ports, identifying service versions, and enumerating OS fingerprints and user accounts using tools such as Nmap and Masscan.</li>
+              <li><strong>Phase 3 — Gaining Access (Exploitation):</strong> Leveraging identified vulnerabilities to breach the target boundary, achieve remote command execution, or obtain an initial foothold using Metasploit, web exploit payloads, or misconfiguration abuse.</li>
+              <li><strong>Phase 4 — Maintaining Access (Post-Exploitation):</strong> Assessing potential persistence by simulating backdoors, privilege escalation to root/SYSTEM, and internal lateral movement while maintaining strict non-destructive constraints.</li>
+              <li><strong>Phase 5 — Analysis &amp; Clearing Tracks (Reporting):</strong> In an ethical context, practitioner logs are preserved, temporary test artifacts/shells are cleaned, and a comprehensive remediation report is delivered to leadership.</li>
+            </ol>
+          </div>
+          <div class="hi-box">
+            <div class="mukul-card">
+              <div class="mukul-card-header"><span>🇮🇳</span> FOR BKL Mukul Explains · 2.3 Hacking Ke 5 Phases Ka Step-by-Step Flow</div>
+              <p class="body-p">Yeh 10-mark ka standard university question hai! 5 steps ka diagram banao aur explanation likho:</p>
+              <ol class="styled-list">
+                <li><strong>Phase 1: Reconnaissance (Jaasoosi / Footprinting):</strong> Target ke baare me info jama karna. Shuruat passive reconnaissance se hoti hai (Google Dorking, LinkedIn, WHOIS) jisme target ko pata bhi nahi chalta ki use koi dekh raha hai.</li>
+                <li><strong>Phase 2: Scanning &amp; Enumeration (Darwaze Ginna):</strong> Nmap chala ke dekhna ki kaun kaun se ports khule hain (Port 80 HTTP, Port 22 SSH) aur unpe kaun sa software chal raha hai (Apache 2.4.49).</li>
+                <li><strong>Phase 3: Gaining Access (Ghar Me Ghusna / Exploitation):</strong> Kamzori milte hi Metasploit ya exploit code se system ke andar ghus jana aur command prompt (shell) lena.</li>
+                <li><strong>Phase 4: Maintaining Access (Tik Ke Rehna):</strong> Backdoor ya persistence banana taaki agar server restart bhi ho jaye toh connection na toote. Normal user se Root/Administrator banna (Privilege Escalation).</li>
+                <li><strong>Phase 5: Clearing Tracks &amp; Reporting (Kachra Saaf Karna &amp; Report Dena):</strong> Black Hat hacker logs delete karta hai taaki pakda na jaye. Par Ethical Hacker apne saare temporary shells delete karta hai, client ko poori audit report deta hai, aur batata hai ki ise theek kaise karein!</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- § 3. Methodology, Tools & Vulnerabilities -->
+      <h2 id="s-3-methodology-tools-and-vulnerabilities" class="section-h2"><span class="h-anchor">§</span> 3. Methodology, Tools &amp; Vulnerabilities</h2>
+
+      <!-- 3.1 -->
+      <div class="topic-container" id="sec-3-1">
+        <h3 id="s-3-1-reconnaissance-scanning-and-enumeration" class="section-h3"><span class="h-anchor">#</span> 3.1 Reconnaissance, scanning, and enumeration</h3>
+        <div class="topic-split-grid">
+          <div class="en-box">
+            <p class="body-p"><strong>Reconnaissance and Scanning</strong> form the technical foundation of all security assessments. The methodology transitions systematically from passive discovery to active protocol interaction:</p>
+            <ul class="styled-list">
+              <li><strong>Passive Reconnaissance (OSINT):</strong> Interrogating public registers without sending a single packet to the target. Techniques include WHOIS queries, BGP routing analysis, DNS harvesting via <code>sublist3r</code> or <code>amass</code>, and Google Dorking (e.g. <code>site:target.com filetype:env DB_PASSWORD</code>).</li>
+              <li><strong>Active Scanning Mechanics (Nmap):</strong> Probing network interfaces directly to analyze TCP flag responses:
+                <br>• <em>TCP SYN Stealth Scan (<code>-sS</code>):</em> Sends a SYN packet; receives SYN-ACK for open ports, then immediately responds with RST to teardown connection before completion, avoiding application-level logging.
+                <br>• <em>Service Version Detection (<code>-sV</code>):</em> Connects to open ports and executes protocol probes to extract software banner banners.
+                <br>• <em>OS Fingerprinting (<code>-O</code>):</em> Evaluates TCP ISN unpredictability, IP ID sequencing, and TCP window size algorithms against Nmap's OS database.
+              </li>
+            </ul>
+            <div class="terminal-block">
+              <div class="terminal-header">nmap_production_scan.sh</div>
+              <pre><code># Comprehensive authorized reconnaissance scan:
+# -sS: Stealth SYN Scan | -sV: Service Versions | -sC: Default Safe Scripts
+# -O: OS Detection | -p-: Scan all 65535 ports | -T4: Aggressive timing
+nmap -sS -sV -sC -O -T4 -p- -oA target_audit_report 192.168.1.100</code></pre>
+            </div>
+          </div>
+          <div class="hi-box">
+            <div class="mukul-card">
+              <div class="mukul-card-header"><span>🇮🇳</span> FOR BKL Mukul Explains · 3.1 Nmap Scanning Flags Ka Poora Kacha-Chittha</div>
+              <p class="body-p">Nmap security ka God tool hai! Practical lab exam aur viva me examiner terminal pe Nmap ke flags poochta hai:</p>
+              <ul class="styled-list">
+                <li><strong>Passive Recon (Google Dorking):</strong> Target ki website ko chhue bina Google se uski confidential files nikaalna: <code>site:college.edu filetype:pdf "internal marks"</code>.</li>
+                <li><strong>Nmap SYN Stealth Scan (<code>-sS</code>):</strong> Yeh half-open scan hota hai! SYN packet bhejta hai, server se SYN-ACK aata hai, toh handshake poora karne ke badle turant RST (Reset) bhej deta hai. Connection banti hi nahi, isliye server ke web log me entry nahi aati!</li>
+                <li><strong>Version Detection (<code>-sV</code>):</strong> Port khula milne ke baad poochta hai 'Kaun sa version chal raha hai?' (e.g., Apache 2.4.49 ya OpenSSH 8.2).</li>
+                <li><strong>Default Script Scan (<code>-sC</code>):</strong> Nmap Scripting Engine (NSE) ke safe scripts chala ke vulnerable configuration dhoondhna.</li>
+              </ul>
+              <div class="terminal-block">
+                <div class="terminal-header">nmap_mukul_cheatsheet.sh</div>
+                <pre><code># Viva Me Examiner Ko Yeh Command Batao:
+# -sS = Stealth SYN Scan (Sabse popular)
+# -sV = Software version batayega
+# -sC = Safe NSE scripts run karega
+# -O  = Operating System (Linux vs Windows) batayega
+# -p- = 1 se 65535 tak saare ports scan karega
+nmap -sS -sV -sC -O -p- 192.168.1.100</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3.2 -->
+      <div class="topic-container" id="sec-3-2">
+        <h3 id="s-3-2-core-tools" class="section-h3"><span class="h-anchor">#</span> 3.2 Core tools</h3>
+        <div class="topic-split-grid">
+          <div class="en-box">
+            <p class="body-p">An ethical hacker relies on a specialized ecosystem of audited security tools within Linux distribution environments (Kali Linux, Parrot OS). The core toolkit matrix includes:</p>
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Tool Name</th>
+                  <th>Primary Classification</th>
+                  <th>Core Functional Capabilities</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Nmap</strong></td>
+                  <td>Network Mapper &amp; Port Scanner</td>
+                  <td>Host discovery, service banner enumeration, OS fingerprinting, NSE script auditing</td>
+                </tr>
+                <tr>
+                  <td><strong>Wireshark</strong></td>
+                  <td>Network Protocol Packet Analyzer</td>
+                  <td>Deep packet inspection (DPI), promiscuous mode sniffing, protocol decoding, PCAP analysis</td>
+                </tr>
+                <tr>
+                  <td><strong>Burp Suite</strong></td>
+                  <td>Web Application Security Proxy</td>
+                  <td>HTTP/S traffic interception, automated fuzzing, CSRF/XSS testing, Repeater payload manipulation</td>
+                </tr>
+                <tr>
+                  <td><strong>Metasploit Framework</strong></td>
+                  <td>Modular Exploitation Platform</td>
+                  <td>Vulnerability validation, proof-of-concept exploit delivery, Meterpreter payloads, post-exploitation</td>
+                </tr>
+                <tr>
+                  <td><strong>Nikto</strong></td>
+                  <td>Web Server Vulnerability Scanner</td>
+                  <td>Detection of dangerous CGI scripts, outdated web server software, insecure HTTP headers</td>
+                </tr>
+                <tr>
+                  <td><strong>John the Ripper / Hashcat</strong></td>
+                  <td>Offline Cryptographic Hash Cracker</td>
+                  <td>Rule-based dictionary attacks, GPU-accelerated brute forcing of MD5, SHA, bcrypt, NTLM hashes</td>
+                </tr>
+                <tr>
+                  <td><strong>Aircrack-ng Suite</strong></td>
+                  <td>802.11 Wireless Security Suite</td>
+                  <td>Monitor mode frame capture (airodump-ng), deauth injection (aireplay-ng), WPA2 4-way handshake cracking</td>
+                </tr>
+                <tr>
+                  <td><strong>OWASP ZAP</strong></td>
+                  <td>Open-Source Web Scanner</td>
+                  <td>Automated web crawler, active/passive vulnerability scanner, API security tester</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="hi-box">
+            <div class="mukul-card">
+              <div class="mukul-card-header"><span>🇮🇳</span> FOR BKL Mukul Explains · 3.2 Kali Linux Ke 8 Mahabali Tools</div>
+              <p class="body-p">Kali Linux me 600+ tools hote hain, par examiner viva me inhi 8 tools ke functions poochta hai:</p>
+              <table class="styled-table">
+                <thead>
+                  <tr>
+                    <th>Tool Ka Naam</th>
+                    <th>Asli Kaam (Simple Hindi)</th>
+                    <th>Kab Use Hota Hai</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Nmap</strong></td>
+                    <td>Network ke saare darwaze (ports) aur OS dhoondhta hai</td>
+                    <td>Phase 2 (Scanning &amp; Enumeration)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Wireshark</strong></td>
+                    <td>Network wire pe passing packets ko live capture aur decode karta hai</td>
+                    <td>Packet Sniffing &amp; Forensics</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Burp Suite</strong></td>
+                    <td>Browser aur server ke beech me baith kar HTTP requests modify karta hai</td>
+                    <td>Web App Security (SQLi, XSS)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Metasploit</strong></td>
+                    <td>Bana-banaya exploit payload target system pe deliver karta hai</td>
+                    <td>Phase 3 (Exploitation)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Nikto</strong></td>
+                    <td>Web server pe outdated files aur bad configuration scan karta hai</td>
+                    <td>Web Server Auditing</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Hashcat / John</strong></td>
+                    <td>Leaked passwords ke cryptographic hashes ko brute force karke crack karta hai</td>
+                    <td>Password Auditing</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Aircrack-ng</strong></td>
+                    <td>Wi-Fi packets capture karke WPA2 4-way handshake crack karta hai</td>
+                    <td>Wireless Security Testing</td>
+                  </tr>
+                  <tr>
+                    <td><strong>OWASP ZAP</strong></td>
+                    <td>Free open-source web application scanner jo auto-spidering karta hai</td>
+                    <td>Automated Web Scanning</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3.3 -->
+      <div class="topic-container" id="sec-3-3">
+        <h3 id="s-3-3-vulnerability-exploit-payload-risk-and-impact" class="section-h3"><span class="h-anchor">#</span> 3.3 Vulnerability, exploit, payload, risk, and impact</h3>
+        <div class="topic-split-grid">
+          <div class="en-box">
+            <p class="body-p">Precision in terminology is essential for accurate risk scoring and exam success. Evaluators strictly differentiate between these four interconnected concepts:</p>
+            <ul class="styled-list">
+              <li><strong>Vulnerability:</strong> A flaw, misconfiguration, or weakness in system software, architecture, or design that can be inadvertently or intentionally triggered (e.g. unpatched Apache CVE-2021-41773 directory traversal).</li>
+              <li><strong>Exploit:</strong> A concrete sequence of commands, custom code, or scripted inputs specifically engineered to leverage a known vulnerability and alter system execution flow.</li>
+              <li><strong>Payload:</strong> The functional software component delivered to the target host after successful exploit execution (e.g. reverse TCP shell, credential harvester, Meterpreter agent).</li>
+              <li><strong>Zero-Day (0-Day):</strong> A vulnerability unknown to the software vendor with zero official security patches available, leaving systems exposed to unmitigated attacks until identified.</li>
+              <li><strong>Risk Calculation Formula:</strong> The standard cybersecurity risk equation is quantified as:
+                <br>$$\text{Risk} = \text{Threat} \times \text{Vulnerability} \times \text{Impact}$$
+              </li>
+            </ul>
+          </div>
+          <div class="hi-box">
+            <div class="mukul-card">
+              <div class="mukul-card-header"><span>🇮🇳</span> FOR BKL Mukul Explains · 3.3 Vulnerability, Exploit aur Payload Ka Farak</div>
+              <p class="body-p">Bhai Mukul, aksar log Vulnerability aur Exploit ko ek samajh lete hain, aur examiner viva me zero de deta hai! Yeh desi missile analogy hamesha yaad rakhna:</p>
+              <div class="mukul-card-example">
+                <strong>🚀 Asli Missile Analogy:</strong>
+                <br>• <strong>Vulnerability (Kamzori):</strong> Dushman ke kile ki deewar me ek chhed hai (Flaw/Bug).
+                <br>• <strong>Exploit (Delivery Rocket):</strong> Woh rocket jisko us chhed ke size ke hisaab se design kiya gaya hai taaki woh chhed ke andar ghus sake (The mechanism that breaks through).
+                <br>• <strong>Payload (Warhead / Bomb):</strong> Rocket ke aage laga bomb! Rocket ka kaam tha sirf andar ghusna; andar phat ke command shell dena ya password churana payload ka kaam hai!
+                <br>• <strong>Zero-Day:</strong> Aisa chhed jiska kile ke maalik ko pata hi nahi hai aur na hi use theek karne ke liye cement (patch) available hai!
+                <br>• <strong>Risk Formula:</strong> $\text{Risk} = \text{Khatra} \times \text{Kamzori} \times \text{Nuksan}$. Agar server internet pe nahi hai, toh vulnerability hone ke baad bhi risk kam ho jata hai!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3.4 -->
+      <div class="topic-container" id="sec-3-4">
+        <h3 id="s-3-4-reporting-a-finding" class="section-h3"><span class="h-anchor">#</span> 3.4 Reporting a finding</h3>
+        <div class="topic-split-grid">
+          <div class="en-box">
+            <p class="body-p">The deliverable of every professional assessment is the <strong>Vulnerability Remediation Report</strong>. It bridges technical vulnerabilities with business risk. A standard report contains:</p>
+            <ol class="styled-list">
+              <li><strong>Executive Summary:</strong> High-level risk summary written for corporate leadership without technical jargon, highlighting business operational impact.</li>
+              <li><strong>Vulnerability Classification &amp; CVSS v3.1 Scoring:</strong> Severity rating based on Common Vulnerability Scoring System (Base, Temporal, Environmental metrics).</li>
+              <li><strong>Reproduction Steps (Proof of Concept):</strong> Complete, deterministic walkthrough enabling developers to replicate the issue safely.</li>
+              <li><strong>Actionable Remediation Guidance:</strong> Concrete mitigation instructions (e.g. configuration changes, code patches, firewall rules) rather than generic advice.</li>
+            </ol>
+          </div>
+          <div class="hi-box">
+            <div class="mukul-card">
+              <div class="mukul-card-header"><span>🇮🇳</span> FOR BKL Mukul Explains · 3.4 Professional Pentest Report Kaise Banate Hain</div>
+              <p class="body-p">Pentest me hacking 30% hoti hai, aur 70% kaam hota hai audit report banana. Company tumhe report ke hi paise deti hai:</p>
+              <ul class="styled-list">
+                <li><strong>1. Executive Summary:</strong> CEO aur Director ke liye aasan bhasha me summary—'Aapke server me SQL Injection mila hai jisse customer ke credit card chori ho sakte hain'.</li>
+                <li><strong>2. CVSS Score:</strong> 0.1 se 10.0 tak ka scale. Agar score 9.8 hai toh Critical hai, turant patch chahiye!</li>
+                <li><strong>3. Step-by-Step PoC:</strong> Developer ko dikhana ki maine <code>curl</code> ya <code>Burp Suite</code> se kaise exploit kiya taaki woh khud verify kar sake.</li>
+                <li><strong>4. Remediation Fix:</strong> Khali galti mat batao; yeh bhi likho ki 'Code me Parameterized Query lagao' ya 'Apache version 2.4.52 me upgrade karo'.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3.5 -->
+      <div class="topic-container" id="sec-3-5">
+        <h3 id="s-3-5-unit-1-quick-check" class="section-h3"><span class="h-anchor">#</span> 3.5 Unit 1 - Quick check</h3>
+        <div class="topic-split-grid">
+          <div class="en-box">
+            <p class="body-p"><strong>Unit 1 University Examination Blueprint:</strong> Verify your preparation across these four high-frequency exam questions:</p>
+            <div class="callout callout-tip">
+              <div class="callout-title">Core 10-Mark &amp; 5-Mark Questions</div>
+              <ul class="styled-list">
+                <li><strong>Q1 (10 Marks):</strong> Detail the 5 phases of the ethical hacking lifecycle. Contrast passive and active reconnaissance with examples of tools used in each phase.</li>
+                <li><strong>Q2 (10 Marks):</strong> Analyze the Indian legal framework governing cyber offences. Explain Sections 43, 65, 66, 66F, and 70 of the IT Act 2000. What is CERT-In's incident reporting window?</li>
+                <li><strong>Q3 (5 Marks):</strong> Differentiate between Vulnerability Assessment (VA) and Penetration Testing (PT). Detail four core parameters comparing scope, tooling, and business impact.</li>
+                <li><strong>Q4 (5 Marks):</strong> Differentiate between Vulnerability, Exploit, and Payload. State the cybersecurity risk formula.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="hi-box">
+            <div class="mukul-card">
+              <div class="mukul-card-header"><span>🇮🇳</span> FOR BKL Mukul Explains · 3.5 Unit 1 Master Exam Blueprint &amp; Viva Tips</div>
+              <p class="body-p">Unit 1 me examiner ke favourite 4 sawal hain. Inke points ready rakhna:</p>
+              <div class="mukul-card-example">
+                <strong>🎯 Viva Me Examiner Ko Khush Karne Ke Tips:</strong>
+                <br>• IT Act me <strong>Section 66F</strong> (Cyber Terrorism) aur <strong>Section 70</strong> (Critical Infrastructure) zaroor bolna, examiner turant impress ho jata hai!
+                <br>• VA aur PT ke difference me bolna ki VA scanning hai aur PT active exploitation hai.
+                <br>• Nmap ke flags me <code>-sS</code> ka matlab SYN Stealth Scan aur <code>-sV</code> ka matlab Version Detection batana.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="chapter-divider">
+    </div>
+
+    <div class="chapter-nav-bottom">
+      <a href="ch00-syllabus-guide.html" class="chapter-nav-btn prev-btn">&larr; Prev: Ch 0 Syllabus &amp; Blueprint</a>
+      <a href="ch02-network-system-security.html" class="chapter-nav-btn next-btn">Next: Ch 2 Network Security &rarr;</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="chapter-content-container" style="padding-top:1.5rem; padding-bottom:1.5rem; text-align:center; color:var(--tx-muted); font-size:0.85rem; border-top:1px solid var(--bd-subtle);">
+    <span style="color:var(--em-accent-text); font-weight:700;">Ethical Hacking MiniBook</span> · University of Delhi B.Tech CSE · Pitch Black &amp; Archival Paper Themes.
+  </div>
+</footer>
+
+<script src="../assets/js/state.js"></script>
+<script src="../assets/js/core.js"></script>
+<script>
+function switchChapterMode(mode) {
+  const container = document.getElementById('chapter-content-body');
+  if (!container) return;
+  container.classList.remove('view-mode-en', 'view-mode-hi', 'view-mode-dual');
+  container.classList.add('view-mode-' + mode);
+  
+  document.querySelectorAll('.mukul-pill').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-mode') === mode);
+  });
+
+  try {
+    localStorage.setItem('minibook_ch01_view_mode', mode);
+  } catch(e) {}
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const saved = localStorage.getItem('minibook_ch01_view_mode');
+  if (saved && ['en', 'hi', 'dual'].includes(saved)) {
+    switchChapterMode(saved);
+  } else {
+    switchChapterMode('en');
+  }
+});
+</script>
+</body>
+</html>

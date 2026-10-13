@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<!-- ⚡ Arpit | Ethical Hacking MiniBook 2026 | University of Delhi -->
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="Arpit"><meta name="description" content="Ch 5: Practical Lab Workbook (All 7 Experiments) — Ethical Hacking and Advanced Cybersecurity MiniBook, University of Delhi B.Tech CSE.">
+<title>Ch 5: Practical Lab Workbook (All 7 Experiments) | Ethical Hacking MiniBook 🛡️</title>
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/animations.css">
+<link rel="stylesheet" href="../assets/css/chapters.css">
+<link rel="stylesheet" href="../assets/css/timer.css">
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<!-- HEADER -->
+<header id="main-header">
+  <div class="header-left">
+    <button id="sidebar-toggle" class="icon-btn" title="Toggle Sidebar (S)" aria-label="Toggle Navigation">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="brand-logo">
+      <div class="brand-icon">🛡️</div>
+      <div class="brand-text">
+        <span class="main">Ethical Hacking</span>
+        <span class="sub">University of Delhi · B.Tech CSE</span>
+      </div>
+    </div>
+  </div>
+
+  <span class="header-chapter-title">Ch 5: Practical Lab Workbook (All 7 Experiments)</span>
+
+  <div class="header-right">
+    <button id="search-btn" class="icon-btn" title="Search (Ctrl+K)" aria-label="Search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    </button>
+    <button id="print-btn" title="Print to Clean PDF (Ctrl+P)" aria-label="Print">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      <span class="print-label">PDF</span>
+    </button>
+    <button id="reading-mode-btn" class="icon-btn" title="Reading Focus Mode (F)" aria-label="Reading Mode">📖</button>
+    <button id="theme-toggle" class="icon-btn" title="Toggle Theme (T)" aria-label="Theme"></button>
+  </div>
+</header>
+
+<!-- SIDEBAR -->
+<div id="sidebar-overlay"></div>
+<aside id="sidebar">
+  <nav class="sidebar-nav">
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Navigation</div>
+      <a href="../index.html" class="sidebar-link"><span class="link-icon">🏠</span>Home Portal</a>
+      <a href="../quick-learn.html" class="sidebar-link"><span class="link-icon">⚡</span>Quick Learn</a>
+      <a href="../last-minute.html" class="sidebar-link"><span class="link-icon">⏱️</span>Last-Minute Cram</a>
+      <a href="../activities.html" class="sidebar-link"><span class="link-icon">📁</span>Activities &amp; Solutions</a>
+      <a href="../exams/mcq-test.html" class="sidebar-link"><span class="link-icon">📝</span>MCQ Test Simulator</a>
+      <a href="../progress.html" class="sidebar-link"><span class="link-icon">📊</span>Study Dashboard</a>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Chapters</div>
+      <a href="ch00-syllabus-guide.html" class="sidebar-link"><span class="link-icon">🧭</span>Ch 0 — Syllabus &amp; Blueprint</a>
+      <a href="ch00-syllabus-guide-hinglish.html" class="sidebar-link sidebar-mukul-sublink"><span class="link-icon">🔥</span>Ch 0 · Mukul Hinglish</a>
+      <a href="ch01-fundamentals-ethics.html" class="sidebar-link "><span class="link-icon">🛡️</span>Ch 1 — Fundamentals &amp; Ethics</a>
+      <a href="ch01-fundamentals-ethics-hinglish.html" class="sidebar-link sidebar-mukul-sublink" style="color:#38bdf8;"><span class="link-icon">🔥</span>Ch 1 — Mukul Hinglish</a>
+      <a href="ch02-network-system-security.html" class="sidebar-link "><span class="link-icon">🌐</span>Ch 2 — Network &amp; Systems</a>
+      <a href="ch02-network-system-security-hinglish.html" class="sidebar-link sidebar-mukul-sublink" style="color:#38bdf8;"><span class="link-icon">🔥</span>Ch 2 — Mukul Hinglish</a>
+      <a href="ch03-web-application-security.html" class="sidebar-link "><span class="link-icon">💻</span>Ch 3 — Web Security &amp; OWASP</a>
+      <a href="ch04-advanced-cybersecurity.html" class="sidebar-link "><span class="link-icon">🔒</span>Ch 4 — Advanced Cyber &amp; Crypto</a>
+      <a href="ch05-practical-lab-workbook.html" class="sidebar-link active"><span class="link-icon">🔬</span>Ch 5 — Practical Labs (1 to 7)</a>
+    </div>
+  </nav>
+  <div class="sidebar-footer">
+    <div class="sidebar-brand-mark"><div class="mark">🛡️</div><span>Arpit · DU B.Tech CSE</span></div>
+  </div>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main id="main-content">
+  <div class="chapter-content-container">
+    
+    <div class="chapter-hero">
+      <span class="chapter-badge">Practical Component</span>
+      <h1 class="chapter-headline">Ch 5: Practical Lab Workbook (All 7 Experiments)</h1>
+      <p class="chapter-sub">Curriculum-aligned textbook study module for University of Delhi (DSE-3/GE-5).</p>
+    </div>
+
+    <nav class="toc-box"><div class="toc-title">📑 Table of Contents</div><ul class="toc-list"><li class="toc-item"><a href="#s-7-practical-workbook-seven-syllabus-experiments">7. Practical Workbook: Seven Syllabus Experiments</a></li><li class="toc-subitem"><a href="#s-lab-1-reconnaissance-using-maltego">Lab 1 - Reconnaissance using Maltego</a></li><li class="toc-subitem"><a href="#s-lab-2-ethical-hacking-lifecycle-in-a-controlled-lab">Lab 2 - Ethical hacking lifecycle in a controlled lab</a></li><li class="toc-subitem"><a href="#s-lab-3-custom-script-for-safe-sandbox-validation">Lab 3 - Custom script for safe sandbox validation</a></li><li class="toc-subitem"><a href="#s-lab-4-secure-code-analysis-for-sqli-and-xss">Lab 4 - Secure code analysis for SQLi and XSS</a></li><li class="toc-subitem"><a href="#s-lab-5-build-a-small-honeypot-and-review-logs">Lab 5 - Build a small honeypot and review logs</a></li><li class="toc-subitem"><a href="#s-lab-6-ransomware-incident-simulation-and-response">Lab 6 - Ransomware incident simulation and response</a></li><li class="toc-subitem"><a href="#s-lab-7-cloud-security-audit">Lab 7 - Cloud security audit</a></li><li class="toc-subitem"><a href="#s-practical-report-template">Practical report template</a></li><li class="toc-item"><a href="#s-aim">Aim</a></li><li class="toc-item"><a href="#s-scope-and-authorization">Scope and Authorization</a></li><li class="toc-item"><a href="#s-environment-and-tools">Environment and Tools</a></li><li class="toc-item"><a href="#s-theory-security-principle">Theory / Security Principle</a></li><li class="toc-item"><a href="#s-procedure">Procedure</a></li><li class="toc-item"><a href="#s-observations-and-evidence">Observations and Evidence</a></li><li class="toc-item"><a href="#s-result">Result</a></li><li class="toc-item"><a href="#s-risks-and-limitations">Risks and Limitations</a></li><li class="toc-item"><a href="#s-remediation-defensive-lessons">Remediation / Defensive Lessons</a></li><li class="toc-item"><a href="#s-conclusion">Conclusion</a></li></ul></nav>
+
+    <div class="chapter-body-text">
+      <h2 id="s-7-practical-workbook-seven-syllabus-experiments" class="section-h2"><span class="h-anchor">§</span> 7. Practical Workbook: Seven Syllabus Experiments</h2>
+<p class="body-p">These are proposed lab sheets aligned to the seven themes in the course PDF. Use instructor-provided instructions where they differ. Each lab should produce a brief report with scope, setup, steps, observations, evidence, limitations, and remediation.</p>
+<h3 id="s-lab-1-reconnaissance-using-maltego" class="section-h3"><span class="h-anchor">#</span> Lab 1 - Reconnaissance using Maltego</h3>
+<p class="body-p"><strong>Objective:</strong> Build a small, evidence-backed OSINT graph for a deliberately selected lab organization/domain or a synthetic case provided by the instructor.</p>
+<p class="body-p"><strong>Environment:</strong> Maltego or an equivalent relationship-mapping tool; browser; note-taking template. Use a domain owned by you, a lab domain, or a target expressly approved by the instructor.</p>
+<p class="body-p"><strong>Procedure:</strong></p>
+<ul class="styled-list">
+<li><strong>1.</strong> Write the target and authorization boundary before collecting anything.</li>
+<li><strong>2.</strong> Add the permitted seed entity (for example, your lab domain).</li>
+<li><strong>3.</strong> Run a small number of approved transforms that retrieve public DNS/domain or organization relationships.</li>
+<li><strong>4.</strong> Record each important result's source, time, and confidence.</li>
+<li><strong>5.</strong> Verify representative findings against the original source.</li>
+<li><strong>6.</strong> Mark inferred and unverified relationships as such; do not present them as facts.</li>
+<li><strong>7.</strong> Remove unnecessary personal data from screenshots and the report.</li>
+</ul>
+<p class="body-p"><strong>Deliverables:</strong> graph screenshot, evidence table, three observations, confidence/limitations, and suggested exposure-reduction steps.</p>
+<p class="body-p"><strong>Success criteria:</strong> all collection stays in scope; the graph is interpretable; claims link back to evidence; speculative relations are labelled.</p>
+<h3 id="s-lab-2-ethical-hacking-lifecycle-in-a-controlled-lab" class="section-h3"><span class="h-anchor">#</span> Lab 2 - Ethical hacking lifecycle in a controlled lab</h3>
+<p class="body-p"><strong>Objective:</strong> Observe how discovery, assessment, validation, and reporting fit together without affecting real systems.</p>
+<p class="body-p"><strong>Environment:</strong> A disposable private VM network with an instructor-approved intentionally vulnerable target. Disable bridging to external networks unless explicitly required and authorized.</p>
+<p class="body-p"><strong>Procedure:</strong></p>
+<ul class="styled-list">
+<li><strong>1.</strong> Record VM names, private IP addresses, network mode, snapshot, and test scope.</li>
+<li><strong>2.</strong> Identify which target is reachable using the lab's approved discovery method.</li>
+<li><strong>3.</strong> Enumerate only the services permitted by the worksheet.</li>
+<li><strong>4.</strong> Compare one observation with vendor or instructor-provided version/configuration information.</li>
+<li><strong>5.</strong> If the worksheet allows exploitation, use only the supplied lab exercise and a harmless validation goal; avoid destructive modules or persistence.</li>
+<li><strong>6.</strong> Collect minimal evidence and state what it proves and does not prove.</li>
+<li><strong>7.</strong> Restore the snapshot and confirm the lab is back to baseline.</li>
+</ul>
+<p class="body-p"><strong>Deliverables:</strong> scope note, high-level lifecycle diagram, findings table, and remediation/retest plan.</p>
+<p class="body-p"><strong>Safety stop:</strong> stop immediately if the traffic reaches an unexpected external host or a real system appears in scope accidentally.</p>
+<h3 id="s-lab-3-custom-script-for-safe-sandbox-validation" class="section-h3"><span class="h-anchor">#</span> Lab 3 - Custom script for safe sandbox validation</h3>
+<p class="body-p"><strong>Objective:</strong> Understand a security check by writing a small script that parses local sample data or tests a local mock service.</p>
+<p class="body-p"><strong>Suggested safe exercise:</strong> write a Python script that checks a local sample list of HTTP security headers or flags weak configuration values in a provided text/JSON fixture. Do not create a script that spreads, steals credentials, evades detection, or damages files.</p>
+<p class="body-p"><strong>Procedure:</strong></p>
+<ul class="styled-list">
+<li><strong>1.</strong> Define exactly what the script checks and what it does not check.</li>
+<li><strong>2.</strong> Use only a fixture file or an explicit localhost service.</li>
+<li><strong>3.</strong> Validate input handling and include exception handling/timeouts if the script makes local requests.</li>
+<li><strong>4.</strong> Produce a deterministic report with pass/fail/unknown states.</li>
+<li><strong>5.</strong> Test normal, missing, malformed, and unexpected input.</li>
+<li><strong>6.</strong> Include a usage note, dependencies, and sample output.</li>
+</ul>
+<p class="body-p"><strong>Example safe header-checking starter:</strong></p>
+<div class="code-block-container"><pre class="code-block"><code class="language-python">from urllib.request import Request, urlopen
+from urllib.error import URLError, HTTPError
+
+URL = &quot;http://127.0.0.1:3000/&quot;  # Replace only with your approved local lab URL.
+TIMEOUT_SECONDS = 3
+
+try:
+    request = Request(URL, method=&quot;GET&quot;, headers={&quot;User-Agent&quot;: &quot;Ethical-Hacking-Lab/1.0&quot;})
+    with urlopen(request, timeout=TIMEOUT_SECONDS) as response:
+        headers = {key.lower(): value for key, value in response.headers.items()}
+        print(f&quot;Status: {response.status}&quot;)
+        for header in (&quot;content-security-policy&quot;, &quot;x-content-type-options&quot;, &quot;referrer-policy&quot;):
+            print(f&quot;{header}: {&#x27;present&#x27; if header in headers else &#x27;missing&#x27;}&quot;)
+except HTTPError as exc:
+    print(f&quot;HTTP error returned by local lab: {exc.code}&quot;)
+except URLError as exc:
+    print(f&quot;Could not reach the local lab: {exc.reason}&quot;)</code></pre></div>
+<p class="body-p">This example is a basic observational check, not a complete security scanner. A header may be appropriate or inappropriate depending on the app; investigate rather than equating “missing” with “exploitable.”</p>
+<p class="body-p"><strong>Deliverables:</strong> source file, test cases, sample output, explanation of checks, and limitations.</p>
+<h3 id="s-lab-4-secure-code-analysis-for-sqli-and-xss" class="section-h3"><span class="h-anchor">#</span> Lab 4 - Secure code analysis for SQLi and XSS</h3>
+<p class="body-p"><strong>Objective:</strong> Identify the root cause of two common input-handling flaws and propose secure fixes.</p>
+<p class="body-p"><strong>Environment:</strong> instructor-provided sample source code or a local intentionally vulnerable training application; no production data.</p>
+<p class="body-p"><strong>Procedure:</strong></p>
+<ul class="styled-list">
+<li><strong>1.</strong> Read the route/handler and trace user input to the database query or HTML output.</li>
+<li><strong>2.</strong> For SQLi, determine whether query structure is built through string concatenation or parameterized binding.</li>
+<li><strong>3.</strong> For XSS, determine where untrusted content enters the page and whether context-appropriate encoding/sanitization is applied.</li>
+<li><strong>4.</strong> Write a minimal reproduction using only the provided training data.</li>
+<li><strong>5.</strong> Patch the code using parameterized queries and safe output handling.</li>
+<li><strong>6.</strong> Add regression tests for benign input, malformed input, and the previously vulnerable behavior.</li>
+<li><strong>7.</strong> Repeat the test and record the change in result.</li>
+</ul>
+<p class="body-p"><strong>Deliverables:</strong> vulnerable code location, explanation of data flow, before/after evidence, fix, regression test, and residual risks.</p>
+<p class="body-p"><strong>Avoid:</strong> testing real websites, harvesting records, or publishing exploit details for systems you do not own.</p>
+<h3 id="s-lab-5-build-a-small-honeypot-and-review-logs" class="section-h3"><span class="h-anchor">#</span> Lab 5 - Build a small honeypot and review logs</h3>
+<p class="body-p"><strong>Objective:</strong> Understand how a honeypot can collect signals about unsolicited or simulated connection attempts.</p>
+<p class="body-p"><strong>Environment:</strong> a disposable VM/container on an isolated host-only network; a low-interaction service or instructor-provided honeypot image. Do not expose it to the public Internet as part of this beginner exercise.</p>
+<p class="body-p"><strong>Procedure:</strong></p>
+<ul class="styled-list">
+<li><strong>1.</strong> Document the isolated network and confirm that no production credential or file is present.</li>
+<li><strong>2.</strong> Run the supplied low-interaction honeypot according to its documentation.</li>
+<li><strong>3.</strong> From a second lab VM, generate a few benign, known test events approved by the instructor.</li>
+<li><strong>4.</strong> Inspect timestamp, source address within the lab, requested service, and event type.</li>
+<li><strong>5.</strong> Separate test-generated events from unknown or background activity.</li>
+<li><strong>6.</strong> Discuss what the honeypot can detect and what it cannot infer about an actor's identity or intention.</li>
+<li><strong>7.</strong> Shut down the service and preserve only the minimal sanitized logs needed for the report.</li>
+</ul>
+<p class="body-p"><strong>Deliverables:</strong> architecture diagram, sample sanitized events, three observations, limitations, and containment notes.</p>
+<p class="body-p"><strong>Safety note:</strong> do not use real credentials, provide a route into your private network, or interact with systems that connect to the honeypot unless the activity is in scope.</p>
+<h3 id="s-lab-6-ransomware-incident-simulation-and-response" class="section-h3"><span class="h-anchor">#</span> Lab 6 - Ransomware incident simulation and response</h3>
+<p class="body-p"><strong>Objective:</strong> Practice response decisions without encrypting real files or building deployable ransomware.</p>
+<p class="body-p"><strong>Safe simulation design:</strong> use synthetic event logs or a mock incident timeline. For example, a set of harmless log entries can indicate an unusual mass rename attempt, disabled backup job, suspicious process, and a sudden spike in file modifications. The lab is about triage and response, not building malware.</p>
+<p class="body-p"><strong>Procedure:</strong></p>
+<ul class="styled-list">
+<li><strong>1.</strong> Read the scenario and identify the first reliable indicators.</li>
+<li><strong>2.</strong> Classify the incident's suspected scope and confidence level.</li>
+<li><strong>3.</strong> Decide when to isolate a simulated endpoint, disable a compromised test account, and notify the incident lead.</li>
+<li><strong>4.</strong> Identify evidence to preserve: relevant logs, timestamps, process/network records, affected asset list, and hashes of provided samples where requested.</li>
+<li><strong>5.</strong> Map containment, eradication, recovery, and communication steps.</li>
+<li><strong>6.</strong> Check backup integrity and define a safe restore validation plan.</li>
+<li><strong>7.</strong> Hold a short retrospective: which control or detection could have reduced the impact?</li>
+</ul>
+<p class="body-p"><strong>Deliverables:</strong> incident timeline, severity rationale, decision log, evidence checklist, recovery steps, and lessons learned.</p>
+<p class="body-p"><strong>Never:</strong> run ransomware on a personal computer, shared VM, real folder, or third-party system. Do not use a real encryption/deletion payload for this exercise.</p>
+<h3 id="s-lab-7-cloud-security-audit" class="section-h3"><span class="h-anchor">#</span> Lab 7 - Cloud security audit</h3>
+<p class="body-p"><strong>Objective:</strong> Review a controlled cloud training account or a supplied configuration snapshot against a short checklist.</p>
+<p class="body-p"><strong>Environment:</strong> an instructor-managed sandbox or a static policy/configuration export. Use test resources and least-privileged credentials.</p>
+<p class="body-p"><strong>Checklist:</strong></p>
+<ul class="styled-list">
+<li>Are any storage resources public without a documented need?</li>
+<li>Are identity roles broader than required?</li>
+<li>Is MFA enabled for privileged identities where supported?</li>
+<li>Are access keys, tokens, and secrets stored safely and rotated when needed?</li>
+<li>Are audit logs enabled, retained, and reviewed?</li>
+<li>Are management interfaces and inbound rules restricted?</li>
+<li>Are encryption settings and key-management responsibilities defined?</li>
+<li>Are backups protected and restoration tested?</li>
+<li>Are resources tagged with an owner and data classification?</li>
+<li>Is there a process for patching images, dependencies, and managed services?</li>
+</ul>
+<p class="body-p"><strong>Procedure:</strong> record the expected secure state; inspect each permitted setting; classify findings by evidence and impact; recommend a least-privilege fix; then validate using the sandbox or a sample configuration.</p>
+<p class="body-p"><strong>Deliverables:</strong> checklist, evidence references, risk-ranked findings, and retest plan. Avoid changing shared resources without instructor approval.</p>
+<h3 id="s-practical-report-template" class="section-h3"><span class="h-anchor">#</span> Practical report template</h3>
+<p class="body-p">Use this template for each instructor-assigned experiment:</p>
+<div class="code-block-container"><pre class="code-block"><code class="language-markdown"># Experiment: [Title]
+
+## Aim
+## Scope and Authorization
+## Environment and Tools
+## Theory / Security Principle
+## Procedure
+## Observations and Evidence
+## Result
+## Risks and Limitations
+## Remediation / Defensive Lessons
+## Conclusion</code></pre></div>
+<hr class="chapter-divider">
+    </div>
+
+    <div class="chapter-nav-bottom">
+      <a href="ch04-advanced-cybersecurity.html" class="chapter-nav-btn prev-btn">&larr; Previous Chapter</a>
+      <a href="../activities.html" class="chapter-nav-btn next-btn">Classroom Activities &rarr;</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="chapter-content-container" style="padding-top:1.5rem; padding-bottom:1.5rem; text-align:center; color:var(--tx-muted); font-size:0.85rem; border-top:1px solid var(--bd-subtle);">
+    <span style="color:var(--em-accent-text); font-weight:700;">Ethical Hacking MiniBook</span> · University of Delhi B.Tech CSE · Pitch Black &amp; Archival Paper Themes.
+  </div>
+</footer>
+
+<script src="../assets/js/state.js"></script>
+<script src="../assets/js/core.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  ThemeManager.init();
+  SidebarManager.init();
+});
+</script>
+</body>
+</html>

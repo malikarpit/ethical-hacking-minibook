@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Arpit">
+  <meta name="description" content="Ethical Hacking & Advanced Cybersecurity MiniBook — A Visual, Methodological, and Hands-on Self-Teaching Guide for University of Delhi B.Tech CSE (DSE-3/GE-5). Complete textbook, 7 classroom activities with verified solutions, and 79-question MCQ test simulator.">
+  <title>Ethical Hacking MiniBook 🛡️ | University of Delhi</title>
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2563EB">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/chapters.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/timer.css">
+
+  <style>
+    /* Hero background cyber radial */
+    .portal-hero::before {
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.25) 0%, rgba(37, 99, 235, 0.10) 50%, rgba(0, 0, 0, 0) 70%);
+    }
+
+    .unit-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 3px 8px;
+      border-radius: var(--em-radius-sm);
+    }
+    .unit-badge-u1 { background: rgba(2, 132, 199, 0.15); color: #38BDF8; border: 1px solid rgba(2, 132, 199, 0.35); }
+    .unit-badge-u2 { background: rgba(8, 145, 178, 0.15); color: #22D3EE; border: 1px solid rgba(8, 145, 178, 0.35); }
+    .unit-badge-u3 { background: rgba(217, 119, 6, 0.15); color: #FBBF24; border: 1px solid rgba(217, 119, 6, 0.35); }
+    .unit-badge-u4 { background: rgba(99, 102, 241, 0.15); color: #A78BFA; border: 1px solid rgba(99, 102, 241, 0.35); }
+    .unit-badge-labs { background: rgba(37, 99, 235, 0.15); color: #60A5FA; border: 1px solid rgba(37, 99, 235, 0.35); }
+
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: var(--em-space-4);
+      margin-top: var(--em-space-4);
+    }
+    .hub-card {
+      background: var(--em-surface-2);
+      border: 1px solid var(--em-border);
+      border-radius: var(--em-radius-md);
+      padding: var(--em-space-4);
+      text-decoration: none;
+      transition: all var(--em-motion-fast) var(--em-ease);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .hub-card:hover {
+      background: var(--em-surface-3);
+      border-color: var(--em-border-strong);
+      transform: translateY(-2px);
+      box-shadow: var(--sh-sm);
+    }
+    .hub-card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--em-text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .hub-card-desc {
+      font-size: 0.84rem;
+      color: var(--em-text-secondary);
+      line-height: 1.45;
+    }
+  </style>
+</head>
+<body data-chapter-id="portal">
+  <div id="progress-bar"></div>
+
+  <!-- Header -->
+  <header id="main-header">
+    <div class="header-left">
+      <button id="sidebar-toggle" class="icon-btn" aria-label="Toggle navigation drawer" title="Toggle Sidebar (S)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon">ETH</div>
+        <div class="brand-text">
+          <span class="main">Ethical Hacking</span>
+          <span class="sub">DU DSE-3 &amp; GE-5 Engineering MiniBook</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="header-chapter-title">Master Subject Portal</div>
+
+    <div class="header-right">
+      <button id="reading-mode-btn" class="icon-btn" aria-label="Toggle reading focus mode" title="Focus Mode (F)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+          <line x1="8" y1="21" x2="16" y2="21"></line>
+          <line x1="12" y1="17" x2="12" y2="21"></line>
+        </svg>
+      </button>
+      <button id="theme-toggle" class="icon-btn" aria-label="Cycle theme" title="Theme (T)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="12" cy="12" r="4.5"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Sidebar Overlay -->
+  <div id="sidebar-overlay"></div>
+
+  <!-- Sidebar -->
+  <aside id="sidebar" aria-expanded="true">
+    <div class="sidebar-nav">
+      <div class="sidebar-section">
+        <div class="sidebar-section-label">General</div>
+        <a href="index.html" class="sidebar-link active">
+          <span class="link-icon">🏛️</span>
+          <span>Subject Portal</span>
+        </a>
+        <a href="quick-learn.html" class="sidebar-link">
+          <span class="link-icon">⚡</span>
+          <span>Quick Learn Digest</span>
+        </a>
+        <a href="last-minute.html" class="sidebar-link">
+          <span class="link-icon">⏱️</span>
+          <span>Last-Minute Cram</span>
+        </a>
+        <a href="activities.html" class="sidebar-link">
+          <span class="link-icon">📁</span>
+          <span>Activities &amp; Solutions</span>
+        </a>
+        <a href="exams/mcq-test.html" class="sidebar-link">
+          <span class="link-icon">🎯</span>
+          <span>MCQ Test Simulator</span>
+        </a>
+        <a href="progress.html" class="sidebar-link">
+          <span class="link-icon">📊</span>
+          <span>Study Dashboard</span>
+        </a>
+      </div>
+
+      <!-- Core Curriculum Chapters -->
+      <div class="sidebar-section">
+        <div class="sidebar-section-label part-label part-i">Unit I — Foundations &amp; Ethics</div>
+        <a href="chapters/ch00-syllabus-guide.html" class="sidebar-link"><span class="link-icon">🧭</span>Ch 0 — Syllabus &amp; Blueprint</a>
+      <a href="chapters/ch00-syllabus-guide-hinglish.html" class="sidebar-link sidebar-mukul-sublink"><span class="link-icon">🔥</span>Ch 0 · Mukul Hinglish</a>
+      <a href="chapters/ch01-fundamentals-ethics.html" class="sidebar-link">
+          <span class="link-icon">01</span>
+          <span>Fundamentals &amp; Ethics</span>
+        </a>
+        <a href="chapters/ch01-fundamentals-ethics-hinglish.html" class="sidebar-link sidebar-mukul-sublink" title="BKL Mukul Ke Liye (Hinglish Edition)">
+          <span class="link-icon">🔥</span>
+          <span>Ch 1 · Mukul Hinglish</span>
+        </a>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-label part-label part-ii">Unit II — Scanning &amp; Enumeration</div>
+        <a href="chapters/ch02-network-system-security.html" class="sidebar-link">
+          <span class="link-icon">02</span>
+          <span>Network &amp; System Security</span>
+        </a>
+        <a href="chapters/ch02-network-system-security-hinglish.html" class="sidebar-link sidebar-mukul-sublink" title="BKL Mukul Ke Liye (Hinglish Edition)">
+          <span class="link-icon">🔥</span>
+          <span>Ch 2 · Mukul Hinglish</span>
+        </a>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-label part-label part-iii">Unit III — Web &amp; App Security</div>
+        <a href="chapters/ch03-web-application-security.html" class="sidebar-link">
+          <span class="link-icon">03</span>
+          <span>Web Application Security</span>
+        </a>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-label part-label part-iv">Unit IV — Advanced Cyber &amp; Crypto</div>
+        <a href="chapters/ch04-advanced-cybersecurity.html" class="sidebar-link">
+          <span class="link-icon">04</span>
+          <span>Advanced Cyber &amp; Crypto</span>
+        </a>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-label part-label part-v">Practical Lab Workbook</div>
+        <a href="chapters/ch05-practical-lab-workbook.html" class="sidebar-link">
+          <span class="link-icon">05</span>
+          <span>Practical Lab Workbook</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-brand-mark">
+        <div class="mark">DU</div>
+        <div>
+          <strong>DSE-3 / GE-5 MiniBook</strong>
+          <div>University of Delhi · B.Tech CSE</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Mandatory Global Reading Shell (#main-content) -->
+  <div id="main-content">
+    <main class="chapter-content">
+      <!-- Portal Hero -->
+      <section class="portal-hero">
+        <div class="portal-badge-strip">
+          <span class="tag-badge tag-core">DU DSE-3 / GE-5 Syllabus</span>
+          <span class="tag-badge tag-math">4 Credits (3L + 1P)</span>
+          <span class="tag-badge tag-lab">Kali Linux &amp; Wireshark</span>
+          <span class="tag-badge tag-exam">University &amp; CEH Aligned</span>
+          <span class="tag-badge tag-deep-dive">7 Lab Activities Solved</span>
+        </div>
+        <h1 class="portal-title">Ethical Hacking &amp; Advanced Cybersecurity</h1>
+        <p class="portal-subtitle">
+          An interactive, visual, and methodological self-teaching textbook. Rigorously mapped to the University of Delhi B.Tech Computer Science curriculum, featuring step-by-step offensive security workflows, defensive packet filtering, secure coding remediations, and 7 verified classroom case studies.
+        </p>
+        <div class="portal-actions">
+          <a href="chapters/ch00-syllabus-guide.html" class="sidebar-link"><span class="link-icon">🧭</span>Ch 0 — Syllabus &amp; Blueprint</a>
+      <a href="chapters/ch00-syllabus-guide-hinglish.html" class="sidebar-link sidebar-mukul-sublink"><span class="link-icon">🔥</span>Ch 0 · Mukul Hinglish</a>
+      <a href="chapters/ch01-fundamentals-ethics.html" class="portal-btn portal-btn-primary">
+            <span>Start Chapter 01: Foundations</span>
+            <span>→</span>
+          </a>
+          <a href="chapters/ch01-fundamentals-ethics-hinglish.html" class="portal-btn portal-btn-secondary" style="border-color: rgba(239, 68, 68, 0.5); color: #f87171;">
+            <span>🔥 BKL Mukul Hinglish</span>
+          </a>
+          <a href="activities.html" class="portal-btn portal-btn-secondary" style="border-color:#0891B2; color:#22D3EE;">
+            <span>📁 7 Solved Activities</span>
+          </a>
+          <a href="exams/mcq-test.html" class="portal-btn portal-btn-secondary" style="border-color:#38BDF8; color:#38BDF8;">
+            <span>🎯 79 MCQ Simulator</span>
+          </a>
+          <a href="quick-learn.html" class="portal-btn portal-btn-secondary">
+            <span>⚡ Quick Learn</span>
+          </a>
+          <a href="last-minute.html" class="portal-btn portal-btn-secondary">
+            <span>⏱️ Last Minute</span>
+          </a>
+          <a href="progress.html" class="portal-btn portal-btn-secondary">
+            <span>Study Dashboard</span>
+            <span>📊</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Stats Strip -->
+      <div class="portal-stats-grid">
+        <div class="stat-card">
+          <div class="stat-val">5</div>
+          <div class="stat-label">Core Chapters</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">7</div>
+          <div class="stat-label">Lab Activities Solved</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">160</div>
+          <div class="stat-label">MCQs, MSQs &amp; Short Q&amp;A</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">21</div>
+          <div class="stat-label">Last-Minute Formulas</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">10</div>
+          <div class="stat-label">Exam Traps Identified</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">100%</div>
+          <div class="stat-label">DU Syllabus Coverage</div>
+        </div>
+      </div>
+
+      <!-- Curriculum Navigator -->
+      <div class="section-header">
+        <span class="section-num">MAP</span>
+        <h2>Curriculum Explorer &amp; University Units</h2>
+      </div>
+
+      <div class="parts-grid">
+        <!-- Unit I Card -->
+        <div class="part-card part-i" id="unit-1">
+          <div>
+            <div class="part-card-header">
+              <span class="unit-badge unit-badge-u1">🎓 Unit I · Syllabus Scope</span>
+              <span class="tag-badge tag-core">Chapter 01</span>
+            </div>
+            <h3 class="part-card-title">Unit I — Ethical Hacking Foundations, Ethics &amp; Cyber Law</h3>
+            <p class="part-card-desc">
+              Core concepts of ethical hacking, legal boundaries (IT Act 2000 Section 43/66), White vs Gray vs Black Hat classifications, Rules of Engagement (RoE), Footprinting techniques, Google Dorking, WHOIS, DNS reconnaissance, and social engineering mitigation.
+            </p>
+            <ul class="part-chapters-list">
+              <li class="part-chapter-item">
+                <a href="chapters/ch00-syllabus-guide.html"><strong>00.</strong> Syllabus, Exam Pattern &amp; Study Strategy</a>
+                <span class="ch-tag">START HERE</span>
+              </li>
+              <li class="part-chapter-item">
+                <a href="chapters/ch01-fundamentals-ethics.html"><strong>01.</strong> Foundations, Cyber Law &amp; Reconnaissance</a>
+                <span class="ch-tag">CORE · READY</span>
+              </li>
+              <li class="part-chapter-item" style="border-left: 2px solid #f87171; padding-left: 8px;">
+                <a href="chapters/ch01-fundamentals-ethics-hinglish.html"><strong>🔥 FOR BKL Mukul:</strong> Hinglish + College Examples</a>
+                <span class="ch-tag" style="background: rgba(239, 68, 68, 0.15); color: #f87171;">HINGLISH</span>
+              </li>
+            </ul>
+          </div>
+          <div style="display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap;">
+            <a href="chapters/ch00-syllabus-guide.html" class="portal-btn portal-btn-secondary" style="flex: 1; justify-content: center; min-width: 120px;">
+              🧭 Ch 0 Guide →
+            </a>
+            <a href="chapters/ch01-fundamentals-ethics.html" class="portal-btn portal-btn-secondary" style="flex: 1; justify-content: center; min-width: 120px;">
+              English View →
+            </a>
+            <a href="chapters/ch01-fundamentals-ethics-hinglish.html" class="portal-btn portal-btn-primary" style="flex: 1; justify-content: center; min-width: 150px; background: linear-gradient(135deg, #ef4444 0%, #f97316 100%); border-color: #f87171;">
+              🔥 Mukul Hinglish →
+            </a>
+          </div>
+        </div>
+
+        <!-- Unit II Card -->
+        <div class="part-card part-ii" id="unit-2">
+          <div>
+            <div class="part-card-header">
+              <span class="unit-badge unit-badge-u2">🎓 Unit II · Syllabus Scope</span>
+              <span class="tag-badge tag-core">Chapter 02</span>
+            </div>
+            <h3 class="part-card-title">Unit II — Network &amp; System Security, Scanning &amp; Enumeration</h3>
+            <p class="part-card-desc">
+              Port scanning mechanics (TCP SYN `-sS`, Connect `-sT`, FIN, Xmas, Null), OS fingerprinting, banner grabbing, NetBIOS/SNMP/SMB enumeration, firewall evasion, stateful inspection, and vulnerability scanning with Nessus and OpenVAS.
+            </p>
+            <ul class="part-chapters-list">
+              <li class="part-chapter-item">
+                <a href="chapters/ch02-network-system-security.html"><strong>02.</strong> Network Scanning, Enumeration &amp; Firewalls</a>
+                <span class="ch-tag">LAB · READY</span>
+              </li>
+              <li class="part-chapter-item" style="border-left: 2px solid #f87171; padding-left: 8px;">
+                <a href="chapters/ch02-network-system-security-hinglish.html"><strong>🔥 Mukul Edition:</strong> Hinglish + College Examples</a>
+                <span class="ch-tag" style="background: rgba(239, 68, 68, 0.15); color: #f87171;">HINGLISH</span>
+              </li>
+            </ul>
+          </div>
+          <div style="display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap;">
+            <a href="chapters/ch02-network-system-security.html" class="portal-btn portal-btn-secondary" style="flex: 1; justify-content: center; min-width: 120px;">
+              English View →
+            </a>
+            <a href="chapters/ch02-network-system-security-hinglish.html" class="portal-btn portal-btn-primary" style="flex: 1; justify-content: center; min-width: 150px; background: linear-gradient(135deg, #ef4444 0%, #f97316 100%); border-color: #f87171;">
+              🔥 Mukul Hinglish →
+            </a>
+          </div>
+        </div>
+
+        <!-- Unit III Card -->
+        <div class="part-card part-iii" id="unit-3">
+          <div>
+            <div class="part-card-header">
+              <span class="unit-badge unit-badge-u3">🎓 Unit III · Syllabus Scope</span>
+              <span class="tag-badge tag-core">Chapter 03</span>
+            </div>
+            <h3 class="part-card-title">Unit III — Web Application Security &amp; OWASP Top 10</h3>
+            <p class="part-card-desc">
+              OWASP Top 10 (2021) deep dive: SQL Injection (in-band, blind, time-based), Cross-Site Scripting (Reflected, Stored, DOM), Broken Access Control (IDOR/BOLA), CSRF, SSRF, insecure deserialization, parameterized queries, and defensive CSP headers.
+            </p>
+            <ul class="part-chapters-list">
+              <li class="part-chapter-item">
+                <a href="chapters/ch03-web-application-security.html"><strong>03.</strong> Web Application Security &amp; OWASP Defenses</a>
+                <span class="ch-tag">EXAM · READY</span>
+              </li>
+            </ul>
+          </div>
+          <a href="chapters/ch03-web-application-security.html" class="portal-btn portal-btn-secondary" style="width: 100%; justify-content: center;">
+            Study Unit III →
+          </a>
+        </div>
+
+        <!-- Unit IV Card -->
+        <div class="part-card part-iv" id="unit-4">
+          <div>
+            <div class="part-card-header">
+              <span class="unit-badge unit-badge-u4">🎓 Unit IV · Syllabus Scope</span>
+              <span class="tag-badge tag-core">Chapter 04</span>
+            </div>
+            <h3 class="part-card-title">Unit IV — Advanced Cybersecurity, Cryptography &amp; Incident Response</h3>
+            <p class="part-card-desc">
+              Symmetric vs asymmetric ciphers (AES vs RSA), Diffie-Hellman key exchange, SHA-256, digital signatures, WPA2/WPA3 4-way handshake analysis, deauthentication attacks, Zero Trust architecture (PEP/PDP), and NIST SP 800-61 incident response lifecycle.
+            </p>
+            <ul class="part-chapters-list">
+              <li class="part-chapter-item">
+                <a href="chapters/ch04-advanced-cybersecurity.html"><strong>04.</strong> Cryptography, Wireless Defense &amp; Zero Trust</a>
+                <span class="ch-tag">MATH · READY</span>
+              </li>
+            </ul>
+          </div>
+          <a href="chapters/ch04-advanced-cybersecurity.html" class="portal-btn portal-btn-secondary" style="width: 100%; justify-content: center;">
+            Study Unit IV →
+          </a>
+        </div>
+
+        <!-- Unit V / Lab Workbook Card -->
+        <div class="part-card part-v" id="unit-5">
+          <div>
+            <div class="part-card-header">
+              <span class="unit-badge unit-badge-labs">🧪 Practical Syllabus Scope</span>
+              <span class="tag-badge tag-lab">Chapter 05</span>
+            </div>
+            <h3 class="part-card-title">Chapter 05 — Practical Lab Workbook (Labs 1 to 7)</h3>
+            <p class="part-card-desc">
+              Hands-on lab experiments covering Kali Linux VM setup, safe scanning within host-only boundaries, Wireshark packet capture &amp; TCP filter synthesis, Metasploit payload generation, SQLMap automation, and OWASP ZAP vulnerability triage.
+            </p>
+            <ul class="part-chapters-list">
+              <li class="part-chapter-item">
+                <a href="chapters/ch05-practical-lab-workbook.html"><strong>05.</strong> Practical Lab Workbook &amp; Commands</a>
+                <span class="ch-tag">LAB · READY</span>
+              </li>
+            </ul>
+          </div>
+          <a href="chapters/ch05-practical-lab-workbook.html" class="portal-btn portal-btn-secondary" style="width: 100%; justify-content: center;">
+            Open Lab Workbook →
+          </a>
+        </div>
+      </div>
+
+      <!-- Specialized Exam & Revision Suites -->
+      <div class="section-header">
+        <span class="section-num">HUB</span>
+        <h2>High-Yield Interactive Study Suites</h2>
+      </div>
+
+      <div class="hub-grid">
+        <a href="activities.html" class="hub-card" style="border-top: 3px solid #06B6D4;">
+          <div>
+            <div class="hub-card-title">📁 Classroom Activities</div>
+            <p class="hub-card-desc">All 7 official classroom case studies with verified step-by-step solutions, code fixes, and checklists.</p>
+          </div>
+          <span style="font-size:0.78rem; font-weight:700; color:#22D3EE; margin-top:12px;">7 Case Studies Solved →</span>
+        </a>
+
+        <a href="exams/mcq-test.html" class="hub-card" style="border-top: 3px solid #38BDF8;">
+          <div>
+            <div class="hub-card-title">🎯 MCQ Test Simulator</div>
+            <p class="hub-card-desc">79 interactive MCQs &amp; MSQs with Instant Practice Feedback, Timed Exam Mode, and full explanations.</p>
+          </div>
+          <span style="font-size:0.78rem; font-weight:700; color:#38BDF8; margin-top:12px;">Launch Exam Simulator →</span>
+        </a>
+
+        <a href="quick-learn.html" class="hub-card" style="border-top: 3px solid #F59E0B;">
+          <div>
+            <div class="hub-card-title">⚡ Quick Learn Digest</div>
+            <p class="hub-card-desc">High-yield summary cards, essential comparison matrices, and fast recall checklists for exam prep.</p>
+          </div>
+          <span style="font-size:0.78rem; font-weight:700; color:#FBBF24; margin-top:12px;">Read Quick Digest →</span>
+        </a>
+
+        <a href="last-minute.html" class="hub-card" style="border-top: 3px solid #EC4899;">
+          <div>
+            <div class="hub-card-title">⏱️ Last-Minute Cram</div>
+            <p class="hub-card-desc">21 one-line definitions with live filter, memory diagrams, and 10 high-frequency traps.</p>
+          </div>
+          <span style="font-size:0.78rem; font-weight:700; color:#F472B6; margin-top:12px;">Review Last-Minute Deck →</span>
+        </a>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="assets/js/core.js"></script>
+</body>
+</html>

@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<!-- ⚡ Arpit | Ethical Hacking MiniBook 2026 | University of Delhi -->
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="Arpit"><meta name="description" content="Last-Minute Exam Revision Filter — Ethical Hacking and Advanced Cybersecurity. 21 high-yield one-line definitions, comparison points, memory flow diagrams, and traps to avoid.">
+<title>Last-Minute Revision Cram ⏱️ | Ethical Hacking MiniBook 🛡️</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/animations.css">
+<link rel="stylesheet" href="assets/css/chapters.css">
+<link rel="stylesheet" href="assets/css/timer.css">
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<!-- HEADER -->
+<header id="main-header">
+  <div class="header-left">
+    <button id="sidebar-toggle" class="icon-btn" title="Toggle Sidebar (S)" aria-label="Toggle Navigation">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="brand-logo">
+      <div class="brand-icon">🛡️</div>
+      <div class="brand-text">
+        <span class="main">Ethical Hacking</span>
+        <span class="sub">University of Delhi · B.Tech CSE</span>
+      </div>
+    </div>
+  </div>
+
+  <span class="header-chapter-title">Last-Minute Exam Revision Filter</span>
+
+  <div class="header-right">
+    <button id="search-btn" class="icon-btn" title="Search (Ctrl+K)" aria-label="Search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    </button>
+    <button id="print-btn" title="Print to Clean PDF (Ctrl+P)" aria-label="Print">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      <span class="print-label">PDF</span>
+    </button>
+    <button id="reading-mode-btn" class="icon-btn" title="Reading Focus Mode (F)" aria-label="Reading Mode">📖</button>
+    <button id="theme-toggle" class="icon-btn" title="Toggle Theme (T)" aria-label="Theme"></button>
+  </div>
+</header>
+
+<!-- SIDEBAR -->
+<div id="sidebar-overlay"></div>
+<aside id="sidebar">
+  <nav class="sidebar-nav">
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Navigation</div>
+      <a href="index.html" class="sidebar-link"><span class="link-icon">🏠</span>Home Portal</a>
+      <a href="quick-learn.html" class="sidebar-link"><span class="link-icon">⚡</span>Quick Learn</a>
+      <a href="last-minute.html" class="sidebar-link active"><span class="link-icon">⏱️</span>Last-Minute Cram</a>
+      <a href="last-minute-hinglish.html" class="sidebar-link sidebar-mukul-sublink"><span class="link-icon">🔥</span>Last-Minute · Mukul</a>
+      <a href="activities.html" class="sidebar-link"><span class="link-icon">📁</span>Activities & Solutions</a>
+      <a href="exams/mcq-test.html" class="sidebar-link"><span class="link-icon">📝</span>MCQ Test Simulator</a>
+      <a href="progress.html" class="sidebar-link"><span class="link-icon">📊</span>Study Dashboard</a>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Core Chapters</div>
+            <a href="chapters/ch00-syllabus-guide.html" class="sidebar-link"><span class="link-icon">🧭</span>Ch 0 — Syllabus &amp; Blueprint</a>
+      <a href="chapters/ch00-syllabus-guide-hinglish.html" class="sidebar-link sidebar-mukul-sublink"><span class="link-icon">🔥</span>Ch 0 · Mukul Hinglish</a>
+      <a href="chapters/ch01-fundamentals-ethics.html" class="sidebar-link"><span class="link-icon">🛡️</span>Ch 1 — Fundamentals & Ethics</a>
+      <a href="chapters/ch01-fundamentals-ethics-hinglish.html" class="sidebar-link sidebar-mukul-sublink"><span class="link-icon">🔥</span>Ch 1 · Mukul Hinglish</a>
+      <a href="chapters/ch02-network-system-security.html" class="sidebar-link"><span class="link-icon">🌐</span>Ch 2 — Network & System Security</a>
+      <a href="chapters/ch02-network-system-security-hinglish.html" class="sidebar-link sidebar-mukul-sublink"><span class="link-icon">🔥</span>Ch 2 · Mukul Hinglish</a>
+      <a href="chapters/ch03-web-application-security.html" class="sidebar-link"><span class="link-icon">💻</span>Ch 3 — Web & App Security</a>
+      <a href="chapters/ch04-advanced-cybersecurity.html" class="sidebar-link"><span class="link-icon">🔒</span>Ch 4 — Advanced Cyber & Crypto</a>
+      <a href="chapters/ch05-practical-lab-workbook.html" class="sidebar-link"><span class="link-icon">🔬</span>Ch 5 — Practical Labs (1 to 7)</a>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Page Sections</div>
+      <a href="#sec-defs" class="sidebar-link"><span class="link-icon">📌</span>High-Yield Definitions (Units 1 &amp; 2)</a>
+      <a href="#sec-diffs" class="sidebar-link"><span class="link-icon">⚖️</span>University Differentiations</a>
+      <a href="#sec-diagrams" class="sidebar-link"><span class="link-icon">📐</span>Essential Memory Diagrams</a>
+      <a href="#sec-traps" class="sidebar-link"><span class="link-icon">⚠️</span>12 Critical Exam Traps</a>
+    </div>
+  </nav>
+  <div class="sidebar-footer">
+    <div class="sidebar-brand-mark"><div class="mark">🛡️</div><span>Arpit · DU B.Tech CSE</span></div>
+  </div>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main id="main-content">
+  <div class="chapter-content-container">
+    
+    <div style="margin-bottom: 2.5rem;">
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(37, 99, 235, 0.12); border:1px solid rgba(56, 189, 248, 0.3); border-radius:99px; padding:4px 14px; font-size:0.75rem; font-weight:700; color:var(--accent-light); margin-bottom:12px;">
+        ⏱️ Final Exam Day Revision Cheat-Sheet · Units 1 &amp; 2 Deep Focus
+      </div>
+      <h1 style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; letter-spacing: -0.03em; color: var(--tx-primary); margin: 0 0 10px;">
+        Last-Minute Revision Filter
+      </h1>
+      <p style="color: var(--tx-secondary); font-size: 1.05rem; line-height: 1.6; margin: 0;">
+        Read this in the final study hours before your examination. Master high-frequency 2-mark definitions, core comparison matrices, rapid memory flow diagrams, and the 12 exam traps that cost students marks in Delhi University B.Tech examinations.
+      </p>
+    </div>
+    <!-- BKL MUKUL SPECIAL FILTER / VIEW SWITCHER -->
+    <div class="mukul-filter-bar">
+      <div class="mukul-header-row">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span class="mukul-badge">🔥 FOR BKL Mukul Filter</span>
+          <span class="mukul-tagline">Hinglish Exam Night Cram Mode</span>
+        </div>
+        <div class="mukul-toggle-pills">
+          <button class="mukul-pill" id="btn-view-en" data-mode="en" onclick="switchChapterMode('hi')">
+            <span>⏱️</span> English Official
+          </button>
+          <button class="mukul-pill active" id="btn-view-hi" data-mode="hi" onclick="switchChapterMode('hi')">
+            <span>🇮🇳</span> FOR BKL Mukul (Hinglish)
+          </button>
+          <button class="mukul-pill" id="btn-view-dual" data-mode="dual" onclick="switchChapterMode('dual')">
+            <span>⚡</span> Dual Split View (Both)
+          </button>
+        </div>
+      </div>
+      <div class="mukul-sub">
+        Exam ki subah last-minute revision ke liye switch to <strong>FOR BKL Mukul (Hinglish Edition)</strong> for quick desi memory tricks and trap-busters!
+      </div>
+    </div>
+
+
+    <!-- Live Definition Search -->
+    <div style="margin-bottom: 2rem;">
+      <input type="text" id="def-search-input" placeholder="🔍 Filter definitions by keyword or unit (e.g. unit1, unit2, ARP, IPsec, WPA2, IT Act, IDS)..." 
+             style="width:100%; box-sizing:border-box; padding:12px 18px; border-radius:var(--em-radius-md); border:1px solid var(--bd-default); background:var(--bg-card); color:var(--tx-primary); font-size:0.95rem;"
+             oninput="filterDefinitions(this.value)">
+    </div>
+
+    <!-- High-Yield Definitions -->
+    <div class="chapter-body-text view-mode-hi" id="last-minute-content-body">
+    <section id="sec-defs" class="lm-card">
+      <h2 class="lm-header"><span>📖</span> High-Yield Definitions (Units 1 &amp; 2 Focus)</h2>
+      <p style="color:var(--tx-muted); font-size:0.85rem; margin-top:0;">Precision 1-to-2 sentence answers calibrated for 2-mark university theory questions:</p>
+      
+      <!-- Unit 1 Definitions -->
+      <h3 style="color:var(--accent-light); font-size:1.15rem; margin:1.5rem 0 1rem; display:flex; align-items:center; gap:8px;">
+        <span>🛡️</span> Unit 1: Fundamentals of Ethical Hacking &amp; Cyber Laws
+      </h3>
+      <div class="def-grid" id="def-grid">
+        <div class="def-item" data-term="unit1 ethical hacking authorization scope legal defensive">
+          <span class="def-term">1. Ethical Hacking</span>
+          <p class="def-desc"><strong>Authorized, legally scoped</strong> security testing applying offensive methodologies to discover vulnerabilities and deliver verified remediation to the system owner.</p>
+        </div>
+        <div class="def-item" data-term="unit1 penetration testing pt validation exploit proof of concept">
+          <span class="def-term">2. Penetration Testing (PT)</span>
+          <p class="def-desc">A structured, <strong>evidence-based validation</strong> methodology that safely exploits selected weaknesses to prove chained attack paths and realistic <strong>business impact</strong>.</p>
+        </div>
+        <div class="def-item" data-term="unit1 vulnerability assessment va breadth inventory scan cve">
+          <span class="def-term">3. Vulnerability Assessment (VA)</span>
+          <p class="def-desc">A breadth-first systematic process that identifies, categorizes, and <strong>inventories potential flaws</strong> across assets without active exploitation or proof-of-concept verification.</p>
+        </div>
+        <div class="def-item" data-term="unit1 security audit compliance standard policy iso pci">
+          <span class="def-term">4. Security Audit</span>
+          <p class="def-desc">A formal, systematic evaluation assessing an organization's systems against established <strong>regulatory standards</strong> (e.g., ISO 27001, PCI-DSS) or written internal security policies.</p>
+        </div>
+        <div class="def-item" data-term="unit1 rules of engagement roe legal contract scope authorization">
+          <span class="def-term">5. Rules of Engagement (ROE)</span>
+          <p class="def-desc">The formal binding contract defining <strong>in-scope targets</strong>, excluded assets, authorized testing timeframes, emergency stop contacts, and permissible attack intensity.</p>
+        </div>
+        <div class="def-item" data-term="unit1 passive reconnaissance osint footprinting shodan whois">
+          <span class="def-term">6. Passive Reconnaissance (OSINT)</span>
+          <p class="def-desc">Intelligence gathering using publicly available sources (Whois, Shodan, Google Dorking, DNS) <strong>without sending packets</strong> directly to target network interfaces.</p>
+        </div>
+        <div class="def-item" data-term="unit1 active footprinting reconnaissance scanning zone transfer probe">
+          <span class="def-term">7. Active Footprinting</span>
+          <p class="def-desc">Directly interrogating target systems (DNS zone transfers, ICMP sweeps, port probes); <strong>generates logged traffic</strong> and strictly requires prior written authorization.</p>
+        </div>
+        <div class="def-item" data-term="unit1 google dorking advanced search recon operators">
+          <span class="def-term">8. Google Dorking</span>
+          <p class="def-desc">Leveraging advanced search engine operators (e.g. <code>site:</code>, <code>filetype:env</code>, <code>intitle:"Index of /"</code>) to uncover exposed configurations, leaks, and unlinked portals.</p>
+        </div>
+        <div class="def-item" data-term="unit1 enumeration smb snmp rpc usernames shares banners">
+          <span class="def-term">9. Enumeration</span>
+          <p class="def-desc">Active querying of discovered services to extract granular target metadata: <strong>user accounts, Windows network shares (SMB)</strong>, SNMP community strings, and daemon versions.</p>
+        </div>
+        <div class="def-item" data-term="unit1 vulnerability cve flaw weakness bug">
+          <span class="def-term">10. Vulnerability (CVE)</span>
+          <p class="def-desc">A weakness in software design, protocol implementation, system configuration, or human operation that can be <strong>triggered or exploited</strong> to violate security policy.</p>
+        </div>
+        <div class="def-item" data-term="unit1 exploit poc proof of concept weaponized code">
+          <span class="def-term">11. Exploit</span>
+          <p class="def-desc">A sequence of commands, proof-of-concept software, or weaponized payload that takes advantage of a specific vulnerability to cause <strong>unintended execution</strong>.</p>
+        </div>
+        <div class="def-item" data-term="unit1 payload meterpreter reverse shell staged code">
+          <span class="def-term">12. Payload</span>
+          <p class="def-desc">The actual malicious or diagnostic code executed on a target machine post-exploitation, such as delivering a <strong>reverse command shell</strong> or remote management agent.</p>
+        </div>
+        <div class="def-item" data-term="unit1 meterpreter metasploit in-memory ram dll injection stealth">
+          <span class="def-term">13. Metasploit Meterpreter</span>
+          <p class="def-desc">An advanced, dynamically extensible payload executing entirely <strong>in-memory (RAM) via DLL injection</strong>, leaving zero forensic trace on target hard disks to evade antivirus.</p>
+        </div>
+        <div class="def-item" data-term="unit1 zero-day flaw unpatched vendor vulnerability">
+          <span class="def-term">14. Zero-Day Vulnerability</span>
+          <p class="def-desc">A software flaw actively known to researchers or adversaries for which <strong>no official vendor patch</strong> currently exists, leaving systems entirely vulnerable to exploit.</p>
+        </div>
+        <div class="def-item" data-term="unit1 attack surface exposed endpoints ports entry points">
+          <span class="def-term">15. Attack Surface</span>
+          <p class="def-desc">The aggregate total of all accessible entry points, open network ports, web APIs, running services, and human channels through which an adversary can attempt a breach.</p>
+        </div>
+        <div class="def-item" data-term="unit1 it act 2000 section 43 civil liability unauthorized access compensation">
+          <span class="def-term">16. IT Act 2000 — Section 43</span>
+          <p class="def-desc">Prescribes <strong>civil liability and monetary compensation</strong> for unauthorized access, data copying, downloading, extracting, or introducing computer contaminants.</p>
+        </div>
+        <div class="def-item" data-term="unit1 it act 2000 section 66 criminal penalties imprisonment fine">
+          <span class="def-term">17. IT Act 2000 — Section 66</span>
+          <p class="def-desc">Prescribes <strong>criminal penalties</strong> (up to 3 years imprisonment and ₹5 lakh fine) for committing any unauthorized act under Section 43 dishonestly or fraudulently.</p>
+        </div>
+        <div class="def-item" data-term="unit1 it act 2000 section 66c 66e identity theft privacy voyeurism">
+          <span class="def-term">18. IT Act 2000 — Section 66C &amp; 66E</span>
+          <p class="def-desc">Criminalizes <strong>identity theft</strong> (Section 66C: fraudulent use of electronic signatures/passwords) and <strong>privacy violation</strong> (Section 66E: publishing private images without consent).</p>
+        </div>
+        <div class="def-item" data-term="unit1 it act 2000 section 70 protected systems cii critical infrastructure">
+          <span class="def-term">19. IT Act 2000 — Section 70 (Protected Systems)</span>
+          <p class="def-desc">Imposes up to <strong>10 years imprisonment</strong> for unauthorized access to declared Critical Information Infrastructure (CII) affecting national security, economy, or public health.</p>
+        </div>
+        <div class="def-item" data-term="unit1 dpdp rules 2025 personal data cert-in 6 hours fiduciaries">
+          <span class="def-term">20. DPDP Rules 2025 (Digital Personal Data)</span>
+          <p class="def-desc">Mandates Data Fiduciaries maintain rigorous data protection, restrict testing strictly to <strong>synthetic data</strong>, and report cybersecurity incidents to CERT-In within 6 hours.</p>
+        </div>
+        <div class="def-item" data-term="unit1 cert-in indian computer emergency response team nodal agency">
+          <span class="def-term">21. CERT-In</span>
+          <p class="def-desc">The national nodal agency in India responsible for cybersecurity incident response, vulnerability coordination, threat advisories, and mandatory incident reporting directives.</p>
+        </div>
+        <div class="def-item" data-term="unit1 cvss v3.1 common vulnerability scoring system base metrics">
+          <span class="def-term">22. CVSS v3.1</span>
+          <p class="def-desc">An open industry standard evaluating vulnerability severity on a 0.0 to 10.0 scale across <strong>Base, Temporal, and Environmental</strong> metric dimensions.</p>
+        </div>
+        <div class="def-item" data-term="unit1 defense in depth layered controls redundancy">
+          <span class="def-term">23. Defense-in-Depth</span>
+          <p class="def-desc">A holistic security architecture implementing <strong>multiple redundant defensive layers</strong> (perimeter, network, endpoint, application, data) so no single failure leads to total compromise.</p>
+        </div>
+
+        <!-- Unit 2 Definitions -->
+        <div class="def-item" data-term="unit2 stateless packet filter firewall router layer 3 4 rules">
+          <span class="def-term">24. Stateless Packet Filter</span>
+          <p class="def-desc">A Layer 3/4 firewall that inspects individual packets against static rule sets (IP, port, protocol) <strong>without tracking ongoing connection state</strong>.</p>
+        </div>
+        <div class="def-item" data-term="unit2 stateful inspection firewall spi state table handshake tcp">
+          <span class="def-term">25. Stateful Packet Inspection (SPI)</span>
+          <p class="def-desc">A firewall that maintains an active <strong>dynamic state table</strong> tracking established TCP 3-way handshakes, automatically permitting legitimate returning reply packets.</p>
+        </div>
+        <div class="def-item" data-term="unit2 next generation firewall ngfw dpi deep packet inspection ips">
+          <span class="def-term">26. Next-Generation Firewall (NGFW)</span>
+          <p class="def-desc">A multi-layer appliance combining SPI with <strong>Deep Packet Inspection (DPI)</strong>, integrated inline IPS, application-level awareness, and TLS decryption inspection.</p>
+        </div>
+        <div class="def-item" data-term="unit2 intrusion detection system ids out of band tap span passive alert">
+          <span class="def-term">27. Intrusion Detection System (IDS)</span>
+          <p class="def-desc">An out-of-band monitoring system that <strong>passively inspects a traffic copy</strong> via TAP or SPAN port to generate alerts on signature matches or anomalies without blocking traffic.</p>
+        </div>
+        <div class="def-item" data-term="unit2 intrusion prevention system ips inline live drop reset rst">
+          <span class="def-term">28. Intrusion Prevention System (IPS)</span>
+          <p class="def-desc">An <strong>inline network appliance</strong> placed directly in the live traffic path that inspects packets in real-time and actively drops malicious frames or resets connections (<code>TCP RST</code>).</p>
+        </div>
+        <div class="def-item" data-term="unit2 network tap span port mirror traffic copy physical">
+          <span class="def-term">29. Network TAP vs SPAN Port</span>
+          <p class="def-desc">A physical TAP is a hardware splitter delivering an unadulterated 100% traffic copy; a SPAN port mirrors traffic via switch software and may drop frames under high CPU load.</p>
+        </div>
+        <div class="def-item" data-term="unit2 virtual private network vpn encrypted tunnel ipsec ssl">
+          <span class="def-term">30. Virtual Private Network (VPN)</span>
+          <p class="def-desc">An authenticated, <strong>encrypted logical tunnel</strong> (e.g., IPsec, OpenVPN, WireGuard) safeguarding communications across untrusted public networks.</p>
+        </div>
+        <div class="def-item" data-term="unit2 ipsec authentication header ah protocol 51 integrity origin anti-replay">
+          <span class="def-term">31. IPsec Authentication Header (AH)</span>
+          <p class="def-desc">IP Protocol 51 providing data integrity, origin authentication, and anti-replay across the full packet; <strong>provides zero confidentiality</strong> and breaks across NAT.</p>
+        </div>
+        <div class="def-item" data-term="unit2 ipsec encapsulating security payload esp protocol 50 confidentiality encryption">
+          <span class="def-term">32. IPsec ESP (Protocol 50)</span>
+          <p class="def-desc">Provides <strong>symmetric data confidentiality (AES)</strong>, origin authentication, integrity, and anti-replay; compatible with NAT via UDP port 4500 (NAT-T).</p>
+        </div>
+        <div class="def-item" data-term="unit2 ipsec transport mode host to host payload encryption">
+          <span class="def-term">33. IPsec Transport Mode</span>
+          <p class="def-desc">Host-to-host mode that encrypts only the Layer 4 payload while <strong>preserving original IP headers intact</strong>; lower overhead, but exposes endpoint addresses.</p>
+        </div>
+        <div class="def-item" data-term="unit2 ipsec tunnel mode site to site gateway outer ip header">
+          <span class="def-term">34. IPsec Tunnel Mode</span>
+          <p class="def-desc">Gateway-to-gateway mode encrypting the <strong>entire original IP packet</strong> and prepending a new outer IP header; standard for Site-to-Site enterprise VPNs.</p>
+        </div>
+        <div class="def-item" data-term="unit2 forward proxy client egress url filtering caching anonymity">
+          <span class="def-term">35. Forward Proxy Server</span>
+          <p class="def-desc">An intermediary positioned at client network egress, enforcing corporate <strong>URL filtering, content caching</strong>, client identity masking, and outbound inspection.</p>
+        </div>
+        <div class="def-item" data-term="unit2 reverse proxy server ingress ssl termination load balancing waf">
+          <span class="def-term">36. Reverse Proxy Server</span>
+          <p class="def-desc">An intermediary deployed in front of web servers handling public ingress traffic, <strong>SSL/TLS termination, server load balancing</strong>, and WAF security filtering.</p>
+        </div>
+        <div class="def-item" data-term="unit2 promiscuous mode nic capture raw frames wireshark">
+          <span class="def-term">37. Promiscuous Mode</span>
+          <p class="def-desc">A NIC configuration instructing the controller to pass <strong>all received frames to the OS</strong> for inspection, regardless of whether destination MAC matches the host.</p>
+        </div>
+        <div class="def-item" data-term="unit2 packet sniffing wireshark tcpdump frame analysis">
+          <span class="def-term">38. Packet Sniffing</span>
+          <p class="def-desc">Capturing, decoding, and analyzing raw data frames traversing a network segment using protocol analyzers such as <strong>Wireshark</strong> or <code>tcpdump</code>.</p>
+        </div>
+        <div class="def-item" data-term="unit2 address resolution protocol arp layer 2 ip to mac mapping">
+          <span class="def-term">39. Address Resolution Protocol (ARP)</span>
+          <p class="def-desc">A stateless Layer 2 broadcast protocol dynamically resolving a known IPv4 address to a physical hardware Media Access Control (MAC) address.</p>
+        </div>
+        <div class="def-item" data-term="unit2 arp cache poisoning spoofing gratuitous arp mitm">
+          <span class="def-term">40. ARP Cache Poisoning / Spoofing</span>
+          <p class="def-desc">Broadcasting forged gratuitous ARP replies mapping the default gateway IP to the attacker's MAC, enabling <strong>Man-in-the-Middle traffic redirection</strong>.</p>
+        </div>
+        <div class="def-item" data-term="unit2 dynamic arp inspection dai dhcp snooping switch security">
+          <span class="def-term">41. Dynamic ARP Inspection (DAI)</span>
+          <p class="def-desc">A managed switch security feature that validates incoming ARP packets against a trusted <strong>DHCP Snooping database</strong>, dropping invalid forged mappings.</p>
+        </div>
+        <div class="def-item" data-term="unit2 dns cache poisoning spoofing recursive resolver transaction id">
+          <span class="def-term">42. DNS Cache Poisoning</span>
+          <p class="def-desc">Injecting forged DNS query replies with guessed Transaction IDs into a recursive resolver's cache before authentic nameservers respond, redirecting user domains.</p>
+        </div>
+        <div class="def-item" data-term="unit2 dnssec cryptographic signing rrsig dns over https doh">
+          <span class="def-term">43. DNSSEC</span>
+          <p class="def-desc">Cryptographic extension to DNS providing <strong>origin authentication and data integrity</strong> via digital signatures (RRSIG), preventing cache poisoning.</p>
+        </div>
+        <div class="def-item" data-term="unit2 ip address spoofing bcp 38 urpf egress ingress filtering">
+          <span class="def-term">44. IP Address Spoofing</span>
+          <p class="def-desc">Forging the source IP in an IPv4 header to disguise packet origin; mitigated using <strong>BCP 38 ingress/egress filtering</strong> and Unicast Reverse Path Forwarding (uRPF).</p>
+        </div>
+        <div class="def-item" data-term="unit2 ssl tls stripping mitm cleartext downgrade hsts">
+          <span class="def-term">45. SSL / TLS Stripping</span>
+          <p class="def-desc">An MITM attack where a proxy intercepts the initial unencrypted HTTP redirect, serving cleartext HTTP to the victim while bridging HTTPS to the authentic server.</p>
+        </div>
+        <div class="def-item" data-term="unit2 hsts http strict transport security preload header">
+          <span class="def-term">46. HSTS (Strict Transport Security)</span>
+          <p class="def-desc">A response header instructing web browsers to <strong>strictly enforce HTTPS connections only</strong>, completely neutralizing SSL stripping attacks.</p>
+        </div>
+        <div class="def-item" data-term="unit2 vertical privilege escalation root system suid kernel exploit">
+          <span class="def-term">47. Vertical Privilege Escalation</span>
+          <p class="def-desc">Elevating permissions from an unprivileged user account to administrative control (e.g. <code>root</code> or <code>SYSTEM</code>) via kernel flaws or misconfigurations.</p>
+        </div>
+        <div class="def-item" data-term="unit2 horizontal privilege escalation idor peer account access">
+          <span class="def-term">48. Horizontal Privilege Escalation</span>
+          <p class="def-desc">Accessing data, resources, or capabilities belonging to a <strong>peer account at the same privilege tier</strong> (e.g. Alice accessing Bob's profile via IDOR flaws).</p>
+        </div>
+        <div class="def-item" data-term="unit2 suid sgid unix file permissions 4000 2000 root execution">
+          <span class="def-term">49. SUID / SGID File Permissions</span>
+          <p class="def-desc">Special Unix permission bits (<code>4000</code> / <code>2000</code>) enabling executable binaries to run with the <strong>file owner's privileges (e.g. root)</strong> rather than the user's.</p>
+        </div>
+        <div class="def-item" data-term="unit2 trojan horse malware benign disguise non-replicating">
+          <span class="def-term">50. Trojan Horse</span>
+          <p class="def-desc">Malicious code disguised as legitimate, benign software; relies on social engineering to trick users into executing it and <strong>never self-replicates</strong>.</p>
+        </div>
+        <div class="def-item" data-term="unit2 computer worm malware autonomous self-replicating smb network">
+          <span class="def-term">51. Computer Worm</span>
+          <p class="def-desc">An autonomous malware program that <strong>actively self-replicates across networks</strong> by exploiting unpatched network daemon flaws without human intervention.</p>
+        </div>
+        <div class="def-item" data-term="unit2 backdoor rootkit persistent unauthorized access listening port">
+          <span class="def-term">52. Backdoor</span>
+          <p class="def-desc">A hidden mechanism, listening service, or undocumented administrative credential providing covert, persistent access that bypasses standard authentication.</p>
+        </div>
+        <div class="def-item" data-term="unit2 wep wired equivalent privacy rc4 24-bit iv collision broken">
+          <span class="def-term">53. WEP IV Collision Flaw</span>
+          <p class="def-desc">Flawed 802.11 standard using a <strong>short 24-bit cleartext Initialization Vector (IV)</strong> with RC4, resulting in rapid IV reuse and mathematical key recovery in minutes.</p>
+        </div>
+        <div class="def-item" data-term="unit2 wpa2 4-way handshake ptk gtk anonce snonce mic offline dictionary">
+          <span class="def-term">54. WPA2 4-Way Handshake</span>
+          <p class="def-desc">Cryptographic exchange establishing PTK/GTK keys; capturing Msg 1 (ANonce) and Msg 2 (SNonce + MIC) allows <strong>offline dictionary attacks</strong> against the Pre-Shared Key.</p>
+        </div>
+        <div class="def-item" data-term="unit2 deauthentication attack aireplay-ng disconnect frame 802.11">
+          <span class="def-term">55. 802.11 Deauthentication Attack</span>
+          <p class="def-desc">Transmitting spoofed management frames with an AP's MAC address to abruptly disconnect clients, forcing a reconnection to capture the 4-Way Handshake.</p>
+        </div>
+        <div class="def-item" data-term="unit2 wpa3 sae simultaneous authentication of equals dragonfly pmf">
+          <span class="def-term">56. WPA3 SAE (Dragonfly Handshake)</span>
+          <p class="def-desc">Replaces 4-Way Handshake with <strong>Simultaneous Authentication of Equals</strong>; provides forward secrecy and total immunity to offline dictionary cracking.</p>
+        </div>
+        <div class="def-item" data-term="unit2 rogue access point unauthorized physical ap ethernet lan">
+          <span class="def-term">57. Rogue Access Point</span>
+          <p class="def-desc">An unauthorized wireless AP plugged directly into an internal corporate Ethernet switchport without authorization, bypassing perimeter firewalls.</p>
+        </div>
+        <div class="def-item" data-term="unit2 evil twin ap clone ssid mac spoofing fake portal">
+          <span class="def-term">58. Evil Twin Access Point</span>
+          <p class="def-desc">An attacker-operated AP broadcasting the identical SSID and MAC address of a trusted network at high signal power to harvest victim credentials via fake portals.</p>
+        </div>
+
+        <!-- Units 3 & 4 Quick Bridge Definitions -->
+        <div class="def-item" data-term="unit3 sql injection sqli parameterized queries">
+          <span class="def-term">59. SQL Injection (SQLi)</span>
+          <p class="def-desc">Untrusted input alters the structure of an SQL query; mitigated via <strong>parameterized prepared statements</strong>.</p>
+        </div>
+        <div class="def-item" data-term="unit3 cross-site scripting xss context output encoding">
+          <span class="def-term">60. Cross-Site Scripting (XSS)</span>
+          <p class="def-desc">Untrusted script executes within a victim's browser session under the application's origin; mitigated via <strong>contextual output encoding</strong>.</p>
+        </div>
+        <div class="def-item" data-term="unit3 cross-site request forgery csrf samesite token">
+          <span class="def-term">61. Cross-Site Request Forgery (CSRF)</span>
+          <p class="def-desc">Inducing an authenticated browser into submitting unwanted requests; mitigated via <strong>anti-CSRF tokens &amp; SameSite cookies</strong>.</p>
+        </div>
+        <div class="def-item" data-term="unit4 incident response nist containment eradication">
+          <span class="def-term">62. Incident Response (NIST SP 800-61)</span>
+          <p class="def-desc">Structured 6-phase lifecycle: <strong>Prepare &rarr; Detect &amp; Analyze &rarr; Contain &rarr; Eradicate &rarr; Recover &rarr; Lessons Learned</strong>.</p>
+        </div>
+        <div class="def-item" data-term="unit4 cryptographic hash sha256 one-way integrity">
+          <span class="def-term">63. Cryptographic Hash</span>
+          <p class="def-desc">A deterministic <strong>one-way mathematical function</strong> producing a fixed digest (e.g. SHA-256) for data integrity verification.</p>
+        </div>
+        <div class="def-item" data-term="unit4 digital signature private key authenticity non-repudiation">
+          <span class="def-term">64. Digital Signature</span>
+          <p class="def-desc">Private-key encrypted hash verifiable by the sender's public key, guaranteeing <strong>authenticity, integrity, and non-repudiation</strong>.</p>
+        </div>
+        <div class="def-item" data-term="unit4 digital certificate x509 pki public key binding">
+          <span class="def-term">65. Digital Certificate (X.509)</span>
+          <p class="def-desc">An electronic credential digitally signed by a Certificate Authority (CA) binding an entity's identity to a public key.</p>
+        </div>
+        <div class="def-item" data-term="unit4 zero trust architecture never trust verify">
+          <span class="def-term">66. Zero-Trust Architecture</span>
+          <p class="def-desc">Security model rejecting implicit perimeter trust; every request is dynamically authenticated and authorized under least privilege.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Most-Tested Differentiations -->
+    <section id="sec-diffs" class="lm-card">
+      <h2 class="lm-header"><span>⚖️</span> Most-Tested University Differentiations (Units 1 &amp; 2 Focus)</h2>
+      <p style="color:var(--tx-muted); font-size:0.85rem; margin-top:0;">Structured tabular and bulleted comparison points calibrated for 5-mark and 10-mark University of Delhi questions:</p>
+      <div class="topic-split-grid" id="diffs-grid">
+        <div class="en-box">
+          
+
+      <div style="margin-bottom:2rem;">
+        <h3 style="color:var(--accent-light); margin-bottom:8px; font-size:1.1rem;">1. Vulnerability Assessment (VA) vs Penetration Testing (PT) vs Security Audit</h3>
+        <p style="margin:0 0 10px; font-size:0.92rem; line-height:1.6; color:var(--tx-secondary);">
+          • <strong>Vulnerability Assessment:</strong> Broad, automated discovery identifying known weaknesses (Nessus/OpenVAS). Zero exploitation; high breadth, low validation.<br>
+          • <strong>Penetration Testing:</strong> Deep, controlled exploitation of selected flaws to prove chained attack paths and business impact. High validation, requires signed ROE.<br>
+          • <strong>Security Audit:</strong> Formal checklist evaluation assessing architecture against statutory or compliance baselines (ISO 27001, PCI-DSS).
+        </p>
+      </div>
+
+      <div style="margin-bottom:2rem;">
+        <h3 style="color:var(--accent-light); margin-bottom:8px; font-size:1.1rem;">2. White-Hat vs Black-Hat vs Grey-Hat Hackers</h3>
+        <table class="matrix-table" style="margin-bottom:10px;">
+          <thead><tr><th>Attribute</th><th>White-Hat</th><th>Black-Hat</th><th>Grey-Hat</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Authorization</strong></td><td>Explicit written permission (ROE)</td><td>Zero authorization</td><td>Absent or ambiguous</td></tr>
+            <tr><td><strong>Motivation</strong></td><td>Defense, risk remediation</td><td>Financial extortion, sabotage</td><td>Curiosity, public disclosure</td></tr>
+            <tr><td><strong>Legality</strong></td><td>Lawful under Indian IT Act</td><td>Criminal under §43/§66</td><td>Illegal regardless of intent</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="margin-bottom:2rem;">
+        <h3 style="color:var(--accent-light); margin-bottom:8px; font-size:1.1rem;">3. Passive Reconnaissance (OSINT) vs Active Footprinting</h3>
+        <p style="margin:0 0 10px; font-size:0.92rem; line-height:1.6; color:var(--tx-secondary);">
+          • <strong>Passive Reconnaissance:</strong> Uses public databases (Whois, Shodan, Google Dorks, Netcraft, Maltego) without generating packets to target boundaries. Undetectable by target firewalls; legally safe.<br>
+          • <strong>Active Footprinting:</strong> Directly probes target systems (DNS zone transfer requests, ICMP sweeps, port scans). Generates logged traffic on target firewalls; requires explicit written contract.
+        </p>
+      </div>
+
+      <div style="margin-bottom:2rem;">
+        <h3 style="color:var(--accent-light); margin-bottom:8px; font-size:1.1rem;">4. Nmap TCP SYN Stealth Scan (`-sS`) vs TCP Connect Scan (`-sT`)</h3>
+        <p style="margin:0 0 10px; font-size:0.92rem; line-height:1.6; color:var(--tx-secondary);">
+          • <strong>TCP SYN Scan (`-sS`):</strong> Half-open scanning. Sends SYN; receives SYN-ACK (open) or RST (closed); immediately transmits RST to abort handshake before completion. Stealthy; evades daemon logs; requires root privileges.<br>
+          • <strong>TCP Connect Scan (`-sT`):</strong> Completes full 3-Way Handshake (SYN &rarr; SYN-ACK &rarr; ACK). Usable by unprivileged users; slow, noisy, and heavily logged by target application servers.
+        </p>
+      </div>
+
+      <div style="margin-bottom:2rem;">
+        <h3 style="color:var(--accent-light); margin-bottom:8px; font-size:1.1rem;">5. Stateless Packet Filter vs Stateful Inspection (SPI) vs Next-Generation Firewall (NGFW)</h3>
+        <table class="matrix-table" style="margin-bottom:10px;">
+          <thead><tr><th>Firewall Type</th><th>OSI Layer</th><th>Inspection Logic</th><th>Critical Vulnerability</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Stateless Filter</strong></td><td>L3 / L4</td><td>Static IP/Port rules per packet</td><td>Spoofed ACK flags, fragmented attacks</td></tr>
+            <tr><td><strong>Stateful (SPI)</strong></td><td>L3 / L4</td><td>Tracks TCP state table sessions</td><td>Blind to application-layer attacks (ports 80/443)</td></tr>
+            <tr><td><strong>NGFW</strong></td><td>L3 to L7</td><td>Deep Packet Inspection + inline IPS</td><td>High resource cost; requires TLS root CA certificates</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="margin-bottom:2rem;">
+        <h3 style="color:var(--accent-light); margin-bottom:8px; font-size:1.1rem;">6. Intrusion Detection System (IDS) vs Intrusion Prevention System (IPS)</h3>
+        <p style="margin:0 0 10px; font-size:0.92rem; line-height:1.6; color:var(--tx-secondary);">
+          • <strong>Placement &amp; Traffic Path:</strong> IDS sits <em>out-of-band</em> (connected to switch SPAN mirror or TAP port); IPS sits <em>inline</em> directly in the live cable path.<br>
+          • <strong>Response Mode:</strong> IDS is <em>passive</em> (generates log alerts); IPS is <em>active</em> (drops malicious packets, injects <code>TCP RST</code> frames).<br>
+          • <strong>Operational Failure Impact:</strong> IDS failure produces zero business impact; IPS failure or false positive directly disrupts legitimate corporate network operations.
+        </p>
+      </div>
+
+      <div style="margin-bottom:2rem;">
+        <h3 style="color:var(--accent-light); margin-bottom:8px; font-size:1.1rem;">7. IPsec Authentication Header (AH) vs Encapsulating Security Payload (ESP)</h3>
+        <p style="margin:0 0 10px; font-size:0.92rem; line-height:1.6; color:var(--tx-secondary);">
+          • <strong>AH (IP Protocol 51):</strong> Provides data integrity, origin authentication, and anti-replay. Hashes outer IP header + payload. <strong>Zero confidentiality</strong> (cleartext payload). <strong>Fails across NAT</strong> because NAT alters the IP header.<br>
+          • <strong>ESP (IP Protocol 50):</strong> Provides confidentiality (symmetric encryption via AES), data integrity, origin authentication, and anti-replay. Does not hash outer IP header. <strong>Fully compatible with NAT-Traversal (NAT-T)</strong> via UDP port 4500.
+        </p>
+      </div>
+
+      <div style="margin-bottom:2rem;">
+        <h3 style="color:var(--accent-light); margin-bottom:8px; font-size:1.1rem;">8. IPsec Transport Mode vs Tunnel Mode</h3>
+        <p style="margin:0 0 10px; font-size:0.92rem; line-height:1.6; color:var(--tx-secondary);">
+          • <strong>Transport Mode:</strong> Host-to-host direct secure link. Encrypts only the Layer 4 payload while keeping the original IP header visible. Lower overhead; exposes communicating endpoint addresses.<br>
+          • <strong>Tunnel Mode:</strong> Gateway-to-gateway (Site-to-Site VPN). Encrypts the <strong>entire original IP packet</strong> (header + payload) and encapsulates it inside a <strong>new outer IP header</strong>. Completely hides internal network topology.
+        </p>
+      </div>
+
+      <div style="margin-bottom:2rem;">
+        <h3 style="color:var(--accent-light); margin-bottom:8px; font-size:1.1rem;">9. Forward Proxy Server vs Reverse Proxy Server</h3>
+        <p style="margin:0 0 10px; font-size:0.92rem; line-height:1.6; color:var(--tx-secondary);">
+          • <strong>Forward Proxy:</strong> Sits at client network egress. Acts on behalf of internal clients to enforce URL filtering, employee content restrictions, caching, and client anonymity.<br>
+          • <strong>Reverse Proxy:</strong> Sits in front of internal web servers at server ingress. Acts on behalf of servers to handle public traffic load balancing, SSL/TLS termination, and Web Application Firewall (WAF) filtering.
+        </p>
+      </div>
+
+      <div style="margin-bottom:2rem;">
+        <h3 style="color:var(--accent-light); margin-bottom:8px; font-size:1.1rem;">10. ARP Spoofing vs DNS Spoofing vs IP Address Spoofing</h3>
+        <table class="matrix-table" style="margin-bottom:10px;">
+          <thead><tr><th>Vector</th><th>OSI Layer</th><th>Mechanics</th><th>Core Defense</th></tr></thead>
+          <tbody>
+            <tr><td><strong>ARP Spoofing</strong></td><td>Data Link (L2)</td><td>Sends forged gratuitous ARP replies mapping gateway IP to attacker MAC</td><td>Dynamic ARP Inspection (DAI) &amp; DHCP Snooping</td></tr>
+            <tr><td><strong>DNS Spoofing</strong></td><td>Application (L7)</td><td>Injects forged DNS query responses with guessed transaction IDs</td><td>DNSSEC &amp; DNS over HTTPS (DoH)</td></tr>
+            <tr><td><strong>IP Spoofing</strong></td><td>Network (L3)</td><td>Forges source IP in IPv4 packet headers to mask origin or amplify DDoS</td><td>BCP 38 Ingress/Egress filtering &amp; uRPF</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="margin-bottom:2rem;">
+        <h3 style="color:var(--accent-light); margin-bottom:8px; font-size:1.1rem;">11. Vertical Privilege Escalation vs Horizontal Privilege Escalation</h3>
+        <p style="margin:0 0 10px; font-size:0.92rem; line-height:1.6; color:var(--tx-secondary);">
+          • <strong>Vertical Escalation:</strong> Gaining higher permission tier (e.g., local user elevating to <code>root</code> or <code>SYSTEM</code>). Vectors: kernel exploits (Dirty COW), vulnerable SUID binaries, misconfigured `sudoers` (`NOPASSWD`).<br>
+          • <strong>Horizontal Escalation:</strong> Accessing resources belonging to a peer account at the same permission tier (e.g., student A viewing student B's exam grades via Insecure Direct Object References - IDOR).
+        </p>
+      </div>
+
+      <div style="margin-bottom:2rem;">
+        <h3 style="color:var(--accent-light); margin-bottom:8px; font-size:1.1rem;">12. Trojan Horse vs Computer Worm vs Backdoor</h3>
+        <p style="margin:0 0 10px; font-size:0.92rem; line-height:1.6; color:var(--tx-secondary);">
+          • <strong>Trojan Horse:</strong> Disguised as legitimate software. Requires user execution to run. Does <strong>not</strong> self-replicate.<br>
+          • <strong>Computer Worm:</strong> Autonomous program that <strong>actively self-replicates across networks</strong> by exploiting unpatched service flaws (e.g. WannaCry via SMB) without human intervention.<br>
+          • <strong>Backdoor:</strong> Undocumented administrative entry point, listening port, or backdoor account providing persistent covert remote access.
+        </p>
+      </div>
+
+      <div style="margin-bottom:2rem;">
+        <h3 style="color:var(--accent-light); margin-bottom:8px; font-size:1.1rem;">13. WEP vs WPA vs WPA2 vs WPA3 Wireless Protocol Standards</h3>
+        <table class="matrix-table" style="margin-bottom:10px;">
+          <thead><tr><th>Protocol</th><th>Cipher</th><th>Authentication</th><th>Vulnerability</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td><strong>WEP</strong></td><td>RC4 (64/128-bit)</td><td>Open / PSK</td><td>24-bit IV collision; rapid key recovery</td><td><strong style="color:#ef4444;">Broken</strong></td></tr>
+            <tr><td><strong>WPA</strong></td><td>TKIP (128-bit)</td><td>PSK / 802.1X</td><td>Michael MIC flaw; Beck-Tews attack</td><td><strong style="color:#ef4444;">Deprecated</strong></td></tr>
+            <tr><td><strong>WPA2</strong></td><td>AES-CCMP</td><td>PSK / 802.1X</td><td>4-Way Handshake vulnerable to offline dictionary attack</td><td><strong style="color:#eab308;">Acceptable (&ge;20 chars)</strong></td></tr>
+            <tr><td><strong>WPA3</strong></td><td>AES-GCMP</td><td>SAE (Dragonfly)</td><td>Immune to offline dictionary cracking; mandates PMF</td><td><strong style="color:#38bdf8;">Modern Standard</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="margin-bottom:2rem;">
+        <h3 style="color:var(--accent-light); margin-bottom:8px; font-size:1.1rem;">14. Rogue Access Point vs Evil Twin Attack</h3>
+        <p style="margin:0 0 10px; font-size:0.92rem; line-height:1.6; color:var(--tx-secondary);">
+          • <strong>Rogue AP:</strong> An unauthorized hardware AP physically attached to an internal corporate network switchport by an employee or intruder, bypassing perimeter firewalls.<br>
+          • <strong>Evil Twin:</strong> An attacker-controlled software AP broadcasting the identical SSID and MAC address of a legitimate Wi-Fi network at higher signal strength to trick users into associating and harvesting credentials.
+        </p>
+      </div>
+
+      <div style="margin-bottom:2rem;">
+        <h3 style="color:var(--accent-light); margin-bottom:8px; font-size:1.1rem;">15. SQLi vs XSS vs CSRF (Unit 3 Bridge)</h3>
+        <p style="margin:0 0 10px; font-size:0.92rem; line-height:1.6; color:var(--tx-secondary);">
+          • <strong>SQLi:</strong> Targets server-side database query parser &rarr; Prevent with parameterized prepared statements.<br>
+          • <strong>XSS:</strong> Targets client-side browser document parser &rarr; Prevent with context-aware output encoding.<br>
+          • <strong>CSRF:</strong> Targets implicit trust in automatic browser session cookies &rarr; Prevent with anti-CSRF tokens and SameSite cookies.
+        </p>
+      </div>
+
+      <div>
+        <h3 style="color:var(--accent-light); margin-bottom:8px; font-size:1.1rem;">16. Encryption vs Hash vs Digital Signature (Unit 4 Bridge)</h3>
+        <p style="margin:0; font-size:0.92rem; line-height:1.6; color:var(--tx-secondary);">
+          • <strong>Encryption:</strong> Two-way reversible with proper key &rarr; Protects confidentiality.<br>
+          • <strong>Hash:</strong> One-way irreversible digest &rarr; Verifies data integrity.<br>
+          • <strong>Digital Signature:</strong> Asymmetric private-key signed digest &rarr; Guarantees authenticity, integrity, and non-repudiation.
+        </p>
+      </div>
+    
+        </div>
+        <div class="hi-box">
+          <div class="mukul-card">
+  <div class="mukul-card-header"><span>🇮🇳</span> FOR BKL Mukul Explains · University Differentiations Ka Desi Farak</div>
+  <ul class="styled-list">
+    <li><strong>VA vs PT:</strong> VA scanner se khali list banata hai (Automated, Low Risk); PT manual exploit karke real business impact prove karta hai (Hands-on, High Risk).</li>
+    <li><strong>Stateless vs Stateful:</strong> Stateless har packet ko akele static ACL pe dekhta hai (No Memory); Stateful dynamic Connection State Table me TCP flags track karta hai (Smart Memory).</li>
+    <li><strong>IDS vs IPS:</strong> IDS passive CCTV monitor hai (Alert bhejta hai); IPS active inline bouncer hai (Packet drop + TCP RST injection).</li>
+    <li><strong>Sniffing vs Spoofing:</strong> Sniffing chupke se data sunna hai (Promiscuous mode); Spoofing nakli identity dikhana hai (Forged headers, ARP/DNS lie).</li>
+    <li><strong>WEP vs WPA2 vs WPA3:</strong> WEP 24-bit IV RC4 (5 min me crack); WPA2 AES-CCMP (Strong par handshake offline crack); WPA3 Dragonfly SAE (Offline brute-force impossible).</li>
+  </ul>
+</div>
+        </div>
+      </div>
+</section>
+
+    <!-- Essential Memory Diagrams -->
+    <section id="sec-diagrams" class="lm-card">
+      <h2 class="lm-header"><span>📐</span> Essential Memory Flow Diagrams (Reproduce in Exam)</h2>
+      <p style="color:var(--tx-muted); font-size:0.85rem; margin-top:0;">Standard ASCII architecture flows designed for immediate reproduction in Delhi University answer booklets:</p>
+      <div class="topic-split-grid" id="diag-grid">
+        <div class="en-box">
+          
+
+      <div>
+        <strong style="color:var(--tx-primary); font-size:1rem;">1. The 5-Phase Ethical Hacking &amp; Penetration Testing Lifecycle (Unit 1):</strong>
+        <div class="flow-diagram-box">
+[ Written Authorization &amp; Signed Rules of Engagement (ROE) ]
+                             &darr;
+[ Phase 1: Reconnaissance (Passive OSINT &amp; Active Footprinting) ]
+                             &darr;
+[ Phase 2: Scanning &amp; Enumeration (Nmap -sS, Services, OS Fingerprinting) ]
+                             &darr;
+[ Phase 3: Gaining Access (Controlled Exploitation Proof-of-Concept) ]
+                             &darr;
+[ Phase 4: Maintaining Access (Persistence Analysis &amp; Privilege Escalation) ]
+                             &darr;
+[ Phase 5: Evidence Management &amp; Defensive Reporting (Sanitized POCs) ]
+                             &darr;
+[ Remediation Support &amp; Retest Verification (Formal Engagement Closure) ]
+        </div>
+      </div>
+
+      <div style="margin-top:1.5rem;">
+        <strong style="color:var(--tx-primary); font-size:1rem;">2. The Complete 8-Stage VAPT Workflow Pipeline (Unit 2):</strong>
+        <div class="flow-diagram-box">
+1. Scoping &amp; Legal Sign-Off (IP Ranges, Excluded Systems, Authorized Window)
+          &darr;
+2. Asset Discovery &amp; Reconnaissance (Passive OSINT, ICMP/ARP sweeps)
+          &darr;
+3. Port Scanning &amp; Service Enumeration (Nmap -sS -sV, Banner Grabbing)
+          &darr;
+4. Automated Vulnerability Scanning (Nessus, OpenVAS breadth scans)
+          &darr;
+5. Manual Verification &amp; False Positive Elimination (Discard Type I errors)
+          &darr;
+6. Controlled Exploitation Validation (Minimal Proof-of-Concept verification)
+          &darr;
+7. Comprehensive Reporting &amp; CVSS Rating (Actionable technical fixes)
+          &darr;
+8. Remediation Retesting &amp; Formal Sign-Off (Validate patches in production)
+        </div>
+      </div>
+
+      <div style="margin-top:1.5rem;">
+        <strong style="color:var(--tx-primary); font-size:1rem;">3. Enterprise Defense-in-Depth Network Perimeter Architecture (Unit 2):</strong>
+        <div class="flow-diagram-box">
+[ Public Untrusted Internet ]
+            &darr;
+[ External Edge Router (Stateless BCP 38 Ingress Filtering) ]
+            &darr;
+[ Perimeter Firewall (Next-Gen SPI Firewall + WAF) ]
+            &darr;
+    +-------+-------+
+    |               |
+    &darr;               &darr;
+[ DMZ Subnet ]  [ Inline IPS (Active Packet Drops &amp; TCP RST) ]
+(Web/Mail Proxies)  &darr;
+    |           [ Internal Stateful Firewall ]
+    |               &darr;
+    +---------&gt; [ Corporate Internal LAN (VLANs, 802.1X NAC, DAI) ]
+                    &darr;
+                [ Secure Core Vault (DB Servers, Least Privilege Access) ]
+        </div>
+      </div>
+
+      <div style="margin-top:1.5rem;">
+        <strong style="color:var(--tx-primary); font-size:1rem;">4. WPA2 4-Way Handshake &amp; Deauthentication Capture Sequence (Unit 2):</strong>
+        <div class="flow-diagram-box">
+Attacker sends Spoofed Deauthentication Frame (aireplay-ng -0)
+                         &darr;
+Legitimate Client Disconnects and Reconnects to AP
+                         &darr;
+[Msg 1]  AP &rarr; Client:     ANonce (Random Authenticator Nonce)
+                         &darr;
+[Msg 2]  Client &rarr; AP:     SNonce + MIC  &lt;--- [ATTACKER CAPTURES Msg 1 &amp; 2 via airodump-ng]
+                         &darr;
+[Msg 3]  AP &rarr; Client:     Install PTK + GTK + MIC
+                         &darr;
+[Msg 4]  Client &rarr; AP:     Confirmation ACK
+                         &darr;
+Attacker runs Offline Dictionary Attack (aircrack-ng / hashcat mode 22000)
+comparing candidate passwords against captured MIC with zero network interaction!
+        </div>
+      </div>
+
+      <div style="margin-top:1.5rem;">
+        <strong style="color:var(--tx-primary); font-size:1rem;">5. ARP Cache Poisoning Man-in-the-Middle (MITM) Interception Flow (Unit 2):</strong>
+        <div class="flow-diagram-box">
+      [ Attacker Host (MAC: AA:AA) ]
+        /                        \
+Forged Gratuitous ARP        Forged Gratuitous ARP
+"Gateway IP is at AA:AA"     "Victim IP is at AA:AA"
+      /                            \
+     &darr;                              &darr;
+[ Victim Host ] &lt;=== Poisoned ===&gt; [ Default Gateway ]
+(All outbound traffic routed        (All inbound replies routed
+ through Attacker NIC in             through Attacker NIC before
+ Promiscuous Mode)                   forwarding)
+        </div>
+      </div>
+
+      <div style="margin-top:1.5rem;">
+        <strong style="color:var(--tx-primary); font-size:1rem;">6. IPsec Packet Encapsulation: Transport vs Tunnel Mode (Unit 2):</strong>
+        <div class="flow-diagram-box">
+Original IP Packet:
+[ Original IP Header ] [ TCP/UDP Header ] [ Data Payload ]
+
+IPsec ESP Transport Mode (Host-to-Host):
+[ Original IP Header ] [ ESP Header ] [ Encrypted TCP/UDP + Payload ] [ ESP Trailer ] [ ESP Auth ]
+
+IPsec ESP Tunnel Mode (Gateway-to-Gateway Site-to-Site VPN):
+[ New Outer IP Header ] [ ESP Header ] [ Encrypted: Original IP Hdr + TCP/UDP + Payload ] [ ESP Trailer ] [ ESP Auth ]
+        </div>
+      </div>
+
+      <div style="margin-top:1.5rem;">
+        <strong style="color:var(--tx-primary); font-size:1rem;">7. NIST SP 800-61 Incident Response Lifecycle (Unit 4 Bridge):</strong>
+        <div class="flow-diagram-box">
+[ 1. Preparation (Hardening &amp; Playbooks) ]
+                &darr;
+[ 2. Detection &amp; Analysis (SIEM, Triage, Scope) ]
+                &darr;
+[ 3. Containment (Network Isolation &amp; Quarantining) ]
+                &darr;
+[ 4. Eradication (Malware Removal &amp; Root Cause Patch) ]
+                &darr;
+[ 5. Recovery (Restoration from Clean Backups &amp; Monitoring) ]
+                &darr;
+[ 6. Post-Incident Lessons Learned (Audit &amp; Control Updates) ]
+        </div>
+      </div>
+
+      <div style="margin-top:1.5rem;">
+        <strong style="color:var(--tx-primary); font-size:1rem;">8. Secure Web Request Architecture Flow (Unit 3 Bridge):</strong>
+        <div class="flow-diagram-box">
+Browser &rarr; [HTTPS / TLS 1.3] &rarr; Reverse Proxy / WAF
+         &rarr; Server-Side Authentication &amp; RBAC Authorization
+         &rarr; Input Validation &amp; Business Logic
+         &rarr; Parameterized Database Query (Prepared Statement)
+         &rarr; Context-Aware Output Encoded Response (with HSTS &amp; CSP)
+        </div>
+      </div>
+    
+        </div>
+        <div class="hi-box">
+          <div class="mukul-card">
+  <div class="mukul-card-header"><span>🇮🇳</span> FOR BKL Mukul Explains · 4 Core Memory Diagrams</div>
+  <ul class="styled-list">
+    <li><strong>TCP 3-Way Handshake:</strong> Client sends SYN (Seq=X) &rarr; Server sends SYN-ACK (Seq=Y, Ack=X+1) &rarr; Client sends ACK (Seq=X+1, Ack=Y+1). Stateful firewalls isi sequence ko track karte hain!</li>
+    <li><strong>WPA2 4-Way Handshake:</strong> AP sends ANonce &rarr; Client derives PTK, sends SNonce + MIC &rarr; AP verifies MIC, sends Group Key GTK &rarr; Client confirms. Air me password kabhi nahi jata!</li>
+    <li><strong>ARP Spoofing MITM:</strong> Attacker victim ko bolta hai 'Main Gateway hoon', aur gateway ko bolta hai 'Main Victim hoon'. Dono ka traffic attacker ke computer se pass hota hai!</li>
+    <li><strong>Snort Rule Anatomy:</strong> Action (alert) + Protocol (tcp) + Direction ($EXTERNAL_NET any -> $HTTP_SERVERS 80) + Rule Options (msg, content, nocase, sid).</li>
+  </ul>
+</div>
+        </div>
+      </div>
+</section>
+
+    <!-- 12 Critical Exam Traps to Avoid -->
+    <section id="sec-traps" class="lm-card" style="border-color:rgba(239, 68, 68, 0.4);">
+      <h2 class="lm-header" style="color:#ef4444;"><span>⚠️</span> 12 Critical Exam Traps to Avoid (Units 1 &amp; 2 Focus)</h2>
+
+      <div class="trap-item">
+        <div class="trap-title">❌ Trap 1: Thinking Good Intentions Make Hacking Lawful</div>
+        <p class="trap-desc">Under Indian law (<strong>IT Act, 2000 Section 43/66</strong>), accessing or scanning any computer system without written authorization is strictly illegal. Claiming "helpful research motives" or "benign white-hat intentions" provides zero legal protection without a signed contract.</p>
+      </div>
+
+      <div class="trap-item">
+        <div class="trap-title">❌ Trap 2: Assuming a Port Scan or Banner Grabbing "Proves" an Exploit</div>
+        <p class="trap-desc">An open port or software version banner reported by Nmap is merely an operational clue, not proof of vulnerability. System banners can be forged, backported with custom patches, or honeypots. <strong>Controlled proof-of-concept validation</strong> is necessary.</p>
+      </div>
+
+      <div class="trap-item">
+        <div class="trap-title">❌ Trap 3: Equating Trojan Horses with Computer Worms</div>
+        <p class="trap-desc">A Trojan does <strong>NOT self-replicate</strong> across network subnets by definition. It relies entirely on social engineering and disguise to induce human execution. <strong>Autonomous self-propagation across network services without user intervention</strong> is the hallmark of worms.</p>
+      </div>
+
+      <div class="trap-item">
+        <div class="trap-title">❌ Trap 4: Believing Hiding the SSID or MAC Filtering Secures Wi-Fi</div>
+        <p class="trap-desc">Hiding the SSID provides zero security. Access points still broadcast probe requests and beacon headers containing the BSSID, and active client handshakes reveal the hidden SSID instantly in tools like <strong>Airodump-ng</strong>. MAC addresses are transmitted in plaintext and easily spoofed.</p>
+      </div>
+
+      <div class="trap-item">
+        <div class="trap-title">❌ Trap 5: Confusing Passive Out-of-Band IDS with Inline IPS Placements</div>
+        <p class="trap-desc">Never write that an IDS blocks traffic or that an IPS sits on a mirror port. An <strong>IDS sits out-of-band</strong> via switch SPAN or TAP ports and passively generates alerts. An <strong>IPS sits inline</strong> directly on the live network wire and actively terminates packets.</p>
+      </div>
+
+      <div class="trap-item">
+        <div class="trap-title">❌ Trap 6: Assuming IPsec Authentication Header (AH) Encrypts Data Payloads</div>
+        <p class="trap-desc">AH provides <strong>zero confidentiality</strong>. The payload travels in cleartext. AH provides data integrity, origin authentication, and anti-replay only. To achieve encryption and confidentiality, <strong>Encapsulating Security Payload (ESP)</strong> must be deployed.</p>
+      </div>
+
+      <div class="trap-item">
+        <div class="trap-title">❌ Trap 7: Believing IPsec AH Operates Seamlessly Across NAT</div>
+        <p class="trap-desc">AH includes the outer IP header in its cryptographic hash calculation. When an intermediate router performs Network Address Translation (NAT), it rewrites the source or destination IP, immediately invalidating the AH Integrity Check Value (ICV) and causing packet drops.</p>
+      </div>
+
+      <div class="trap-item">
+        <div class="trap-title">❌ Trap 8: Confusing Vertical and Horizontal Privilege Escalation</div>
+        <p class="trap-desc"><strong>Vertical escalation</strong> means gaining elevated permissions (e.g., standard user &rarr; <code>root</code> / <code>SYSTEM</code>). <strong>Horizontal escalation</strong> means accessing unauthorized records belonging to a peer account at the same permission tier (e.g., user Alice viewing user Bob's private records via IDOR).</p>
+      </div>
+
+      <div class="trap-item">
+        <div class="trap-title">❌ Trap 9: Thinking Increasing WEP RC4 Key Size to 128-bit Solves IV Collision Flaws</div>
+        <p class="trap-desc">WEP's fatal vulnerability is not the RC4 key size, but its <strong>short 24-bit cleartext Initialization Vector (IV)</strong>. In a busy network, IV collisions occur every $2^{24} \approx 16.7$ million packets (within minutes), allowing complete key extraction regardless of key length.</p>
+      </div>
+
+      <div class="trap-item">
+        <div class="trap-title">❌ Trap 10: Confusing Client-Side Form Validation with Security</div>
+        <p class="trap-desc">Never write that browser JavaScript validation secures an endpoint. Attackers easily bypass client code using intercepting proxies (<strong>Burp Suite</strong>) or <code>curl</code>. <strong>Server-side input validation and parameterized database queries</strong> are strictly mandatory.</p>
+      </div>
+
+      <div class="trap-item">
+        <div class="trap-title">❌ Trap 11: Believing CORS Prevents Cross-Site Request Forgery (CSRF)</div>
+        <p class="trap-desc">CORS restricts a web page from reading the response of a cross-origin HTTP request; it does <strong>NOT prevent the browser from transmitting the state-changing POST request</strong>. Anti-CSRF tokens and <strong>SameSite cookie flags</strong> are required.</p>
+      </div>
+
+      <div class="trap-item">
+        <div class="trap-title">❌ Trap 12: Claiming a Cryptographic Hash can be "Decrypted"</div>
+        <p class="trap-desc">Hashes are strictly <strong>one-way irreversible mathematical functions</strong>, not symmetric or asymmetric encryption. They cannot be decrypted with any key. Rainbow tables and dictionary tools test candidate preimages; they never "decrypt" hashes.</p>
+      </div>
+    </section>
+
+  </div>
+    </div>
+</main>
+
+<footer>
+  <div class="chapter-content-container" style="padding-top:1.5rem; padding-bottom:1.5rem; text-align:center; color:var(--tx-muted); font-size:0.85rem; border-top:1px solid var(--bd-subtle);">
+    <span style="color:var(--em-accent-text); font-weight:700;">Ethical Hacking MiniBook</span> · University of Delhi B.Tech CSE (DSE-3/GE-5) · Pure Pitch Black &amp; Archival Paper Themes.
+  </div>
+</footer>
+
+<script src="assets/js/state.js"></script>
+<script src="assets/js/core.js"></script>
+<script>
+function filterDefinitions(query) {
+  const items = document.querySelectorAll('.def-item');
+  const q = query.toLowerCase().trim();
+  items.forEach(el => {
+    const term = el.getAttribute('data-term') || '';
+    const text = el.innerText.toLowerCase();
+    if (q === '' || term.includes(q) || text.includes(q)) {
+      el.style.display = 'block';
+    } else {
+      el.style.display = 'none';
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  ThemeManager.init();
+  SidebarManager.init();
+});
+</script>
+</body>
+</html>

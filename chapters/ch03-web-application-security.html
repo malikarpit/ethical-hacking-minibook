@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<!-- ⚡ Arpit | Ethical Hacking MiniBook 2026 | University of Delhi -->
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="Arpit"><meta name="description" content="Ch 3: Web Security, OWASP Top 10 & Secure Coding — Ethical Hacking and Advanced Cybersecurity MiniBook, University of Delhi B.Tech CSE.">
+<title>Ch 3: Web Security, OWASP Top 10 & Secure Coding | Ethical Hacking MiniBook 🛡️</title>
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/animations.css">
+<link rel="stylesheet" href="../assets/css/chapters.css">
+<link rel="stylesheet" href="../assets/css/timer.css">
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<!-- HEADER -->
+<header id="main-header">
+  <div class="header-left">
+    <button id="sidebar-toggle" class="icon-btn" title="Toggle Sidebar (S)" aria-label="Toggle Navigation">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="brand-logo">
+      <div class="brand-icon">🛡️</div>
+      <div class="brand-text">
+        <span class="main">Ethical Hacking</span>
+        <span class="sub">University of Delhi · B.Tech CSE</span>
+      </div>
+    </div>
+  </div>
+
+  <span class="header-chapter-title">Ch 3: Web Security, OWASP Top 10 & Secure Coding</span>
+
+  <div class="header-right">
+    <button id="search-btn" class="icon-btn" title="Search (Ctrl+K)" aria-label="Search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    </button>
+    <button id="print-btn" title="Print to Clean PDF (Ctrl+P)" aria-label="Print">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      <span class="print-label">PDF</span>
+    </button>
+    <button id="reading-mode-btn" class="icon-btn" title="Reading Focus Mode (F)" aria-label="Reading Mode">📖</button>
+    <button id="theme-toggle" class="icon-btn" title="Toggle Theme (T)" aria-label="Theme"></button>
+  </div>
+</header>
+
+<!-- SIDEBAR -->
+<div id="sidebar-overlay"></div>
+<aside id="sidebar">
+  <nav class="sidebar-nav">
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Navigation</div>
+      <a href="../index.html" class="sidebar-link"><span class="link-icon">🏠</span>Home Portal</a>
+      <a href="../quick-learn.html" class="sidebar-link"><span class="link-icon">⚡</span>Quick Learn</a>
+      <a href="../last-minute.html" class="sidebar-link"><span class="link-icon">⏱️</span>Last-Minute Cram</a>
+      <a href="../activities.html" class="sidebar-link"><span class="link-icon">📁</span>Activities &amp; Solutions</a>
+      <a href="../exams/mcq-test.html" class="sidebar-link"><span class="link-icon">📝</span>MCQ Test Simulator</a>
+      <a href="../progress.html" class="sidebar-link"><span class="link-icon">📊</span>Study Dashboard</a>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Chapters</div>
+      <a href="ch00-syllabus-guide.html" class="sidebar-link"><span class="link-icon">🧭</span>Ch 0 — Syllabus &amp; Blueprint</a>
+      <a href="ch00-syllabus-guide-hinglish.html" class="sidebar-link sidebar-mukul-sublink"><span class="link-icon">🔥</span>Ch 0 · Mukul Hinglish</a>
+      <a href="ch01-fundamentals-ethics.html" class="sidebar-link "><span class="link-icon">🛡️</span>Ch 1 — Fundamentals &amp; Ethics</a>
+      <a href="ch01-fundamentals-ethics-hinglish.html" class="sidebar-link sidebar-mukul-sublink" style="color:#38bdf8;"><span class="link-icon">🔥</span>Ch 1 — Mukul Hinglish</a>
+      <a href="ch02-network-system-security.html" class="sidebar-link "><span class="link-icon">🌐</span>Ch 2 — Network &amp; Systems</a>
+      <a href="ch02-network-system-security-hinglish.html" class="sidebar-link sidebar-mukul-sublink" style="color:#38bdf8;"><span class="link-icon">🔥</span>Ch 2 — Mukul Hinglish</a>
+      <a href="ch03-web-application-security.html" class="sidebar-link active"><span class="link-icon">💻</span>Ch 3 — Web Security &amp; OWASP</a>
+      <a href="ch04-advanced-cybersecurity.html" class="sidebar-link "><span class="link-icon">🔒</span>Ch 4 — Advanced Cyber &amp; Crypto</a>
+      <a href="ch05-practical-lab-workbook.html" class="sidebar-link "><span class="link-icon">🔬</span>Ch 5 — Practical Labs (1 to 7)</a>
+    </div>
+  </nav>
+  <div class="sidebar-footer">
+    <div class="sidebar-brand-mark"><div class="mark">🛡️</div><span>Arpit · DU B.Tech CSE</span></div>
+  </div>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main id="main-content">
+  <div class="chapter-content-container">
+    
+    <div class="chapter-hero">
+      <span class="chapter-badge">Unit 3</span>
+      <h1 class="chapter-headline">Ch 3: Web Security, OWASP Top 10 & Secure Coding</h1>
+      <p class="chapter-sub">Curriculum-aligned textbook study module for University of Delhi (DSE-3/GE-5).</p>
+    </div>
+
+    <nav class="toc-box"><div class="toc-title">📑 Table of Contents</div><ul class="toc-list"><li class="toc-item"><a href="#s-5-unit-3-application-and-web-security">5. Unit 3 - Application and Web Security</a></li><li class="toc-subitem"><a href="#s-5-1-how-a-web-application-works">5.1 How a web application works</a></li><li class="toc-subitem"><a href="#s-5-2-sql-injection-sqli">5.2 SQL injection (SQLi)</a></li><li class="toc-subitem"><a href="#s-5-3-cross-site-scripting-xss">5.3 Cross-Site Scripting (XSS)</a></li><li class="toc-subitem"><a href="#s-5-4-cross-site-request-forgery-csrf">5.4 Cross-Site Request Forgery (CSRF)</a></li><li class="toc-subitem"><a href="#s-5-5-owasp-top-10-framework">5.5 OWASP Top 10 framework</a></li><li class="toc-subitem"><a href="#s-5-6-secure-coding-practices">5.6 Secure coding practices</a></li><li class="toc-subitem"><a href="#s-5-7-apis-and-web-services">5.7 APIs and web services</a></li><li class="toc-subitem"><a href="#s-5-8-mobile-application-security">5.8 Mobile application security</a></li><li class="toc-subitem"><a href="#s-5-9-unit-3-quick-check">5.9 Unit 3 - Quick check</a></li></ul></nav>
+
+    <div class="chapter-body-text">
+      <h2 id="s-5-unit-3-application-and-web-security" class="section-h2"><span class="h-anchor">§</span> 5. Unit 3 - Application and Web Security</h2>
+<h3 id="s-5-1-how-a-web-application-works" class="section-h3"><span class="h-anchor">#</span> 5.1 How a web application works</h3>
+<p class="body-p">A basic web application includes a browser or mobile client, HTTP(S) requests, a web server/API, business logic, identity and session handling, and possibly a database or other services. Many flaws arise when the server trusts client-supplied data or fails to enforce a rule on every relevant request.</p>
+<p class="body-p">Useful concepts:</p>
+<ul class="styled-list">
+<li><strong>Authentication:</strong> establishes who or what the user is.</li>
+<li><strong>Authorization:</strong> decides what the authenticated identity may do.</li>
+<li><strong>Session management:</strong> maintains authenticated state between requests.</li>
+<li><strong>Input validation:</strong> checks that data conforms to expected type, size, and format.</li>
+<li><strong>Output encoding:</strong> renders untrusted data safely in its destination context.</li>
+<li><strong>Parameterized query:</strong> keeps SQL code separate from data values.</li>
+<li><strong>Security logging:</strong> records security-relevant events without needlessly exposing secrets.</li>
+</ul>
+<h3 id="s-5-2-sql-injection-sqli" class="section-h3"><span class="h-anchor">#</span> 5.2 SQL injection (SQLi)</h3>
+<p class="body-p"><strong>Definition:</strong> SQL injection occurs when untrusted input changes the intended structure or meaning of an SQL query.</p>
+<p class="body-p"><strong>Root cause:</strong> unsafe query construction, often by concatenating user-controlled strings into SQL syntax. The issue is not merely that an input contains a quote; it is that input can become part of the query's code rather than remaining a data value.</p>
+<p class="body-p"><strong>Potential impact:</strong> authentication bypass, unauthorized reading or modification of data, or—in some configurations—further database or application compromise. Actual impact depends on the query, database permissions, architecture, and safeguards.</p>
+<p class="body-p"><strong>Conceptual example (intentionally unsafe pattern):</strong></p>
+<div class="code-block-container"><pre class="code-block"><code class="language-python"># UNSAFE: do not use this pattern with untrusted input
+query = &quot;SELECT * FROM users WHERE username = &#x27;&quot; + username + &quot;&#x27;&quot;</code></pre></div>
+<p class="body-p"><strong>Safer pattern using a parameterized query (illustrative Python DB-API style):</strong></p>
+<div class="code-block-container"><pre class="code-block"><code class="language-python"># Safer: keep SQL structure separate from user-controlled values
+cursor.execute(
+    &quot;SELECT * FROM users WHERE username = %s&quot;,
+    (username,)
+)</code></pre></div>
+<p class="body-p">Placeholder syntax varies by database driver; follow that driver's documentation. Use an ORM correctly where suitable. Parameterization is the main defense for values; allowlists are appropriate for dynamic identifiers such as a selectable sort column because identifiers cannot always be bound as ordinary values. Use least-privilege database accounts, generic error messages, and security testing as additional safeguards.</p>
+<h3 id="s-5-3-cross-site-scripting-xss" class="section-h3"><span class="h-anchor">#</span> 5.3 Cross-Site Scripting (XSS)</h3>
+<p class="body-p"><strong>Definition:</strong> XSS occurs when an application causes untrusted data to execute as script in another user's browser under the application's origin.</p>
+<p class="body-p">Common categories:</p>
+<ul class="styled-list">
+<li><strong>Stored XSS:</strong> untrusted content is saved (for example, in a profile or comment) and later delivered to users.</li>
+<li><strong>Reflected XSS:</strong> the payload comes from the current request and is included unsafely in the response.</li>
+<li><strong>DOM-based XSS:</strong> client-side JavaScript processes data unsafely and changes the document in a way that executes script.</li>
+</ul>
+<p class="body-p"><strong>Impact:</strong> actions may be performed in the context of a victim's session, page content can be changed, or data visible to the page can be exposed. Modern browser protections and cookie settings can reduce some impacts but do not replace secure coding.</p>
+<p class="body-p"><strong>Defenses:</strong> context-aware output encoding; safe DOM APIs; avoiding dangerous HTML/JavaScript sinks; sanitizing HTML when HTML input is a required feature; Content Security Policy as defense in depth; secure cookie attributes; and tests across the relevant output contexts.</p>
+<p class="body-p">Validation and encoding are different. Validation asks whether a value fits business rules; output encoding ensures it is interpreted as data—not executable syntax—at the point where it is rendered.</p>
+<h3 id="s-5-4-cross-site-request-forgery-csrf" class="section-h3"><span class="h-anchor">#</span> 5.4 Cross-Site Request Forgery (CSRF)</h3>
+<p class="body-p"><strong>Definition:</strong> CSRF tricks a user's browser into sending an unwanted request to a site where that user is already authenticated. The risk is especially relevant when browsers automatically attach authentication cookies.</p>
+<p class="body-p"><strong>Example scenario:</strong> a user is logged into a vulnerable account-management site and visits a separate malicious page. That page causes the browser to submit a state-changing request that the application accepts because it does not verify that the request originated from an intended interaction.</p>
+<p class="body-p"><strong>Defenses:</strong> anti-CSRF tokens tied to the session/request; <code>SameSite</code> cookie settings appropriate to the use case; checking <code>Origin</code> or <code>Referer</code> where suitable; requiring re-authentication or confirmation for sensitive actions; and avoiding state changes on GET requests. CORS is not a general-purpose CSRF defense, and a CSRF token must be validated server-side.</p>
+<p class="body-p"><strong>XSS vs CSRF:</strong> XSS injects script execution into a trusted origin. CSRF abuses the browser's authenticated request behavior to trigger an action. They have different root causes and controls.</p>
+<h3 id="s-5-5-owasp-top-10-framework" class="section-h3"><span class="h-anchor">#</span> 5.5 OWASP Top 10 framework</h3>
+<p class="body-p">OWASP Top 10 is an awareness and prioritization resource for important web application security risks. It is not a complete security standard, checklist, or substitute for threat modeling and testing.</p>
+<p class="body-p">The course PDF does not state which edition is required. Use your lecturer's prescribed edition for exam terminology. As a current supplement, the official <strong>OWASP Top 10:2025</strong> categories are:</p>
+<ul class="styled-list">
+<li><strong>1.</strong> <strong>A01:2025 - Broken Access Control</strong></li>
+<li><strong>2.</strong> <strong>A02:2025 - Security Misconfiguration</strong></li>
+<li><strong>3.</strong> <strong>A03:2025 - Software Supply Chain Failures</strong></li>
+<li><strong>4.</strong> <strong>A04:2025 - Cryptographic Failures</strong></li>
+<li><strong>5.</strong> <strong>A05:2025 - Injection</strong></li>
+<li><strong>6.</strong> <strong>A06:2025 - Insecure Design</strong></li>
+<li><strong>7.</strong> <strong>A07:2025 - Authentication Failures</strong></li>
+<li><strong>8.</strong> <strong>A08:2025 - Software or Data Integrity Failures</strong></li>
+<li><strong>9.</strong> <strong>A09:2025 - Security Logging & Alerting Failures</strong></li>
+<li><strong>10.</strong> <strong>A10:2025 - Mishandling of Exceptional Conditions</strong></li>
+</ul>
+<p class="body-p">This list reflects the official 2025 edition, which was released after the date printed on your syllabus. Some teaching materials may use the 2021 edition, whose category names and ordering differ. Do not silently mix versions in a version-specific exam answer.</p>
+<h3 id="s-5-6-secure-coding-practices" class="section-h3"><span class="h-anchor">#</span> 5.6 Secure coding practices</h3>
+<ul class="styled-list">
+<li><strong>1.</strong> <strong>Validate on the server:</strong> client-side checks improve usability but can be bypassed.</li>
+<li><strong>2.</strong> <strong>Use parameterized queries:</strong> never create SQL by concatenating user input into query text.</li>
+<li><strong>3.</strong> <strong>Enforce access control for every request:</strong> do not rely only on hiding a button or route in the UI.</li>
+<li><strong>4.</strong> <strong>Use least privilege:</strong> application and database components should have only the permissions they need.</li>
+<li><strong>5.</strong> <strong>Handle errors safely:</strong> do not reveal stack traces, secrets, internal paths, or query details to end users.</li>
+<li><strong>6.</strong> <strong>Protect secrets:</strong> keep credentials out of source code and public repositories; use secret-management facilities and rotate exposed credentials.</li>
+<li><strong>7.</strong> <strong>Use secure defaults:</strong> restrict debug mode, unnecessary services, permissive CORS, and default accounts.</li>
+<li><strong>8.</strong> <strong>Keep dependencies current:</strong> review advisories, lock dependency versions responsibly, and maintain an update process.</li>
+<li><strong>9.</strong> <strong>Authenticate and manage sessions securely:</strong> protect session identifiers; invalidate sessions on logout and relevant account changes.</li>
+<li><strong>10.</strong> <strong>Log security events:</strong> record enough for investigation while excluding passwords, access tokens, and unnecessary personal data.</li>
+<li><strong>11.</strong> <strong>Test negative cases:</strong> confirm that unauthorized users cannot read, modify, or delete another user's data.</li>
+<li><strong>12.</strong> <strong>Review design and code:</strong> automated tools help, but human review is needed for business-logic flaws.</li>
+</ul>
+<h3 id="s-5-7-apis-and-web-services" class="section-h3"><span class="h-anchor">#</span> 5.7 APIs and web services</h3>
+<p class="body-p">An API exposes operations and data for clients or other services. Common risks include broken object-level authorization, weak authentication, excessive data exposure, mass assignment, unrestricted resource consumption, unsafe error handling, and trusting upstream services without validation.</p>
+<p class="body-p"><strong>API security checklist:</strong></p>
+<ul class="styled-list">
+<li>Authenticate the caller where required and authorize each object/action on the server.</li>
+<li>Validate schema, type, size, and allowed values.</li>
+<li>Return only the fields needed by that caller.</li>
+<li>Apply rate limits, quotas, pagination limits, and request-size limits.</li>
+<li>Use TLS for transport and sound token lifecycle practices.</li>
+<li>Avoid putting secrets in URLs; URLs often enter logs and browser history.</li>
+<li>Validate webhooks and service-to-service requests; protect against replay where relevant.</li>
+<li>Version APIs, document authentication requirements, and deprecate insecure endpoints.</li>
+<li>Log denied and unusual access, while redacting credentials and personal information.</li>
+</ul>
+<p class="body-p">For REST-like services, inspect methods, status codes, headers, tokens, and object identifiers within an approved lab. Do not infer that an endpoint is secure merely because it returns <code>401</code> or <code>403</code> for one test case; test the full authorization matrix.</p>
+<h3 id="s-5-8-mobile-application-security" class="section-h3"><span class="h-anchor">#</span> 5.8 Mobile application security</h3>
+<p class="body-p">Mobile apps introduce risks in local storage, app permissions, inter-process communication, deep links, transport security, API authorization, and reverse engineering. A mobile app is not a trusted enforcement point: business-critical authorization must be performed server-side.</p>
+<p class="body-p">Good practices include:</p>
+<ul class="styled-list">
+<li>Store secrets using platform-provided secure storage where appropriate; avoid plain-text tokens and passwords.</li>
+<li>Request the minimum permissions required and explain their purpose.</li>
+<li>Validate deep links and exported components; do not trust parameters passed between apps.</li>
+<li>Use TLS correctly and do not disable certificate validation in production.</li>
+<li>Avoid embedding long-lived API secrets in the app package.</li>
+<li>Check debug settings, backup behavior, logs, and sensitive screenshots.</li>
+<li>Apply server-side authorization even when the UI hides restricted functions.</li>
+<li>Test on a dedicated emulator/test device using synthetic accounts and approved endpoints.</li>
+</ul>
+<h3 id="s-5-9-unit-3-quick-check" class="section-h3"><span class="h-anchor">#</span> 5.9 Unit 3 - Quick check</h3>
+<p class="body-p">Know the definition, root cause, impact, and defense for SQLi, XSS, and CSRF; explain authentication vs authorization; explain why OWASP Top 10 is a guide rather than a complete standard; and list core API/mobile security controls.</p>
+<hr class="chapter-divider">
+    </div>
+
+    <div class="chapter-nav-bottom">
+      <a href="ch02-network-system-security.html" class="chapter-nav-btn prev-btn">&larr; Previous Chapter</a>
+      <a href="ch04-advanced-cybersecurity.html" class="chapter-nav-btn next-btn">Next Chapter &rarr;</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="chapter-content-container" style="padding-top:1.5rem; padding-bottom:1.5rem; text-align:center; color:var(--tx-muted); font-size:0.85rem; border-top:1px solid var(--bd-subtle);">
+    <span style="color:var(--em-accent-text); font-weight:700;">Ethical Hacking MiniBook</span> · University of Delhi B.Tech CSE · Pitch Black &amp; Archival Paper Themes.
+  </div>
+</footer>
+
+<script src="../assets/js/state.js"></script>
+<script src="../assets/js/core.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  ThemeManager.init();
+  SidebarManager.init();
+});
+</script>
+</body>
+</html>
